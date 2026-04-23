@@ -22,10 +22,10 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05 }}
-            className="mt-6 font-display text-5xl font-black leading-[1.0] tracking-tight text-ink text-balance md:text-6xl lg:text-7xl"
+            className="mt-6 font-display text-5xl font-bold leading-[1.0] tracking-tight text-ink text-balance md:text-6xl lg:text-7xl"
           >
             Applied online learning,{" "}
-            <span className="font-serif-display font-normal italic text-primary">built for the way you work.</span>
+            <span className="font-secondary-title text-primary">built for the way you work.</span>
           </motion.h1>
 
           <motion.p
