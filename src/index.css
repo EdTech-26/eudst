@@ -1,56 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* eUDST design system — UDST maroon, warm cream, editorial type. All colors HSL. */
+/* eUDST design system — UDST Brand Guidelines compliant.
+   Primary: UDST Blue #0055B8 · Light: #54C8E8 · Black #222 · Cool Gray #D9D8D6
+   Typography: Lato (primary). Calluna isn't free; we use Fraunces as serif counterpart for editorial display where needed.
+   All colors HSL. */
 
 @layer base {
   :root {
-    --background: 36 33% 97%;
-    --foreground: 220 18% 12%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;          /* UDST Black #222222 */
 
     --card: 0 0% 100%;
-    --card-foreground: 220 18% 12%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 18% 12%;
+    --popover-foreground: 0 0% 13%;
 
-    /* UDST deep maroon */
-    --primary: 343 70% 28%;
-    --primary-foreground: 36 33% 97%;
-    --primary-glow: 343 65% 42%;
+    /* UDST Blue #0055B8 */
+    --primary: 213 100% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 197 78% 62%;     /* UDST Light Blue #54C8E8 */
 
-    --secondary: 36 25% 92%;
-    --secondary-foreground: 220 18% 12%;
+    /* Cool Gray #D9D8D6 → softened into surface */
+    --secondary: 40 4% 95%;
+    --secondary-foreground: 0 0% 13%;
 
-    --muted: 36 20% 94%;
-    --muted-foreground: 220 9% 42%;
+    --muted: 40 6% 96%;
+    --muted-foreground: 0 0% 36%;
 
-    /* Warm gold accent */
-    --accent: 38 60% 52%;
-    --accent-foreground: 220 18% 12%;
+    /* Accent = UDST Light Blue */
+    --accent: 197 78% 62%;
+    --accent-foreground: 0 0% 13%;
 
     --destructive: 0 75% 45%;
-    --destructive-foreground: 36 33% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 18% 88%;
-    --input: 30 18% 88%;
-    --ring: 343 70% 28%;
+    --border: 40 6% 89%;
+    --input: 40 6% 89%;
+    --ring: 213 100% 36%;
 
-    --ink: 220 22% 10%;
+    --ink: 0 0% 13%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --gradient-hero: radial-gradient(ellipse at top left, hsl(343 70% 28% / 0.08), transparent 60%),
-                     radial-gradient(ellipse at bottom right, hsl(38 60% 52% / 0.10), transparent 55%);
-    --gradient-primary: linear-gradient(135deg, hsl(343 70% 28%), hsl(343 60% 38%));
-    --gradient-dark: linear-gradient(135deg, hsl(343 70% 22%), hsl(343 65% 14%));
+    --gradient-hero: radial-gradient(ellipse at top left, hsl(213 100% 36% / 0.08), transparent 60%),
+                     radial-gradient(ellipse at bottom right, hsl(197 78% 62% / 0.18), transparent 55%);
+    --gradient-primary: linear-gradient(135deg, hsl(213 100% 36%), hsl(213 95% 48%));
+    --gradient-bright: linear-gradient(135deg, hsl(213 100% 36%) 0%, hsl(197 78% 62%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(213 100% 22%), hsl(213 80% 12%));
 
-    --shadow-soft: 0 1px 2px hsl(220 18% 12% / 0.04), 0 8px 24px -8px hsl(220 18% 12% / 0.08);
-    --shadow-elegant: 0 10px 40px -12px hsl(343 70% 28% / 0.25);
-    --shadow-lift: 0 20px 50px -20px hsl(220 18% 12% / 0.18);
+    --shadow-soft: 0 1px 2px hsl(0 0% 13% / 0.04), 0 8px 24px -8px hsl(0 0% 13% / 0.08);
+    --shadow-elegant: 0 10px 40px -12px hsl(213 100% 36% / 0.30);
+    --shadow-lift: 0 20px 50px -20px hsl(0 0% 13% / 0.18);
 
     --transition-smooth: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -65,20 +71,23 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "ss01", "cv11";
+    font-family: 'Lato', system-ui, sans-serif;
   }
   h1, h2, h3, h4 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Lato', system-ui, sans-serif;
+    font-weight: 900;
     letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
-  .font-display { font-family: 'Fraunces', serif; }
-  .font-sans { font-family: 'Inter', system-ui, sans-serif; }
+  .font-display { font-family: 'Lato', system-ui, sans-serif; font-weight: 900; letter-spacing: -0.02em; }
+  .font-serif-display { font-family: 'Fraunces', serif; }
+  .font-sans { font-family: 'Lato', system-ui, sans-serif; }
   .text-balance { text-wrap: balance; }
   .bg-hero { background: var(--gradient-hero); }
   .bg-gradient-primary { background: var(--gradient-primary); }
+  .bg-gradient-bright { background: var(--gradient-bright); }
   .bg-gradient-dark { background: var(--gradient-dark); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
