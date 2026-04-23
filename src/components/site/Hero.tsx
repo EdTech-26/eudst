@@ -12,9 +12,9 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary"
+            className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-6 py-2.5 text-sm font-medium text-primary"
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <Sparkles className="h-5 w-5" />
             University of Doha for Science & Technology · eLearning Hub
           </motion.div>
 
