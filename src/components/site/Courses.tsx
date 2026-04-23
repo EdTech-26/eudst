@@ -10,7 +10,7 @@ const courses = [
     desc: "Hands-on data wrangling, visualisation and decision-making with industry tools.",
     type: "Academic · Online",
     duration: "14 weeks",
-    accent: "bg-primary/10 text-primary",
+    accent: "bg-[#FFB600]/20 text-[#8a6300]",
   },
   {
     code: "PROF1042",
@@ -19,7 +19,7 @@ const courses = [
     desc: "Foundational practitioner skills covering threats, controls and incident response.",
     type: "Professional",
     duration: "40 hrs",
-    accent: "bg-accent/15 text-[hsl(38_60%_36%)]",
+    accent: "bg-[#8E1537]/15 text-[#8E1537]",
   },
   {
     code: "DAEN3210",
@@ -28,7 +28,7 @@ const courses = [
     desc: "Apply lifecycle thinking and energy modelling to real engineering problems.",
     type: "Academic · HyFlex",
     duration: "12 weeks",
-    accent: "bg-primary/10 text-primary",
+    accent: "bg-[#EE7623]/15 text-[#b85412]",
   },
   {
     code: "PROF2200",
@@ -37,7 +37,7 @@ const courses = [
     desc: "Translate AI capabilities into operating models, governance and business value.",
     type: "Professional",
     duration: "24 hrs",
-    accent: "bg-accent/15 text-[hsl(38_60%_36%)]",
+    accent: "bg-[#0083C1]/15 text-[#0083C1]",
   },
 ];
 
