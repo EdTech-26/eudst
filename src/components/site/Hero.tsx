@@ -8,15 +8,6 @@ export const Hero = () => {
     <section className="relative overflow-hidden bg-hero">
       <div className="container relative grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-10 lg:py-32">
         <div className="lg:col-span-7">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/5 px-6 py-2.5 text-sm font-medium text-primary"
-          >
-            <Sparkles className="h-5 w-5" />
-            University of Doha for Science & Technology · eLearning Hub
-          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
