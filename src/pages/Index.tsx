@@ -1,16 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Audiences } from "@/components/site/Audiences";
+import { Courses } from "@/components/site/Courses";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { FacultyService } from "@/components/site/FacultyService";
+import { FAQ } from "@/components/site/FAQ";
+import { CTABanner } from "@/components/site/CTABanner";
+import { Footer } from "@/components/site/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "eUDST · Applied Online Learning | University of Doha for Science & Technology";
+    const desc = "eUDST is UDST's eLearning Hub — register for online academic and professional courses, or request blended, online and HyFlex course development as faculty.";
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", desc);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background font-sans">
+      <Navbar />
+      <main>
+        <Hero />
+        <Audiences />
+        <Courses />
+        <HowItWorks />
+        <FacultyService />
+        <FAQ />
+        <CTABanner />
+      </main>
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
