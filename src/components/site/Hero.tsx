@@ -93,23 +93,6 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
           </div>
 
-          {/* Floating card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="absolute -bottom-6 -left-6 hidden w-64 rounded-xl border border-border bg-card p-4 shadow-elegant md:block"
-          >
-            <div className="flex items-center gap-3">
-              <div className="grid h-10 w-10 place-items-center rounded-lg bg-accent/20 text-accent">
-                <Sparkles className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">Now enrolling</p>
-                <p className="font-display text-base font-semibold text-ink">Fall 2025 cohort</p>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
