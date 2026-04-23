@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-learner.jpg";
+import heroImage from "@/assets/hero-learner.png";
 
 export const Hero = () => {
   return (
