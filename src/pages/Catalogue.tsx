@@ -127,6 +127,12 @@ const Catalogue = () => {
             </div>
           ) : (
             <>
+              <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
+                <span className="text-ink">
+                  <span className="font-semibold text-primary">Try the live demo:</span>{" "}
+                  click <em>Applied Data Analytics for Business</em> to explore a sample course end-to-end.
+                </span>
+              </div>
               <div className="mb-8 text-sm text-muted-foreground">
                 Showing <span className="font-semibold text-ink">{filtered.length}</span> course{filtered.length !== 1 && "s"}
               </div>
