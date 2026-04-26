@@ -36,9 +36,7 @@ export const Hero = () => {
                   transition={{ duration: 0.7, delay: 0.15 }}
                   className="mt-6 max-w-md text-base text-primary-foreground/90 text-balance md:text-lg"
                 >
-                  eUDST is the gateway to UDST's online and professional courses — register,
-                  enroll and learn through D2L Brightspace. Faculty can request and manage
-                  blended, online and HyFlex course development, all in one portal.
+                  eUDST is the gateway to online and professional learning from the University of Doha for Science & Technology, making it easier to explore flexible courses, build new skills, and access opportunities designed for learners, professionals, and faculty.
                 </motion.p>
 
                 <motion.div

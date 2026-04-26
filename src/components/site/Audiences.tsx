@@ -29,14 +29,13 @@ export const Audiences = () => {
             Skills that move careers forward.
           </h3>
           <p className="mt-4 text-muted-foreground">
-            Browse UDST's catalogue of online academic and professional courses. Register,
-            pay and jump straight into your learning environment on D2L Brightspace.
+            Explore online academic and professional learning from the University of Doha for Science & Technology. Discover flexible courses, build in-demand skills, and take the next step with learning designed around real goals.
           </p>
           <ul className="mt-8 space-y-3">
             {[
               { i: BookOpen, t: "Self-paced and cohort-based courses" },
-              { i: Award, t: "Industry-recognised UDST certificates" },
-              { i: FileCheck, t: "Single sign-on into Brightspace LMS" },
+              { i: Award, t: "Industry-relevant learning from UDST" },
+              { i: FileCheck, t: "A simple, streamlined online learning experience" },
             ].map(({ i: Icon, t }) => (
               <li key={t} className="flex items-start gap-3 text-sm text-foreground">
                 <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-md bg-primary/10 text-primary">
@@ -76,14 +75,13 @@ export const Audiences = () => {
               Design the next generation of digital courses.
             </h3>
             <p className="mt-4 text-primary-foreground/75">
-              Submit a request to convert your course to blended, fully online or HyFlex
-              delivery — and access all of your active digital courses through a single hub.
+              Create engaging online and blended learning experiences with support from the University of Doha for Science & Technology. Access the tools, guidance, and resources you need to develop high-quality courses in one place.
             </p>
             <ul className="mt-8 space-y-3">
               {[
-                "Submit course conversion requests",
-                "Track development workflow status",
-                "Direct access to your Brightspace shells",
+                "Develop online and blended course experiences",
+                "Access teaching tools, resources, and support",
+                "Manage your digital course activity in one place",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-3 text-sm text-primary-foreground/85">
                   <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-md bg-accent/20 text-accent">
