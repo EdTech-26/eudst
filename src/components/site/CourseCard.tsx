@@ -22,6 +22,7 @@ export type Course = {
 };
 
 export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
+  const { t } = useTranslation();
   const inner = (
     <>
       <div className="flex items-center justify-between">
