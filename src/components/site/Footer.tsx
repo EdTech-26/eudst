@@ -1,42 +1,45 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Logo } from "./Logo";
 
 type Group = {
-  title: string;
-  links: { label: string; to: string; external?: boolean }[];
+  titleKey: string;
+  links: { labelKey: string; to: string }[];
 };
 
 const groups: Group[] = [
   {
-    title: "Learners",
+    titleKey: "footer.groups.learners",
     links: [
-      { label: "Browse courses", to: "/courses" },
-      { label: "Microcredentials", to: "/courses" },
-      { label: "How enrolment works", to: "/#how" },
-      { label: "FAQ", to: "/#faq" },
+      { labelKey: "footer.links.browseCourses", to: "/courses" },
+      { labelKey: "footer.links.microcredentials", to: "/courses" },
+      { labelKey: "footer.links.howEnrolment", to: "/#how" },
+      { labelKey: "footer.links.faq", to: "/#faq" },
     ],
   },
   {
-    title: "Faculty",
+    titleKey: "footer.groups.faculty",
     links: [
-      { label: "Faculty home", to: "/faculty" },
-      { label: "Sign in", to: "/faculty" },
-      { label: "Submit a course request", to: "/faculty" },
-      { label: "Design resources", to: "/faculty" },
+      { labelKey: "footer.links.facultyHome", to: "/faculty" },
+      { labelKey: "footer.links.facultySignIn", to: "/faculty" },
+      { labelKey: "footer.links.submitRequest", to: "/faculty" },
+      { labelKey: "footer.links.designResources", to: "/faculty" },
     ],
   },
   {
-    title: "About",
+    titleKey: "footer.groups.about",
     links: [
-      { label: "About UDST", to: "/" },
-      { label: "About eUDST", to: "/" },
-      { label: "Contact", to: "/" },
-      { label: "Privacy", to: "/" },
+      { labelKey: "footer.links.aboutUdst", to: "/" },
+      { labelKey: "footer.links.aboutEudst", to: "/" },
+      { labelKey: "footer.links.contact", to: "/" },
+      { labelKey: "footer.links.privacy", to: "/" },
     ],
   },
 ];
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="border-t border-border bg-secondary/40">
       <div className="container py-16">
@@ -44,22 +47,21 @@ export const Footer = () => {
           <div className="lg:col-span-4">
             <Logo />
             <p className="mt-5 max-w-xs text-sm text-muted-foreground">
-              eUDST is the University of Doha for Science & Technology eLearning Hub —
-              applied, immersive online learning that builds skills and careers.
+              {t("footer.tagline")}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 lg:col-span-8 lg:grid-cols-3">
             {groups.map((g) => (
-              <div key={g.title}>
-                <h4 className="font-display text-sm font-semibold text-ink">{g.title}</h4>
+              <div key={g.titleKey}>
+                <h4 className="font-display text-sm font-semibold text-ink">{t(g.titleKey)}</h4>
                 <ul className="mt-4 space-y-2.5">
                   {g.links.map((l) => (
-                    <li key={l.label}>
+                    <li key={l.labelKey}>
                       <Link
                         to={l.to}
                         className="text-sm text-muted-foreground transition-smooth hover:text-primary"
                       >
-                        {l.label}
+                        {t(l.labelKey)}
                       </Link>
                     </li>
                   ))}
@@ -69,8 +71,8 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} University of Doha for Science & Technology. All rights reserved.</p>
-          <p>Doha, Qatar</p>
+          <p>{t("footer.rights", { year: new Date().getFullYear() })}</p>
+          <p>{t("footer.location")}</p>
         </div>
       </div>
     </footer>

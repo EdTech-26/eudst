@@ -1,11 +1,12 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { CourseCard } from "./CourseCard";
 import { sampleCourses } from "./courseData";
 
 export const Courses = () => {
+  const { t } = useTranslation();
   const featured = sampleCourses.slice(0, 4);
 
   return (
@@ -13,14 +14,14 @@ export const Courses = () => {
       <div className="container">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary">Catalogue preview</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-primary">{t("courses.eyebrow")}</p>
             <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl text-balance">
-              Online, applied & professional courses for every learner.
+              {t("courses.title")}
             </h2>
           </div>
           <Button variant="soft" asChild>
             <Link to="/courses">
-              View all courses <ArrowRight className="ml-1 h-4 w-4" />
+              {t("courses.viewAll")} <ArrowRight className="ms-1 h-4 w-4 rtl:rotate-180" />
             </Link>
           </Button>
         </div>

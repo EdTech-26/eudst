@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.png";
 
 export const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative bg-background">
       <div className="container pt-10 md:pt-14">
@@ -24,9 +27,9 @@ export const Hero = () => {
                   transition={{ duration: 0.7, delay: 0.05 }}
                   className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary-foreground text-balance md:text-5xl lg:text-6xl"
                 >
-                  Applied online learning,{" "}
+                  {t("hero.titleLine1")}{" "}
                   <span className="font-secondary-title font-normal italic">
-                    built for the way you work.
+                    {t("hero.titleLine2")}
                   </span>
                 </motion.h1>
 
@@ -36,7 +39,7 @@ export const Hero = () => {
                   transition={{ duration: 0.7, delay: 0.15 }}
                   className="mt-6 max-w-md text-base text-primary-foreground/90 text-balance md:text-lg"
                 >
-                  eUDST is the gateway to online and professional learning from the University of Doha for Science & Technology, making it easier to explore flexible courses, build new skills, and access opportunities.
+                  {t("hero.body")}
                 </motion.p>
 
                 <motion.div
@@ -47,7 +50,7 @@ export const Hero = () => {
                 >
                   <Button variant="hero" size="xl" asChild>
                     <Link to="/courses">
-                      Explore the catalogue <ArrowRight className="ml-1" />
+                      {t("hero.cta")} <ArrowRight className="ms-1 rtl:rotate-180" />
                     </Link>
                   </Button>
                 </motion.div>
@@ -63,9 +66,9 @@ export const Hero = () => {
           className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-6 border-t border-border pt-8"
         >
           {[
-            { k: "6", v: "Colleges" },
-            { k: "60+", v: "Courses ready" },
-            { k: "Applied", v: "Immersive learning" },
+            { k: "6", v: t("hero.stats.colleges") },
+            { k: "60+", v: t("hero.stats.coursesReady") },
+            { k: t("hero.stats.appliedLabel"), v: t("hero.stats.immersive") },
           ].map((s) => (
             <div key={s.v} className="text-center">
               <dt className="font-display text-3xl font-semibold text-primary md:text-4xl">
