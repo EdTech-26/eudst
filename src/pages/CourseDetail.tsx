@@ -27,16 +27,16 @@ const CourseDetail = () => {
     }
   }, [course]);
 
-  if (!course || !course.hasDetailPage) {
+  if (!course) {
     return (
       <div className="min-h-screen bg-background font-sans">
         <Navbar />
         <main className="container py-32 text-center">
           <h1 className="font-display text-3xl font-semibold text-ink">
-            Course detail coming soon
+            Course not found
           </h1>
           <p className="mt-3 text-muted-foreground">
-            This course doesn't have a full page yet. Check back shortly.
+            We couldn't find that course. It may have moved or been retired.
           </p>
           <Button variant="soft" className="mt-8" asChild>
             <Link to="/courses">
@@ -48,6 +48,8 @@ const CourseDetail = () => {
       </div>
     );
   }
+
+  const isPlaceholder = !course.longDesc;
 
   return (
     <div className="min-h-screen bg-background font-sans">
