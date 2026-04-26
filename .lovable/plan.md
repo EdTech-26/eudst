@@ -1,92 +1,90 @@
-## Demo learner journey for "Applied Data Analytics for Business" (DACS2101)
+## Goal
 
-A fully UI-only experience with **no backend**. A lightweight `localStorage` layer simulates accounts and enrollments, so the entire flow works end-to-end and resets simply by clearing site data. Every other course card stays as-is (non-clickable preview) so the demo course stands out as the live one.
+Add an English ↔ Arabic language toggle to eUDST. Use `react-i18next` to manage UI strings, mirror the layout to RTL when Arabic is active, and use Lovable AI to draft the Arabic translations. Course data (titles, syllabi, instructor bios) stays in English for now.
 
-### The flow
+## Approach
 
-`/courses` → click DACS2101 card → **Course detail page** → click *Enroll now* → **Sign up / Sign in** (fake) → **Checkout** (fake) → **My Learning** dashboard
+### 1. i18n foundation
+Install and configure `react-i18next` + `i18next`:
+- `src/i18n/index.ts` — initialise i18next, hook up `LanguageDetector` (localStorage), set fallback to `en`.
+- `src/i18n/locales/en.json` — extracted English strings, organised by namespace (e.g. `nav`, `hero`, `audiences`, `courses`, `faq`, `cta`, `footer`, `catalogue`, `common`).
+- `src/i18n/locales/ar.json` — Arabic equivalents, drafted by Lovable AI then committed.
+- Initialise i18n in `src/main.tsx` so it's ready before React renders.
 
----
+### 2. AI-generated Arabic draft
+Run a one-off script (Lovable AI gateway, `google/gemini-3-flash-preview`) that takes `en.json` and produces `ar.json`. Prompt the model to:
+- Preserve the exact JSON structure and keys.
+- Translate values into natural Modern Standard Arabic appropriate for a higher-education brand.
+- Keep brand names (eUDST, UDST, college codes like CCIT/CB/CET) in Latin characters.
+- Preserve placeholders like `{{count}}` if any get added later.
 
-### 1. Fake auth + enrollment store (localStorage)
+This produces a draft you can review with a native speaker before going live.
 
-**New file: `src/lib/demoAuth.ts`**
-- Tiny module wrapping `localStorage` with a React hook (`useDemoAuth`) that returns `{ user, signUp, signIn, signOut }`.
-- `user` shape: `{ name, email, createdAt }` — no real password validation, just stored.
-- A second helper `useEnrollments()` returns `{ enrollments, enroll(courseCode), isEnrolled(courseCode) }` — also localStorage-backed.
-- A small custom event (`demo-auth-changed`) is dispatched on writes so the navbar reactively shows the signed-in state.
+### 3. RTL handling (toggle + key pages scope)
+- Add a small `useDirection` effect in `src/i18n/index.ts` (or in `App.tsx`) that sets `document.documentElement.dir = 'rtl' | 'ltr'` and `lang = 'ar' | 'en'` whenever the language changes.
+- Audit and convert directional Tailwind utilities to **logical** equivalents on these key surfaces only:
+  - `Navbar.tsx`
+  - `Hero.tsx`
+  - `Audiences.tsx`
+  - `Courses.tsx` + `CourseCard.tsx`
+  - `FAQ.tsx`
+  - `CTABanner.tsx`
+  - `Footer.tsx`
+  - `Catalogue.tsx`
+  - Conversions: `ml-*` → `ms-*`, `mr-*` → `me-*`, `pl-*` → `ps-*`, `pr-*` → `pe-*`, `text-left` → `text-start`, `text-right` → `text-end`, `left-*`/`right-*` → `start-*`/`end-*` where used. Icons inside buttons (e.g. `ArrowRight`) get a `rtl:rotate-180` so they point the correct way.
+- Other pages (CourseDetail, Faculty, MyLearning, Enroll) will inherit `dir="rtl"` from `<html>` and read mostly correctly, but may have minor mirroring quirks — flagged as acceptable per your choice.
 
-This keeps everything synchronous, simple, and avoids pulling in any auth library.
+### 4. Arabic-friendly font
+Add **Noto Sans Arabic** to the Google Fonts import in `src/index.css`, and apply it via a CSS rule that targets `html[lang="ar"] body { font-family: 'Noto Sans Arabic', 'Lato', sans-serif; }`. Latin glyphs continue to use Lato through the fallback.
 
-### 2. Extend course data with rich detail fields
+### 5. Language toggle UI (Navbar only)
+Add a small `LanguageToggle` component placed in the Navbar's right-hand cluster (visible on both desktop and mobile menu):
+- Pill-style button: `EN | ع` with the active side highlighted.
+- Clicking calls `i18n.changeLanguage('en' | 'ar')`; choice persists via i18next-browser-languagedetector (localStorage key `i18nextLng`).
+- Position: between the nav links and the auth buttons on desktop; at the top of the mobile menu sheet.
 
-**Edit `src/components/site/courseData.ts`**
-- Add optional fields to the `Course` type: `price`, `startDate`, `outcomes[]`, `syllabus[]` (week → topic), `instructor` ({ name, title, bio, initials }), `longDesc`.
-- Populate the full detail set **only** for `DACS2101` (the live demo course). Other courses keep their existing minimal data.
-- Add a `hasDetailPage` flag (true for DACS2101 only) so the catalogue knows which card is clickable.
+### 6. String extraction
+Refactor each in-scope component to read strings via the `useTranslation()` hook instead of hardcoded literals. Example:
+- `nav.courses`, `nav.faculty`, `nav.howItWorks`, `nav.faq`, `nav.signIn`, `nav.getStarted`, `nav.myLearning`, `nav.signOut`
+- `hero.title.line1`, `hero.title.line2`, `hero.body`, `hero.cta`
+- `hero.stats.colleges`, `hero.stats.coursesReady`, `hero.stats.immersive`
+- `audiences.eyebrow`, `audiences.title`, `audiences.cardBadge`, `audiences.cardTitle`, `audiences.cardBody`, `audiences.bullets.*`, `audiences.browse`, `audiences.createAccount`
+- `courses.eyebrow`, `courses.title`, `courses.viewAll`
+- `faq.eyebrow`, `faq.title`, `faq.items[i].q/a`
+- `cta.body`, `cta.button`
+- `footer.*`
+- `catalogue.title`, `catalogue.body`, `catalogue.collegeLabel`, `catalogue.typeLabel`, `catalogue.demoBanner`, `catalogue.empty.*`, `catalogue.showing`, `catalogue.types.*`
+- `common.learnMore`, `common.enroll`, etc.
 
-### 3. Course detail page
+Course data (titles/descriptions/syllabi/instructor bios in `courseData.ts`) is **not** translated — per your choice, the catalogue cards will continue to display the English course content even when the rest of the UI is in Arabic.
 
-**New file: `src/pages/CourseDetail.tsx`** — route `/courses/:code`
-- Lookup course by `:code` from `sampleCourses`. If not found *or* `hasDetailPage` is false → friendly "Course detail coming soon" state with a link back to `/courses`.
-- Layout (matches existing site styling — `font-display`, `bg-secondary`, `Card`, soft shadows):
-  - **Hero band**: college badge, course code, title, short description, instructor name + duration + start date inline.
-  - **Two-column body** (stacks on mobile):
-    - Left: *About this course* (longDesc), *What you'll learn* (outcomes checklist), *Syllabus* (week-by-week accordion using existing `Accordion` component), *Your instructor* (Avatar with initials, name, title, bio).
-    - Right: **sticky pricing card** with price, duration, start date, delivery type, and a primary `Enroll now` button. If already enrolled → button becomes `Go to My Learning` linking to `/my-learning`.
+## Files
 
-### 4. Make the DACS2101 catalogue card clickable
+**New**
+- `src/i18n/index.ts` — i18next config + direction sync
+- `src/i18n/locales/en.json` — English strings
+- `src/i18n/locales/ar.json` — AI-generated Arabic strings
+- `src/components/site/LanguageToggle.tsx` — EN/ع toggle pill
 
-**Edit `src/components/site/CourseCard.tsx`**
-- If `c.hasDetailPage`, wrap the card in a `<Link to={"/courses/" + c.code}>` and add a subtle "View course →" hint in the footer area on hover.
-- Other cards remain visually identical and non-clickable, preserving the catalogue look.
+**Modified**
+- `src/main.tsx` — import i18n bootstrap
+- `src/index.css` — add Noto Sans Arabic, RTL font rule
+- `src/components/site/Navbar.tsx` — add toggle, translate labels, RTL classes
+- `src/components/site/Hero.tsx` — translate strings, RTL classes, mirror arrow icon
+- `src/components/site/Audiences.tsx` — translate, RTL classes
+- `src/components/site/Courses.tsx` — translate, RTL classes
+- `src/components/site/CourseCard.tsx` — translate button label, RTL classes
+- `src/components/site/FAQ.tsx` — translate, RTL classes
+- `src/components/site/CTABanner.tsx` — translate, RTL classes
+- `src/components/site/Footer.tsx` — translate, RTL classes
+- `src/pages/Catalogue.tsx` — translate header/filters/banner, RTL classes
 
-### 5. Enroll flow → auth gate → checkout
+**Dependencies added**
+- `i18next`
+- `react-i18next`
+- `i18next-browser-languagedetector`
 
-**New file: `src/pages/Enroll.tsx`** — route `/enroll/:code`
-- This page is the orchestrator:
-  - If no `user` in localStorage → show a **Sign up / Sign in** card (tabs). Fields: name (signup only), email, password. No real validation beyond non-empty + email format via `zod`. On submit → `signUp`/`signIn` → continue to checkout step.
-  - If signed in but not enrolled → show **Checkout** card: order summary (course title, price), fake payment fields (card number, expiry, CVC — all just visual, with helper text "This is a demo — no real payment is processed"), and a `Pay & enroll` button.
-  - On `Pay & enroll`: simulate ~1s delay (spinner), call `enroll(code)`, then redirect to `/my-learning` with a sonner toast: "You're enrolled in Applied Data Analytics for Business".
-  - If already enrolled → redirect straight to `/my-learning`.
-
-### 6. My Learning dashboard
-
-**New file: `src/pages/MyLearning.tsx`** — route `/my-learning`
-- Auth-gated: if no user, redirect to `/courses`.
-- Header: "Welcome back, {name}" + sign-out button.
-- Grid of enrolled course cards (reuses `CourseCard`-style layout) each with a `Continue learning` button. Clicking it opens a friendly modal: "Your learning environment will open here in the live product." (keeps the demo self-contained — no broken external links).
-- Empty state: "You haven't enrolled in any courses yet" + button back to `/courses`.
-
-### 7. Navbar updates
-
-**Edit `src/components/site/Navbar.tsx`**
-- Subscribe to `useDemoAuth`.
-- When signed out: existing CTAs unchanged.
-- When signed in: replace the *Sign in* / *Get started* buttons with an avatar/initials chip linking to `/my-learning` and a small `Sign out` action (dropdown menu using existing `DropdownMenu` component).
-
-### 8. Routing
-
-**Edit `src/App.tsx`** — add three routes (above the catch-all):
-- `/courses/:code` → `CourseDetail`
-- `/enroll/:code` → `Enroll`
-- `/my-learning` → `MyLearning`
-
-### 9. Subtle catalogue affordance
-
-**Edit `src/pages/Catalogue.tsx`**
-- Above the grid, add a small one-line note: *"Try the full demo: click **Applied Data Analytics for Business** to explore a sample course end-to-end."* Styled as a soft accent banner so it doesn't dominate the page but tells a reviewer where to click.
-
----
-
-### What this gives you
-- A complete, demoable journey from landing → catalogue → course → signup → payment → dashboard.
-- Zero backend, zero secrets, no Pro plan needed. Resets cleanly for each new viewer.
-- Fully extensible later: swapping `demoAuth.ts` for real Lovable Cloud auth + a `enrollments` table is a focused change without touching page layouts.
-- Other courses remain visually consistent in the catalogue — the demo course is the clear "try me" path.
-
-### Out of scope (happy to add later)
-- Real authentication / database persistence
-- Real Stripe (test mode) checkout
-- Course progress tracking, lesson player, or actual content delivery
-- Email confirmations or receipts
+## Out of scope
+- Translating course data in `courseData.ts` (UI labels only, per your choice).
+- Full RTL polish on CourseDetail / Faculty / MyLearning / Enroll pages — they will still toggle direction but may have minor visual quirks.
+- Native-speaker review of the Arabic draft (recommended before publishing).
