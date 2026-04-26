@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
+import { LanguageToggle } from "./LanguageToggle";
 import { Menu, X, LogOut, GraduationCap } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -14,13 +16,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useDemoAuth } from "@/lib/demoAuth";
 
-type NavLinkItem = { to: string; label: string; hash?: boolean };
+type NavLinkItem = { to: string; key: string; hash?: boolean };
 
 const links: NavLinkItem[] = [
-  { to: "/courses", label: "Courses" },
-  { to: "/faculty", label: "Faculty" },
-  { to: "/#how", label: "How it works", hash: true },
-  { to: "/#faq", label: "FAQ", hash: true },
+  { to: "/courses", key: "nav.courses" },
+  { to: "/faculty", key: "nav.faculty" },
+  { to: "/#how", key: "nav.howItWorks", hash: true },
+  { to: "/#faq", key: "nav.faq", hash: true },
 ];
 
 const initialsOf = (name: string) =>
@@ -37,6 +39,7 @@ export const Navbar = () => {
   const { pathname } = useLocation();
   const { user, signOut } = useDemoAuth();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSignOut = () => {
     signOut();
@@ -56,7 +59,7 @@ export const Navbar = () => {
                 href={l.to}
                 className="text-sm font-medium text-muted-foreground transition-smooth hover:text-primary"
               >
-                {l.label}
+                {t(l.key)}
               </a>
             ) : (
               <Link
@@ -66,12 +69,13 @@ export const Navbar = () => {
                   active ? "text-primary" : "text-muted-foreground"
                 }`}
               >
-                {l.label}
+                {t(l.key)}
               </Link>
             );
           })}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
+          <LanguageToggle />
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -81,7 +85,7 @@ export const Navbar = () => {
                       {initialsOf(user.name)}
                     </AvatarFallback>
                   </Avatar>
-                  <span className="pr-2 text-sm font-medium text-ink">
+                  <span className="pe-2 text-sm font-medium text-ink">
                     {user.name.split(" ")[0]}
                   </span>
                 </button>
@@ -93,34 +97,36 @@ export const Navbar = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <Link to="/my-learning">
-                    <GraduationCap className="mr-2 h-4 w-4" />
-                    My Learning
+                    <GraduationCap className="me-2 h-4 w-4" />
+                    {t("nav.myLearning")}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={handleSignOut}>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  Sign out
+                  <LogOut className="me-2 h-4 w-4" />
+                  {t("nav.signOut")}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
             <>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/courses">Sign in</Link>
+                <Link to="/courses">{t("nav.signIn")}</Link>
               </Button>
               <Button variant="hero" size="sm" asChild>
-                <Link to="/courses">Get started</Link>
+                <Link to="/courses">{t("nav.getStarted")}</Link>
               </Button>
             </>
           )}
         </div>
-        <button
-          aria-label="Toggle menu"
-          onClick={() => setOpen(!open)}
-          className="md:hidden"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageToggle />
+          <button
+            aria-label={t("nav.toggleMenu")}
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
       {open && (
         <div className="border-t border-border bg-background md:hidden">
@@ -133,7 +139,7 @@ export const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className="text-sm font-medium text-foreground"
                 >
-                  {l.label}
+                  {t(l.key)}
                 </a>
               ) : (
                 <Link
@@ -142,7 +148,7 @@ export const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className="text-sm font-medium text-foreground"
                 >
-                  {l.label}
+                  {t(l.key)}
                 </Link>
               )
             )}
@@ -151,7 +157,7 @@ export const Navbar = () => {
                 <>
                   <Button variant="soft" size="sm" className="flex-1" asChild>
                     <Link to="/my-learning" onClick={() => setOpen(false)}>
-                      My Learning
+                      {t("nav.myLearning")}
                     </Link>
                   </Button>
                   <Button
@@ -163,19 +169,19 @@ export const Navbar = () => {
                       handleSignOut();
                     }}
                   >
-                    Sign out
+                    {t("nav.signOut")}
                   </Button>
                 </>
               ) : (
                 <>
                   <Button variant="soft" size="sm" className="flex-1" asChild>
                     <Link to="/courses" onClick={() => setOpen(false)}>
-                      Sign in
+                      {t("nav.signIn")}
                     </Link>
                   </Button>
                   <Button variant="hero" size="sm" className="flex-1" asChild>
                     <Link to="/courses" onClick={() => setOpen(false)}>
-                      Get started
+                      {t("nav.getStarted")}
                     </Link>
                   </Button>
                 </>
