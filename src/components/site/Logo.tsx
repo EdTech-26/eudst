@@ -15,9 +15,9 @@ export const Logo = ({ className = "", variant = "dark" }: LogoProps) => {
       <img
         src={logoFull}
         alt="eUDST · Applied Online Learning"
-        className={`h-12 w-auto md:h-14 ${variant === "light" ? "brightness-0 invert" : ""}`}
-        width={132}
-        height={31}
+        className={`h-15 w-auto md:h-[4.375rem] ${variant === "light" ? "brightness-0 invert" : ""}`}
+        width={165}
+        height={39}
       />
     </a>
   );
