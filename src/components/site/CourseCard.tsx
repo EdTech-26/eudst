@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Clock, ArrowRight } from "lucide-react";
 
 export type Course = {
@@ -41,7 +42,7 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
       </div>
       {c.hasDetailPage && (
         <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition-smooth group-hover:opacity-100">
-          View course <ArrowRight className="h-3 w-3" />
+          {t("courses.viewCourse")} <ArrowRight className="h-3 w-3 rtl:rotate-180" />
         </span>
       )}
     </>
