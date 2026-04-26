@@ -19,15 +19,15 @@ export const CTABanner = () => {
           <img
             src={logoWhite}
             alt="eUDST · Applied Online Learning"
-            className="mx-auto mb-8 h-16 w-auto md:h-20"
+            className="mx-auto mb-12 h-16 w-auto md:mb-16 md:h-20"
           />
           <h2 className="font-display text-4xl font-semibold tracking-tight md:text-5xl text-balance">
             Start your applied learning journey today.
           </h2>
-          <p className="mt-5 text-primary-foreground/85">
+          <p className="mt-8 text-primary-foreground/85">
             Discover immersive online courses and microcredentials from UDST — built for skills that matter.
           </p>
-          <div className="mt-9 flex justify-center">
+          <div className="mt-12 flex justify-center md:mt-14">
             <Button size="xl" className="bg-background text-primary hover:bg-background/90" asChild>
               <Link to="/courses">
                 Explore the catalogue <ArrowRight className="ml-1 h-4 w-4" />
