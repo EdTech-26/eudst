@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import ctaStudents from "@/assets/cta-students.png";
 
 export const CTABanner = () => {
   return (
     <section className="container pb-24">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-primary px-8 py-16 text-center text-primary-foreground shadow-elegant md:px-16 md:py-24">
+      <div className="relative overflow-hidden rounded-3xl px-8 py-16 text-center text-primary-foreground shadow-elegant md:px-16 md:py-24">
+        <img
+          src={ctaStudents}
+          alt="Students collaborating on a laptop"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-primary opacity-65" />
         <div className="absolute inset-0 opacity-20" style={{ background: "radial-gradient(circle at 30% 20%, white, transparent 50%)" }} />
         <div className="relative mx-auto max-w-2xl">
           <h2 className="font-display text-4xl font-semibold tracking-tight md:text-5xl text-balance">
