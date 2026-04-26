@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.png";
 
 export const Hero = () => {
   return (
     <section className="relative bg-background">
       <div className="container pt-10 md:pt-14">
-        {/* Banner with text overlay */}
         <div className="relative overflow-hidden rounded-2xl shadow-lift">
           <img
             src={heroBanner}
@@ -36,7 +36,9 @@ export const Hero = () => {
                   transition={{ duration: 0.7, delay: 0.15 }}
                   className="mt-6 max-w-md text-base text-primary-foreground/90 text-balance md:text-lg"
                 >
-                  eUDST is the gateway to online and professional learning from the University of Doha for Science & Technology, making it easier to explore flexible courses, build new skills, and access opportunities designed for learners, professionals, and faculty.
+                  eUDST is the gateway to applied, immersive online learning and microcredentials
+                  from the University of Doha for Science & Technology — flexible courses that
+                  build real skills around real goals.
                 </motion.p>
 
                 <motion.div
@@ -46,14 +48,9 @@ export const Hero = () => {
                   className="mt-8 flex flex-wrap items-center gap-4"
                 >
                   <Button variant="hero" size="xl" asChild>
-                    <a href="#learners">
-                      Browse courses <ArrowRight className="ml-1" />
-                    </a>
-                  </Button>
-                  <Button variant="soft" size="xl" asChild>
-                    <a href="#faculty">
-                      <PlayCircle className="mr-1" /> Faculty portal
-                    </a>
+                    <Link to="/courses">
+                      Explore the catalogue <ArrowRight className="ml-1" />
+                    </Link>
                   </Button>
                 </motion.div>
               </div>
@@ -61,7 +58,6 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Stats bar below banner */}
         <motion.dl
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -71,7 +67,7 @@ export const Hero = () => {
           {[
             { k: "6", v: "Colleges" },
             { k: "120+", v: "Courses ready" },
-            { k: "3", v: "Delivery modes" },
+            { k: "Applied", v: "Immersive learning" },
           ].map((s) => (
             <div key={s.v} className="text-center">
               <dt className="font-display text-3xl font-semibold text-primary md:text-4xl">

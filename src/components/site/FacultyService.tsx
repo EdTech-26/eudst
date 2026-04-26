@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Layers, Monitor, Shuffle, ArrowUpRight } from "lucide-react";
+import { Layers, Monitor, Sparkles, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const modes = [
@@ -11,12 +11,12 @@ const modes = [
   {
     i: Monitor,
     name: "Fully Online",
-    desc: "Self-paced or cohort-based learning delivered entirely through Brightspace.",
+    desc: "Self-paced or cohort-based learning delivered through a modern online environment.",
   },
   {
-    i: Shuffle,
-    name: "HyFlex",
-    desc: "Students choose to attend in person, synchronously online, or asynchronously.",
+    i: Sparkles,
+    name: "Applied & Immersive",
+    desc: "Project-based, hands-on online experiences that connect learning to real practice.",
   },
 ];
 
@@ -27,11 +27,11 @@ export const FacultyService = () => {
         <div className="lg:col-span-5">
           <p className="text-xs uppercase tracking-[0.2em] text-accent">Faculty workflow</p>
           <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight md:text-5xl text-balance">
-            Convert any course into a digital experience.
+            Convert any course into an applied digital experience.
           </h2>
           <p className="mt-5 max-w-md text-primary-foreground/75">
             Submit a single request and our learning design team partners with you across
-            every step — from course mapping to launch on D2L Brightspace.
+            every step — from course mapping to launch of immersive, applied online learning.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button variant="hero" className="bg-accent text-accent-foreground shadow-elegant hover:bg-accent/90">
