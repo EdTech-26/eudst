@@ -28,7 +28,7 @@ const Faculty = () => {
         {/* Hero */}
         <section className="container pt-10 md:pt-14">
           <div className="relative overflow-hidden rounded-2xl bg-ink text-primary-foreground shadow-lift">
-            <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 opacity-50">
               <img src={facultyImg} alt="" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink/90 to-primary/70" />
             </div>
