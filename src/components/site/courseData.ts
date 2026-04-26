@@ -12,7 +12,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1850,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "Sept 15, 2026",
     longDesc:
       "Applied Data Analytics for Business is a hands-on, fully online course that takes you from raw spreadsheets to confident, data-driven decision-making. You'll learn to clean and shape real datasets, build clear visualisations, and tell a story with numbers — using tools and workflows that mirror what data teams use every day in industry.",
@@ -50,7 +50,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1200,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -64,7 +64,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1650,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -78,7 +78,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 950,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -92,7 +92,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1100,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -106,7 +106,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1450,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -120,7 +120,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1750,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -134,7 +134,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1850,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -148,7 +148,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 1350,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
   {
@@ -162,7 +162,7 @@ export const sampleCourses: Course[] = [
     hasDetailPage: true,
     price: 800,
     currency: "QAR",
-    language: \"en\",
+    language: "en",
     startDate: "TBA",
   },
 ];
