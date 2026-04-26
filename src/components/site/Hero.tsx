@@ -36,9 +36,7 @@ export const Hero = () => {
                   transition={{ duration: 0.7, delay: 0.15 }}
                   className="mt-6 max-w-md text-base text-primary-foreground/90 text-balance md:text-lg"
                 >
-                  eUDST is the gateway to applied, immersive online learning and microcredentials
-                  from the University of Doha for Science & Technology — flexible courses that
-                  build real skills around real goals.
+                  eUDST is the gateway to online and professional learning from the University of Doha for Science & Technology, making it easier to explore flexible courses, build new skills, and access opportunities.
                 </motion.p>
 
                 <motion.div
@@ -66,7 +64,7 @@ export const Hero = () => {
         >
           {[
             { k: "6", v: "Colleges" },
-            { k: "120+", v: "Courses ready" },
+            { k: "60+", v: "Courses ready" },
             { k: "Applied", v: "Immersive learning" },
           ].map((s) => (
             <div key={s.v} className="text-center">
