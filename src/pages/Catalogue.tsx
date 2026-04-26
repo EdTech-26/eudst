@@ -7,7 +7,7 @@ import { Organisations } from "@/components/site/Organisations";
 import { sampleCourses } from "@/components/site/courseData";
 import { Button } from "@/components/ui/button";
 
-const colleges = ["All", "CB", "CCIT", "CET", "CGE", "CHS", "FPU"];
+const colleges = ["All", "CB", "CCIT", "CET", "CGE", "CHS", "CPE"];
 const types = ["All", "Academic · Online", "Academic · Applied", "Professional", "Microcredential"];
 
 const Catalogue = () => {
@@ -129,8 +129,8 @@ const Catalogue = () => {
             <>
               <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
                 <span className="text-ink">
-                  <span className="font-semibold text-primary">Try the live demo:</span>{" "}
-                  click <em>Applied Data Analytics for Business</em> to explore a sample course end-to-end.
+                  <span className="font-semibold text-primary">Demo preview:</span>{" "}
+                  every course is enrollable end-to-end. Course details and pricing shown are placeholders pending finalisation.
                 </span>
               </div>
               <div className="mb-8 text-sm text-muted-foreground">

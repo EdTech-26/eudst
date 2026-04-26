@@ -27,16 +27,16 @@ const CourseDetail = () => {
     }
   }, [course]);
 
-  if (!course || !course.hasDetailPage) {
+  if (!course) {
     return (
       <div className="min-h-screen bg-background font-sans">
         <Navbar />
         <main className="container py-32 text-center">
           <h1 className="font-display text-3xl font-semibold text-ink">
-            Course detail coming soon
+            Course not found
           </h1>
           <p className="mt-3 text-muted-foreground">
-            This course doesn't have a full page yet. Check back shortly.
+            We couldn't find that course. It may have moved or been retired.
           </p>
           <Button variant="soft" className="mt-8" asChild>
             <Link to="/courses">
@@ -48,6 +48,8 @@ const CourseDetail = () => {
       </div>
     );
   }
+
+  const isPlaceholder = !course.longDesc;
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -80,9 +82,11 @@ const CourseDetail = () => {
               </h1>
               <p className="mt-4 text-lg text-muted-foreground">{course.desc}</p>
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5">
-                  <GraduationCap className="h-4 w-4" /> {course.instructor?.name}
-                </span>
+                {course.instructor?.name && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <GraduationCap className="h-4 w-4" /> {course.instructor.name}
+                  </span>
+                )}
                 <span className="inline-flex items-center gap-1.5">
                   <Clock className="h-4 w-4" /> {course.duration}
                 </span>
@@ -99,9 +103,18 @@ const CourseDetail = () => {
         {/* Body */}
         <section className="container grid gap-12 py-16 lg:grid-cols-[1fr_360px]">
           <div className="space-y-12">
+            {isPlaceholder && (
+              <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-sm text-ink">
+                <span className="font-semibold text-primary">Placeholder content:</span>{" "}
+                Full course details, syllabus and instructor bio are being finalised. You can still enroll to reserve your seat.
+              </div>
+            )}
+
             <div>
               <h2 className="font-display text-2xl font-semibold text-ink">About this course</h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed">{course.longDesc}</p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                {course.longDesc ?? course.desc}
+              </p>
             </div>
 
             {course.outcomes && (
