@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight, Languages } from "lucide-react";
 
 export type Course = {
   code: string;
@@ -15,6 +15,7 @@ export type Course = {
   price?: number;
   currency?: string;
   startDate?: string;
+  language?: "en" | "ar" | "en-ar";
   longDesc?: string;
   outcomes?: string[];
   syllabus?: { week: string; topic: string }[];
@@ -35,11 +36,16 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
         {c.title}
       </h3>
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.desc}</p>
-      <div className="mt-6 flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-border pt-4 text-xs text-muted-foreground">
         <span>{c.type}</span>
         <span className="inline-flex items-center gap-1">
           <Clock className="h-3 w-3" /> {c.duration}
         </span>
+        {c.language && (
+          <span className="inline-flex items-center gap-1">
+            <Languages className="h-3 w-3" /> {t(`course.languages.${c.language}`)}
+          </span>
+        )}
       </div>
       {c.hasDetailPage && (
         <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition-smooth group-hover:opacity-100">

@@ -13,10 +13,12 @@ import {
 } from "@/components/ui/accordion";
 import { sampleCourses } from "@/components/site/courseData";
 import { useEnrollments } from "@/lib/demoAuth";
-import { ArrowLeft, Calendar, CheckCircle2, Clock, GraduationCap } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, Clock, GraduationCap, Languages } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CourseDetail = () => {
   const { code } = useParams();
+  const { t } = useTranslation();
   const course = sampleCourses.find((c) => c.code === code);
   const { isEnrolled } = useEnrollments();
   const enrolled = course ? isEnrolled(course.code) : false;
@@ -93,6 +95,11 @@ const CourseDetail = () => {
                 {course.startDate && (
                   <span className="inline-flex items-center gap-1.5">
                     <Calendar className="h-4 w-4" /> Starts {course.startDate}
+                  </span>
+                )}
+                {course.language && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <Languages className="h-4 w-4" /> {t(`course.languages.${course.language}`)}
                   </span>
                 )}
               </div>
@@ -202,6 +209,12 @@ const CourseDetail = () => {
                   <div className="flex justify-between">
                     <dt className="text-muted-foreground">Starts</dt>
                     <dd className="font-medium text-ink">{course.startDate}</dd>
+                  </div>
+                )}
+                {course.language && (
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">{t("course.language")}</dt>
+                    <dd className="font-medium text-ink">{t(`course.languages.${course.language}`)}</dd>
                   </div>
                 )}
               </dl>
