@@ -1,8 +1,18 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut, GraduationCap } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useDemoAuth } from "@/lib/demoAuth";
 
 type NavLinkItem = { to: string; label: string; hash?: boolean };
 
@@ -13,9 +23,25 @@ const links: NavLinkItem[] = [
   { to: "/#faq", label: "FAQ", hash: true },
 ];
 
+const initialsOf = (name: string) =>
+  name
+    .split(" ")
+    .map((n) => n[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const { user, signOut } = useDemoAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    signOut();
+    navigate("/");
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -46,10 +72,47 @@ export const Navbar = () => {
           })}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm">Sign in</Button>
-          <Button variant="hero" size="sm" asChild>
-            <Link to="/courses">Get started</Link>
-          </Button>
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-2 rounded-full border border-border bg-card px-2 py-1 transition-smooth hover:border-primary/40">
+                  <Avatar className="h-7 w-7">
+                    <AvatarFallback className="bg-primary/10 text-xs font-semibold text-primary">
+                      {initialsOf(user.name)}
+                    </AvatarFallback>
+                  </Avatar>
+                  <span className="pr-2 text-sm font-medium text-ink">
+                    {user.name.split(" ")[0]}
+                  </span>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuLabel className="text-xs text-muted-foreground">
+                  {user.email}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/my-learning">
+                    <GraduationCap className="mr-2 h-4 w-4" />
+                    My Learning
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={handleSignOut}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  Sign out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <>
+              <Button variant="ghost" size="sm" asChild>
+                <Link to="/courses">Sign in</Link>
+              </Button>
+              <Button variant="hero" size="sm" asChild>
+                <Link to="/courses">Get started</Link>
+              </Button>
+            </>
+          )}
         </div>
         <button
           aria-label="Toggle menu"
@@ -84,10 +147,39 @@ export const Navbar = () => {
               )
             )}
             <div className="flex gap-2 pt-2">
-              <Button variant="soft" size="sm" className="flex-1">Sign in</Button>
-              <Button variant="hero" size="sm" className="flex-1" asChild>
-                <Link to="/courses" onClick={() => setOpen(false)}>Get started</Link>
-              </Button>
+              {user ? (
+                <>
+                  <Button variant="soft" size="sm" className="flex-1" asChild>
+                    <Link to="/my-learning" onClick={() => setOpen(false)}>
+                      My Learning
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="flex-1"
+                    onClick={() => {
+                      setOpen(false);
+                      handleSignOut();
+                    }}
+                  >
+                    Sign out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button variant="soft" size="sm" className="flex-1" asChild>
+                    <Link to="/courses" onClick={() => setOpen(false)}>
+                      Sign in
+                    </Link>
+                  </Button>
+                  <Button variant="hero" size="sm" className="flex-1" asChild>
+                    <Link to="/courses" onClick={() => setOpen(false)}>
+                      Get started
+                    </Link>
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>
