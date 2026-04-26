@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "courses": "Courses",
+    "faculty": "Faculty",
+    "howItWorks": "How it works",
+    "faq": "FAQ",
+    "signIn": "Sign in",
+    "getStarted": "Get started",
+    "myLearning": "My Learning",
+    "signOut": "Sign out",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "titleLine1": "Applied online learning,",
+    "titleLine2": "built for the way you work.",
+    "body": "eUDST is the gateway to online and professional learning from the University of Doha for Science & Technology, making it easier to explore flexible courses, build new skills, and access opportunities.",
+    "cta": "Explore the catalogue",
+    "stats": {
+      "colleges": "Colleges",
+      "coursesReady": "Courses ready",
+      "immersive": "Immersive learning",
+      "appliedLabel": "Applied"
+    }
+  },
+  "audiences": {
+    "eyebrow": "For learners & professionals",
+    "title": "Skills that move careers forward — built around how you actually learn.",
+    "cardBadge": "External Learners",
+    "cardTitle": "Applied, immersive learning from UDST.",
+    "cardBody": "Explore online academic and professional learning from the University of Doha for Science & Technology. Discover flexible courses, build in-demand skills, and take the next step with learning designed around real goals.",
+    "bullets": {
+      "selfPaced": "Self-paced and cohort-based courses",
+      "stackable": "Stackable microcredentials",
+      "applied": "Applied, project-based learning",
+      "immersive": "Immersive online experiences"
+    },
+    "browse": "Browse catalogue",
+    "createAccount": "Create learner account"
+  },
+  "courses": {
+    "eyebrow": "Catalogue preview",
+    "title": "Online, applied & professional courses for every learner.",
+    "viewAll": "View all courses",
+    "viewCourse": "View course"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions, answered.",
+    "items": [
+      {
+        "q": "Who can register on eUDST?",
+        "a": "Anyone — you don't need to be a UDST student. External learners and professionals can register for online academic and professional courses, and microcredentials."
+      },
+      {
+        "q": "How do I access my course after enrolling?",
+        "a": "Once you complete payment, your course is unlocked from your eUDST dashboard. Launch any time from the same place — no extra logins, no extra setup."
+      },
+      {
+        "q": "What types of learning are available?",
+        "a": "eUDST offers fully online, blended, and applied / immersive courses, plus stackable microcredentials designed around real-world skills and outcomes."
+      },
+      {
+        "q": "What is a microcredential?",
+        "a": "A microcredential is a short, focused credential that proves a specific skill. They're designed to be stackable — combine several to build toward a larger qualification."
+      },
+      {
+        "q": "Are eUDST courses recognised by UDST?",
+        "a": "Yes. All academic and professional courses offered through eUDST are developed and accredited by the University of Doha for Science and Technology."
+      },
+      {
+        "q": "Which colleges offer courses through eUDST?",
+        "a": "Courses are available across all UDST colleges: CB, CCIT, CET, CGE, CHS and CPE."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start your applied learning journey today.",
+    "body": "Discover immersive online courses and microcredentials from UDST — built for skills that matter.",
+    "button": "Explore the catalogue"
+  },
+  "footer": {
+    "tagline": "eUDST is the University of Doha for Science & Technology eLearning Hub — applied, immersive online learning that builds skills and careers.",
+    "groups": {
+      "learners": "Learners",
+      "faculty": "Faculty",
+      "about": "About"
+    },
+    "links": {
+      "browseCourses": "Browse courses",
+      "microcredentials": "Microcredentials",
+      "howEnrolment": "How enrolment works",
+      "faq": "FAQ",
+      "facultyHome": "Faculty home",
+      "facultySignIn": "Sign in",
+      "submitRequest": "Submit a course request",
+      "designResources": "Design resources",
+      "aboutUdst": "About UDST",
+      "aboutEudst": "About eUDST",
+      "contact": "Contact",
+      "privacy": "Privacy"
+    },
+    "rights": "© {{year}} University of Doha for Science & Technology. All rights reserved.",
+    "location": "Doha, Qatar"
+  },
+  "catalogue": {
+    "eyebrow": "Course Catalogue",
+    "title": "Explore applied, immersive online learning.",
+    "body": "Browse academic courses, professional learning and stackable microcredentials from the University of Doha for Science & Technology — designed for real-world outcomes.",
+    "collegeLabel": "College",
+    "typeLabel": "Type",
+    "all": "All",
+    "types": {
+      "academicOnline": "Academic · Online",
+      "academicApplied": "Academic · Applied",
+      "professional": "Professional",
+      "microcredential": "Microcredential"
+    },
+    "demoBanner": {
+      "label": "Demo preview:",
+      "body": "every course is enrollable end-to-end. Course details and pricing shown are placeholders pending finalisation."
+    },
+    "showing": "Showing",
+    "courseCount_one": "course",
+    "courseCount_other": "courses",
+    "empty": {
+      "title": "No courses match these filters yet.",
+      "body": "Try a different combination — or request a custom course below.",
+      "reset": "Reset filters"
+    }
+  }
+}
