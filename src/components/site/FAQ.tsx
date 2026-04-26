@@ -42,7 +42,7 @@ export const FAQ = () => {
             Questions, answered.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Still curious? Reach out to the eUDST team — we typically reply within one business day.
+            ​
           </p>
         </div>
         <div className="lg:col-span-8">
