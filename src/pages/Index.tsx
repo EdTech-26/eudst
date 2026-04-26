@@ -4,7 +4,6 @@ import { Hero } from "@/components/site/Hero";
 import { Audiences } from "@/components/site/Audiences";
 import { Courses } from "@/components/site/Courses";
 import { HowItWorks } from "@/components/site/HowItWorks";
-import { FacultyService } from "@/components/site/FacultyService";
 import { FAQ } from "@/components/site/FAQ";
 import { CTABanner } from "@/components/site/CTABanner";
 import { Footer } from "@/components/site/Footer";
@@ -12,7 +11,7 @@ import { Footer } from "@/components/site/Footer";
 const Index = () => {
   useEffect(() => {
     document.title = "eUDST · Applied Online Learning | University of Doha for Science & Technology";
-    const desc = "eUDST is UDST's eLearning Hub — register for online academic and professional courses, or request blended, online and HyFlex course development as faculty.";
+    const desc = "eUDST is UDST's eLearning Hub — explore applied, immersive online courses and microcredentials designed around real-world skills.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
@@ -30,7 +29,6 @@ const Index = () => {
         <Audiences />
         <Courses />
         <HowItWorks />
-        <FacultyService />
         <FAQ />
         <CTABanner />
       </main>

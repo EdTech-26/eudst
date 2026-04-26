@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { UserPlus, Search, CreditCard, Rocket } from "lucide-react";
 
 const steps = [
-  { i: Search, t: "Discover", d: "Explore courses across UDST's six colleges and professional pathways." },
-  { i: UserPlus, t: "Register", d: "Create your eUDST account in minutes — learner or faculty." },
-  { i: CreditCard, t: "Enroll", d: "Complete secure payment and confirm your seat in the cohort." },
-  { i: Rocket, t: "Learn", d: "Launch directly into D2L Brightspace and start your course." },
+  { i: Search, t: "Discover", d: "Explore the catalogue across UDST's six colleges and professional pathways." },
+  { i: UserPlus, t: "Register", d: "Create your eUDST learner account in minutes." },
+  { i: CreditCard, t: "Pay", d: "Enroll and complete secure payment to confirm your seat." },
+  { i: Rocket, t: "Learn", d: "Jump into your immersive online learning environment and start your course." },
 ];
 
 export const HowItWorks = () => {
@@ -14,7 +14,7 @@ export const HowItWorks = () => {
       <div className="mx-auto max-w-2xl text-center">
         <p className="text-xs uppercase tracking-[0.2em] text-primary">How it works</p>
         <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl text-balance">
-          From browsing to Brightspace in four steps.
+          From discovery to applied learning in four steps.
         </h2>
       </div>
 

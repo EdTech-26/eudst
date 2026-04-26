@@ -1,17 +1,38 @@
+import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 
-const groups = [
+type Group = {
+  title: string;
+  links: { label: string; to: string; external?: boolean }[];
+};
+
+const groups: Group[] = [
   {
     title: "Learners",
-    links: ["Browse courses", "Professional certificates", "How enrolment works", "Payment & refunds"],
+    links: [
+      { label: "Browse courses", to: "/courses" },
+      { label: "Microcredentials", to: "/courses" },
+      { label: "How enrolment works", to: "/#how" },
+      { label: "FAQ", to: "/#faq" },
+    ],
   },
   {
     title: "Faculty",
-    links: ["Sign in", "Submit a course request", "Delivery modes", "Design resources"],
+    links: [
+      { label: "Faculty home", to: "/faculty" },
+      { label: "Sign in", to: "/faculty" },
+      { label: "Submit a course request", to: "/faculty" },
+      { label: "Design resources", to: "/faculty" },
+    ],
   },
   {
     title: "About",
-    links: ["About UDST", "About eUDST", "Contact", "Privacy"],
+    links: [
+      { label: "About UDST", to: "/" },
+      { label: "About eUDST", to: "/" },
+      { label: "Contact", to: "/" },
+      { label: "Privacy", to: "/" },
+    ],
   },
 ];
 
@@ -24,7 +45,7 @@ export const Footer = () => {
             <Logo />
             <p className="mt-5 max-w-xs text-sm text-muted-foreground">
               eUDST is the University of Doha for Science & Technology eLearning Hub —
-              applied online learning that builds skills and careers.
+              applied, immersive online learning that builds skills and careers.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 lg:col-span-8 lg:grid-cols-3">
@@ -33,10 +54,13 @@ export const Footer = () => {
                 <h4 className="font-display text-sm font-semibold text-ink">{g.title}</h4>
                 <ul className="mt-4 space-y-2.5">
                   {g.links.map((l) => (
-                    <li key={l}>
-                      <a href="#" className="text-sm text-muted-foreground transition-smooth hover:text-primary">
-                        {l}
-                      </a>
+                    <li key={l.label}>
+                      <Link
+                        to={l.to}
+                        className="text-sm text-muted-foreground transition-smooth hover:text-primary"
+                      >
+                        {l.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -46,7 +70,7 @@ export const Footer = () => {
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} University of Doha for Science & Technology. All rights reserved.</p>
-          <p>Powered by D2L Brightspace · Doha, Qatar</p>
+          <p>Doha, Qatar</p>
         </div>
       </div>
     </footer>
