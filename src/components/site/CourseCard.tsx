@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Clock } from "lucide-react";
 
 export type Course = {
@@ -19,7 +18,7 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-soft transition-smooth hover:-translate-y-1 hover:border-primary/30 hover:shadow-elegant"
+      className="group relative flex flex-col rounded-xl border border-border bg-card p-6 shadow-soft transition-smooth hover:-translate-y-1 hover:border-primary/30 hover:shadow-elegant"
     >
       <div className="flex items-center justify-between">
         <span className={`rounded-md px-2 py-0.5 text-[11px] font-semibold ${c.accent}`}>
@@ -37,11 +36,6 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
           <Clock className="h-3 w-3" /> {c.duration}
         </span>
       </div>
-      <Link
-        to="/courses"
-        className="absolute inset-0"
-        aria-label={`View ${c.title}`}
-      />
     </motion.article>
   );
 };
