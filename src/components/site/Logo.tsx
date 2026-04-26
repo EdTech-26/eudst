@@ -9,7 +9,7 @@ export const Logo = ({ className = "", variant = "dark" }: LogoProps) => {
   return (
     <a
       href="/"
-      className={`inline-flex items-center ${className}`}
+      className={`inline-flex items-center justify-start ${className}`}
       aria-label="eUDST — Applied Online Learning"
     >
       <img
