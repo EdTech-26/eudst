@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, BookOpen, Users, Award, FileCheck } from "lucide-react";
+import femaleStudentNotes from "@/assets/female-student-notes.png";
 
 export const Audiences = () => {
   return (
@@ -60,27 +61,13 @@ export const Audiences = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative overflow-hidden rounded-2xl bg-gradient-primary p-8 text-primary-foreground shadow-elegant md:p-10"
+          className="relative overflow-hidden rounded-2xl shadow-elegant"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-3 py-1 text-xs font-medium">
-            <Award className="h-3.5 w-3.5" /> Microcredentials
-          </div>
-          <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight md:text-3xl">
-            Short, stackable, career-ready.
-          </h3>
-          <p className="mt-4 text-sm text-primary-foreground/85">
-            Earn focused credentials that build into bigger qualifications — proof of skill,
-            on your schedule.
-          </p>
-          <Button
-            variant="ghost"
-            className="mt-8 px-0 text-primary-foreground hover:bg-transparent hover:text-primary-foreground/80"
-            asChild
-          >
-            <Link to="/courses">
-              Explore microcredentials <ArrowUpRight className="ml-1 h-4 w-4" />
-            </Link>
-          </Button>
+          <img
+            src={femaleStudentNotes}
+            alt="Student taking notes while studying online"
+            className="h-full w-full object-cover"
+          />
         </motion.div>
       </div>
     </section>
