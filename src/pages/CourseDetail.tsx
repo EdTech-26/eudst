@@ -138,15 +138,36 @@ const CourseDetail = () => {
               </div>
             )}
 
+            {course.audience && (
+              <div>
+                <h2 className="font-display text-2xl font-semibold text-ink">Who this course is for</h2>
+                <p className="mt-4 text-muted-foreground leading-relaxed">{course.audience}</p>
+              </div>
+            )}
+
+            {course.structure && (
+              <div>
+                <h2 className="font-display text-2xl font-semibold text-ink">How the course is structured</h2>
+                <p className="mt-4 text-muted-foreground leading-relaxed whitespace-pre-line">{course.structure}</p>
+              </div>
+            )}
+
+            {course.howYouLearn && (
+              <div>
+                <h2 className="font-display text-2xl font-semibold text-ink">How you will learn</h2>
+                <p className="mt-4 text-muted-foreground leading-relaxed">{course.howYouLearn}</p>
+              </div>
+            )}
+
             {course.syllabus && (
               <div>
-                <h2 className="font-display text-2xl font-semibold text-ink">Syllabus</h2>
+                <h2 className="font-display text-2xl font-semibold text-ink">Course modules</h2>
                 <Accordion type="single" collapsible className="mt-5">
                   {course.syllabus.map((s, i) => (
-                    <AccordionItem key={s.week} value={`item-${i}`}>
+                    <AccordionItem key={s.label + i} value={`item-${i}`}>
                       <AccordionTrigger className="text-left">
                         <span>
-                          <span className="font-mono text-xs text-muted-foreground">{s.week}</span>
+                          <span className="font-mono text-xs text-muted-foreground">{s.label}</span>
                           <span className="ml-3 font-medium text-ink">{s.topic}</span>
                         </span>
                       </AccordionTrigger>
