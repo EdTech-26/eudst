@@ -11,8 +11,10 @@ type Step = {
 
 export const HowItWorks = () => {
   const { t } = useTranslation();
-  const steps = t("howItWorks.steps", { returnObjects: true }) as Step[];
-  const outcomes = t("howItWorks.outcomes", { returnObjects: true }) as string[];
+  const stepsRaw = t("howItWorks.steps", { returnObjects: true });
+  const outcomesRaw = t("howItWorks.outcomes", { returnObjects: true });
+  const steps: Step[] = Array.isArray(stepsRaw) ? (stepsRaw as Step[]) : [];
+  const outcomes: string[] = Array.isArray(outcomesRaw) ? (outcomesRaw as string[]) : [];
 
   return (
     <section id="how" className="relative overflow-hidden bg-secondary/40 py-24 md:py-32">
