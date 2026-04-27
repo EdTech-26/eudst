@@ -141,12 +141,6 @@ const Catalogue = () => {
             </div>
           ) : (
             <>
-              <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm">
-                <span className="text-ink">
-                  <span className="font-semibold text-primary">{t("catalogue.demoBanner.label")}</span>{" "}
-                  {t("catalogue.demoBanner.body")}
-                </span>
-              </div>
               <div className="mb-8 text-sm text-muted-foreground">
                 {t("catalogue.showing")}{" "}
                 <span className="font-semibold text-ink">{filtered.length}</span>{" "}
