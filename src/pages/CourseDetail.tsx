@@ -12,7 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { sampleCourses } from "@/components/site/courseData";
-import { useEnrollments } from "@/lib/demoAuth";
+import { useEnrollments } from "@/lib/auth";
 import { ArrowLeft, Calendar, CheckCircle2, Clock, GraduationCap, Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
 

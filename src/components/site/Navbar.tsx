@@ -14,7 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useDemoAuth } from "@/lib/demoAuth";
+import { useAuth } from "@/lib/auth";
 
 type NavLinkItem = { to: string; key: string; hash?: boolean };
 
@@ -37,12 +37,12 @@ const initialsOf = (name: string) =>
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
-  const { user, signOut } = useDemoAuth();
+  const { user, signOut } = useAuth();
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const handleSignOut = () => {
-    signOut();
+  const handleSignOut = async () => {
+    await signOut();
     navigate("/");
   };
 
@@ -110,10 +110,10 @@ export const Navbar = () => {
           ) : (
             <>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/courses">{t("nav.signIn")}</Link>
+                <Link to="/auth?mode=signin">{t("nav.signIn")}</Link>
               </Button>
               <Button variant="hero" size="sm" asChild>
-                <Link to="/courses">{t("nav.getStarted")}</Link>
+                <Link to="/auth">{t("nav.getStarted")}</Link>
               </Button>
             </>
           )}
@@ -175,12 +175,12 @@ export const Navbar = () => {
               ) : (
                 <>
                   <Button variant="soft" size="sm" className="flex-1" asChild>
-                    <Link to="/courses" onClick={() => setOpen(false)}>
+                    <Link to="/auth?mode=signin" onClick={() => setOpen(false)}>
                       {t("nav.signIn")}
                     </Link>
                   </Button>
                   <Button variant="hero" size="sm" className="flex-1" asChild>
-                    <Link to="/courses" onClick={() => setOpen(false)}>
+                    <Link to="/auth" onClick={() => setOpen(false)}>
                       {t("nav.getStarted")}
                     </Link>
                   </Button>
