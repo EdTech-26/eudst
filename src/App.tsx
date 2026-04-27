@@ -12,6 +12,7 @@ import Faculty from "./pages/Faculty.tsx";
 import AboutUdst from "./pages/AboutUdst.tsx";
 import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import HashScroll from "./components/HashScroll";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <HashScroll />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/courses" element={<Catalogue />} />

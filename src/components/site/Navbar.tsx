@@ -55,13 +55,13 @@ export const Navbar = () => {
           {links.map((l) => {
             const active = !l.hash && pathname === l.to;
             return l.hash ? (
-              <a
+              <Link
                 key={l.to}
-                href={l.to}
+                to={l.to}
                 className="text-sm font-medium text-muted-foreground transition-smooth hover:text-primary"
               >
                 {t(l.key)}
-              </a>
+              </Link>
             ) : (
               <Link
                 key={l.to}
@@ -134,14 +134,14 @@ export const Navbar = () => {
           <div className="container flex flex-col gap-4 py-6">
             {links.map((l) =>
               l.hash ? (
-                <a
+                <Link
                   key={l.to}
-                  href={l.to}
+                  to={l.to}
                   onClick={() => setOpen(false)}
                   className="text-sm font-medium text-foreground"
                 >
                   {t(l.key)}
-                </a>
+                </Link>
               ) : (
                 <Link
                   key={l.to}
