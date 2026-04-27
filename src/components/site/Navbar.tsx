@@ -110,10 +110,10 @@ export const Navbar = () => {
           ) : (
             <>
               <Button variant="ghost" size="sm" asChild>
-                <Link to="/courses">{t("nav.signIn")}</Link>
+                <Link to="/auth?mode=signin">{t("nav.signIn")}</Link>
               </Button>
               <Button variant="hero" size="sm" asChild>
-                <Link to="/courses">{t("nav.getStarted")}</Link>
+                <Link to="/auth">{t("nav.getStarted")}</Link>
               </Button>
             </>
           )}
@@ -175,12 +175,12 @@ export const Navbar = () => {
               ) : (
                 <>
                   <Button variant="soft" size="sm" className="flex-1" asChild>
-                    <Link to="/courses" onClick={() => setOpen(false)}>
+                    <Link to="/auth?mode=signin" onClick={() => setOpen(false)}>
                       {t("nav.signIn")}
                     </Link>
                   </Button>
                   <Button variant="hero" size="sm" className="flex-1" asChild>
-                    <Link to="/courses" onClick={() => setOpen(false)}>
+                    <Link to="/auth" onClick={() => setOpen(false)}>
                       {t("nav.getStarted")}
                     </Link>
                   </Button>
