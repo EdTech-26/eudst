@@ -53,11 +53,11 @@ export const Hero = () => {
             transition={{ duration: 14, ease: "easeOut" }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-transparent rtl:bg-gradient-to-l" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-transparent" />
 
-          <div className="absolute inset-0 flex items-center">
+          <div className="absolute inset-0 flex items-center" dir="ltr">
             <div className="w-full px-8 md:px-14 lg:px-20">
-              <div className="max-w-xl text-start">
+              <div className="max-w-xl text-left rtl:text-right" dir="auto">
                 <motion.h1
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
