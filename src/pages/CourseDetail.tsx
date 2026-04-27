@@ -205,17 +205,30 @@ const CourseDetail = () => {
           {/* Sticky pricing card */}
           <aside>
             <div className="sticky top-24 rounded-2xl border border-border bg-card p-6 shadow-elegant">
-              <div className="flex items-baseline gap-1">
-                <span className="font-display text-3xl font-bold text-ink">
-                  {course.price?.toLocaleString()}
-                </span>
-                <span className="text-sm font-medium text-muted-foreground">
-                  {course.currency}
-                </span>
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">
-                One-time payment · all materials included
-              </p>
+              {course.price ? (
+                <>
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-display text-3xl font-bold text-ink">
+                      {course.price.toLocaleString()}
+                    </span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {course.currency}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    One-time payment · all materials included
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="font-display text-2xl font-bold text-ink">
+                    Coming soon
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Pricing and start date will be announced shortly
+                  </p>
+                </>
+              )}
 
               <dl className="mt-6 space-y-3 text-sm">
                 <div className="flex justify-between">
@@ -244,13 +257,17 @@ const CourseDetail = () => {
                 <Button variant="hero" className="mt-6 w-full" asChild>
                   <Link to="/my-learning">Go to My Learning</Link>
                 </Button>
-              ) : (
+              ) : course.price ? (
                 <Button variant="hero" className="mt-6 w-full" asChild>
                   <Link to={`/enroll/${course.code}`}>Enroll now</Link>
                 </Button>
+              ) : (
+                <Button variant="hero" className="mt-6 w-full" disabled>
+                  Enrolment opening soon
+                </Button>
               )}
               <p className="mt-3 text-center text-[11px] text-muted-foreground">
-                Secure checkout · Cancel anytime before start
+                {course.price ? "Secure checkout · Cancel anytime before start" : "Register interest with our team for first access"}
               </p>
             </div>
           </aside>
