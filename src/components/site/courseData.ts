@@ -2,6 +2,78 @@ import { Course } from "./CourseCard";
 
 export const sampleCourses: Course[] = [
   {
+    code: "HDPSG-001",
+    college: "CHS",
+    title: "Health Data Mastery: Privacy and Governance",
+    desc: "Build practical skills in healthcare data privacy, security, and governance for the digital health environment.",
+    type: "Professional",
+    duration: "30 hrs",
+    accent: "bg-[#80BC00]/15 text-[#5a8a00]",
+    hasDetailPage: true,
+    price: 1100,
+    currency: "QAR",
+    language: "en",
+    startDate: "Enrol anytime",
+    longDesc:
+      "Health data has become one of the most valuable and sensitive assets in modern healthcare. As patient records move from paper files to connected digital systems, organisations need professionals who can protect information, support safe access, and maintain strong governance standards.\n\nThis fully online course introduces the foundations of privacy, security, and governance in healthcare data management. Adapted from university-level learning, it explores the balance between data accessibility for patient care and the legal, ethical, and technical responsibilities required to keep that information secure.\n\nDesigned for healthcare professionals, clinic managers, and those looking to move into health technology roles, the course provides a practical introduction to the systems, frameworks, and emerging trends shaping digital healthcare today.",
+    outcomes: [
+      "Classify healthcare data based on sensitivity, use, and legal requirements",
+      "Apply foundational security practices to reduce the risk of breaches and cyber threats",
+      "Evaluate healthcare information systems using a practical professional framework",
+      "Apply data governance principles to support quality, accountability, and compliance",
+      "Identify emerging trends, including AI and wearable technologies, and their impact on patient care",
+    ],
+    audience:
+      "This course is designed for healthcare professionals, clinic owners, administrators, and aspiring health technology practitioners who want to build a strong foundation in health data privacy, security, and governance.",
+    structure:
+      "This fully online course is organised into a series of focused units that introduce the principles of healthcare data management step by step. Learners move through key topics including classification, privacy, security, governance, system evaluation, and future trends in digital healthcare.\n\nEach unit combines essential theory with practical healthcare contexts, helping learners connect core concepts to real-world data challenges across hospitals, clinics, and digital health environments.",
+    howYouLearn:
+      "You will learn through online modules, practical examples, guided activities, and applied case-based scenarios drawn from healthcare settings. The course is designed to support flexible online study while helping you build knowledge that can be applied directly to professional practice.",
+    syllabus: [
+      { label: "Module 1 · 6 hrs", topic: "Healthcare data classification and legal foundations" },
+      { label: "Module 2 · 6 hrs", topic: "Security practices, threats and breach prevention" },
+      { label: "Module 3 · 6 hrs", topic: "Evaluating healthcare information systems" },
+      { label: "Module 4 · 6 hrs", topic: "Data governance, quality and compliance" },
+      { label: "Module 5 · 6 hrs", topic: "Emerging trends: AI, wearables and the future of patient care" },
+    ],
+  },
+  {
+    code: "ALICP-001",
+    college: "CHS",
+    title: "Adaptive Leadership and Collaborative Practice",
+    desc: "Build leadership skills for interprofessional healthcare teams and support person-centred care in complex clinical settings.",
+    type: "Professional",
+    duration: "25 hrs",
+    accent: "bg-[#80BC00]/15 text-[#5a8a00]",
+    hasDetailPage: true,
+    price: 950,
+    currency: "QAR",
+    language: "en",
+    startDate: "Enrol anytime",
+    longDesc:
+      "Effective healthcare depends on strong collaboration, clear communication, and leadership that can respond to constant change. This fully online course introduces the principles of adaptive leadership and interprofessional collaborative practice, helping learners understand how to lead effectively within modern healthcare teams.\n\nThe course focuses on the competencies, tools, and techniques needed to mobilise, motivate, organise, and support interprofessional teams in delivering person-centred care. Learners will explore how leadership can be used to address both technical and adaptive challenges in clinical settings, while also examining the barriers that affect change at both personal and organisational level.\n\nOffered through eUDST, the University of Doha for Science & Technology's online learning platform, this course supports professionals who want to strengthen their leadership capability and contribute more effectively within collaborative healthcare environments.",
+    outcomes: [
+      "Compare key theories of leadership relevant to healthcare practice",
+      "Apply interprofessional competencies to support person-centred care",
+      "Analyse leadership approaches used to address technical and adaptive challenges",
+      "Identify personal and organisational barriers to change",
+      "Examine adaptive leadership and its relevance to interprofessional healthcare practice",
+    ],
+    audience:
+      "This course is designed for healthcare professionals and practitioners who want to strengthen their leadership skills and work more effectively within interprofessional teams.",
+    structure:
+      "This fully online course is organised into a series of interactive units that guide learners through the principles and practice of adaptive leadership in interprofessional healthcare settings.\n\nEach unit includes short modules, practical examples, and applied learning activities that connect leadership theory to real clinical practice. The course is designed for flexible, self-paced study, allowing learners to progress through the content in a clear and structured way while building knowledge step by step.",
+    howYouLearn:
+      "You will learn through interactive online modules, real-world healthcare scenarios, reflective activities, and practical examples. The course encourages active engagement with leadership concepts and helps you apply them to collaborative healthcare practice and person-centred care.",
+    syllabus: [
+      { label: "Module 1 · 5 hrs", topic: "Foundational theories of leadership in healthcare" },
+      { label: "Module 2 · 5 hrs", topic: "Interprofessional competencies and person-centred care" },
+      { label: "Module 3 · 5 hrs", topic: "Technical and adaptive challenges in clinical settings" },
+      { label: "Module 4 · 5 hrs", topic: "Personal and organisational barriers to change" },
+      { label: "Module 5 · 5 hrs", topic: "Adaptive leadership in interprofessional practice" },
+    ],
+  },
+  {
     code: "DACS2101",
     college: "CCIT",
     title: "Applied Data Analytics for Business",
@@ -169,74 +241,5 @@ export const sampleCourses: Course[] = [
     price: 800,
     currency: "QAR",
     language: "en",
-    startDate: "TBA",
-  },
-  {
-    code: "HDPSG-001",
-    college: "CHS",
-    title: "Health Data Mastery: Privacy and Governance",
-    desc: "Build practical skills in healthcare data privacy, security, and governance for the digital health environment.",
-    type: "Professional",
-    duration: "[XX hrs]",
-    accent: "bg-[#80BC00]/15 text-[#5a8a00]",
-    hasDetailPage: true,
-    language: "en",
-    startDate: "Coming soon",
-    longDesc:
-      "Health data has become one of the most valuable and sensitive assets in modern healthcare. As patient records move from paper files to connected digital systems, organisations need professionals who can protect information, support safe access, and maintain strong governance standards.\n\nThis fully online course introduces the foundations of privacy, security, and governance in healthcare data management. Adapted from university-level learning, it explores the balance between data accessibility for patient care and the legal, ethical, and technical responsibilities required to keep that information secure.\n\nDesigned for healthcare professionals, clinic managers, and those looking to move into health technology roles, the course provides a practical introduction to the systems, frameworks, and emerging trends shaping digital healthcare today.",
-    outcomes: [
-      "Classify healthcare data based on sensitivity, use, and legal requirements",
-      "Apply foundational security practices to reduce the risk of breaches and cyber threats",
-      "Evaluate healthcare information systems using a practical professional framework",
-      "Apply data governance principles to support quality, accountability, and compliance",
-      "Identify emerging trends, including AI and wearable technologies, and their impact on patient care",
-    ],
-    audience:
-      "This course is designed for healthcare professionals, clinic owners, administrators, and aspiring health technology practitioners who want to build a strong foundation in health data privacy, security, and governance.",
-    structure:
-      "This fully online course is organised into a series of focused units that introduce the principles of healthcare data management step by step. Learners move through key topics including classification, privacy, security, governance, system evaluation, and future trends in digital healthcare.\n\nEach unit combines essential theory with practical healthcare contexts, helping learners connect core concepts to real-world data challenges across hospitals, clinics, and digital health environments.",
-    howYouLearn:
-      "You will learn through online modules, practical examples, guided activities, and applied case-based scenarios drawn from healthcare settings. The course is designed to support flexible online study while helping you build knowledge that can be applied directly to professional practice.",
-    syllabus: [
-      { label: "Module 1 · [XX hrs]", topic: "Healthcare data classification and legal foundations" },
-      { label: "Module 2 · [XX hrs]", topic: "Security practices, threats and breach prevention" },
-      { label: "Module 3 · [XX hrs]", topic: "Evaluating healthcare information systems" },
-      { label: "Module 4 · [XX hrs]", topic: "Data governance, quality and compliance" },
-      { label: "Module 5 · [XX hrs]", topic: "Emerging trends: AI, wearables and the future of patient care" },
-    ],
-  },
-  {
-    code: "ALICP-001",
-    college: "CHS",
-    title: "Adaptive Leadership and Collaborative Practice",
-    desc: "Build leadership skills for interprofessional healthcare teams and support person-centred care in complex clinical settings.",
-    type: "Professional",
-    duration: "[XX hrs]",
-    accent: "bg-[#80BC00]/15 text-[#5a8a00]",
-    hasDetailPage: true,
-    language: "en",
-    startDate: "Coming soon",
-    longDesc:
-      "Effective healthcare depends on strong collaboration, clear communication, and leadership that can respond to constant change. This fully online course introduces the principles of adaptive leadership and interprofessional collaborative practice, helping learners understand how to lead effectively within modern healthcare teams.\n\nThe course focuses on the competencies, tools, and techniques needed to mobilise, motivate, organise, and support interprofessional teams in delivering person-centred care. Learners will explore how leadership can be used to address both technical and adaptive challenges in clinical settings, while also examining the barriers that affect change at both personal and organisational level.\n\nOffered through eUDST, the University of Doha for Science & Technology's online learning platform, this course supports professionals who want to strengthen their leadership capability and contribute more effectively within collaborative healthcare environments.",
-    outcomes: [
-      "Compare key theories of leadership relevant to healthcare practice",
-      "Apply interprofessional competencies to support person-centred care",
-      "Analyse leadership approaches used to address technical and adaptive challenges",
-      "Identify personal and organisational barriers to change",
-      "Examine adaptive leadership and its relevance to interprofessional healthcare practice",
-    ],
-    audience:
-      "This course is designed for healthcare professionals and practitioners who want to strengthen their leadership skills and work more effectively within interprofessional teams.",
-    structure:
-      "This fully online course is organised into a series of interactive units that guide learners through the principles and practice of adaptive leadership in interprofessional healthcare settings.\n\nEach unit includes short modules, practical examples, and applied learning activities that connect leadership theory to real clinical practice. The course is designed for flexible, self-paced study, allowing learners to progress through the content in a clear and structured way while building knowledge step by step.",
-    howYouLearn:
-      "You will learn through interactive online modules, real-world healthcare scenarios, reflective activities, and practical examples. The course encourages active engagement with leadership concepts and helps you apply them to collaborative healthcare practice and person-centred care.",
-    syllabus: [
-      { label: "Module 1 · [XX hrs]", topic: "Foundational theories of leadership in healthcare" },
-      { label: "Module 2 · [XX hrs]", topic: "Interprofessional competencies and person-centred care" },
-      { label: "Module 3 · [XX hrs]", topic: "Technical and adaptive challenges in clinical settings" },
-      { label: "Module 4 · [XX hrs]", topic: "Personal and organisational barriers to change" },
-      { label: "Module 5 · [XX hrs]", topic: "Adaptive leadership in interprofessional practice" },
-    ],
   },
 ];
