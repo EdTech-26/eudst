@@ -56,13 +56,13 @@ export const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-transparent" />
 
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full px-8 md:px-14 lg:px-20" dir="ltr">
-              <div className="max-w-xl text-left">
+            <div className="w-full px-8 md:px-14 lg:px-20">
+              <div className="max-w-xl text-start">
                 <motion.h1
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.05 }}
-                  className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary-foreground text-balance md:text-5xl lg:text-6xl"
+                  className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary-foreground text-balance md:text-5xl lg:text-6xl rtl:leading-[1.5] rtl:tracking-normal"
                 >
                   {t("hero.titleLine1")}{" "}
                   <span className="font-secondary-title font-normal italic">
