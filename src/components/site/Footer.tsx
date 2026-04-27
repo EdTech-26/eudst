@@ -29,7 +29,7 @@ const groups: Group[] = [
   {
     titleKey: "footer.groups.about",
     links: [
-      { labelKey: "footer.links.aboutUdst", to: "/" },
+      { labelKey: "footer.links.aboutUdst", to: "/about-udst" },
       { labelKey: "footer.links.aboutEudst", to: "/" },
       { labelKey: "footer.links.contact", to: "/" },
       { labelKey: "footer.links.privacy", to: "/" },
@@ -72,7 +72,17 @@ export const Footer = () => {
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
           <p>{t("footer.rights", { year: new Date().getFullYear() })}</p>
-          <p>{t("footer.location")}</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p>{t("footer.location")}</p>
+            <a
+              href="https://www.udst.edu.qa/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-primary transition-smooth hover:text-primary/80"
+            >
+              {t("footer.website")}
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -39,7 +39,8 @@ export const Navbar = () => {
   const { pathname } = useLocation();
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language?.startsWith("ar");
 
   const handleSignOut = async () => {
     await signOut();
@@ -48,7 +49,7 @@ export const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="container flex h-18 items-center justify-between py-4">
+      <div className="container flex h-18 items-center justify-between py-4" dir="ltr">
         <Logo />
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => {
@@ -90,7 +91,7 @@ export const Navbar = () => {
                   </span>
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuContent align={isArabic ? "start" : "end"} className="w-56">
                 <DropdownMenuLabel className="text-xs text-muted-foreground">
                   {user.email}
                 </DropdownMenuLabel>
@@ -118,7 +119,7 @@ export const Navbar = () => {
             </>
           )}
         </div>
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 md:hidden" dir="ltr">
           <LanguageToggle />
           <button
             aria-label={t("nav.toggleMenu")}

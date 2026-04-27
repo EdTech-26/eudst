@@ -90,7 +90,14 @@ export const useAuth = () => {
         },
       });
       if (error) return { error };
-      return { user: data.user };
+
+      if (!data.session && data.user) {
+        const signInResult = await supabase.auth.signInWithPassword({ email, password });
+        if (signInResult.error) return { error: signInResult.error };
+        return { user: signInResult.data.user, session: signInResult.data.session };
+      }
+
+      return { user: data.user, session: data.session };
     },
     [],
   );

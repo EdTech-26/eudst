@@ -9,6 +9,7 @@ import CourseDetail from "./pages/CourseDetail.tsx";
 import Enroll from "./pages/Enroll.tsx";
 import MyLearning from "./pages/MyLearning.tsx";
 import Faculty from "./pages/Faculty.tsx";
+import AboutUdst from "./pages/AboutUdst.tsx";
 import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -27,8 +28,8 @@ const App = () => (
           <Route path="/enroll/:code" element={<Enroll />} />
           <Route path="/my-learning" element={<MyLearning />} />
           <Route path="/faculty" element={<Faculty />} />
+          <Route path="/about-udst" element={<AboutUdst />} />
           <Route path="/auth" element={<Auth />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

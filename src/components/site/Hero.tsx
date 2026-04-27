@@ -18,9 +18,11 @@ export const Hero = () => {
             className="h-[520px] w-full object-cover md:h-[600px] lg:h-[680px]"
           />
 
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-transparent" />
+
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full px-8 md:px-14 lg:px-20">
-              <div className="max-w-xl">
+            <div className="w-full px-8 md:px-14 lg:px-20" dir="ltr">
+              <div className="max-w-xl text-left">
                 <motion.h1
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -37,7 +39,7 @@ export const Hero = () => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.15 }}
-                  className="mt-6 max-w-md text-base text-primary-foreground/90 text-balance md:text-lg"
+                  className="mt-6 max-w-md text-left text-base text-primary-foreground/90 text-balance md:text-lg"
                 >
                   {t("hero.body")}
                 </motion.p>
@@ -50,7 +52,7 @@ export const Hero = () => {
                 >
                   <Button variant="hero" size="xl" asChild>
                     <Link to="/courses">
-                      {t("hero.cta")} <ArrowRight className="ms-1 rtl:rotate-180" />
+                      {t("hero.cta")} <ArrowRight className="ms-1" />
                     </Link>
                   </Button>
                 </motion.div>
@@ -64,6 +66,7 @@ export const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-6 border-t border-border pt-8"
+          dir="ltr"
         >
           {[
             { k: "6", v: t("hero.stats.colleges") },

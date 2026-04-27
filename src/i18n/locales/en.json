@@ -1,6 +1,6 @@
 {
   "nav": {
-    "courses": "Courses",
+    "courses": "Online Courses",
     "faculty": "Faculty",
     "howItWorks": "How it works",
     "faq": "FAQ",
@@ -85,6 +85,37 @@
       "en-ar": "English & Arabic"
     }
   },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "From discovery to applied learning in four clear steps.",
+    "intro": "We designed the learner journey to feel simple, guided and credible from first click to course access.",
+    "highlightLabel": "Why it matters",
+    "highlightTitle": "A smoother path means faster enrolment and stronger engagement.",
+    "highlightBody": "Each step is built to reduce friction, build confidence, and help learners move from interest to active participation without confusion.",
+    "steps": [
+      {
+        "title": "Discover",
+        "body": "Browse online courses and microcredentials across UDST focus areas and find the option that matches your goals."
+      },
+      {
+        "title": "Create your account",
+        "body": "Sign up in minutes with email or Google so you can save your place, enrol, and return anytime."
+      },
+      {
+        "title": "Enroll",
+        "body": "Confirm your selection and complete the course registration flow with a straightforward learner experience."
+      },
+      {
+        "title": "Start learning",
+        "body": "Access your online course space, track progress, and begin an applied learning experience built around real outcomes."
+      }
+    ],
+    "outcomes": [
+      "A clear journey for new learners and returning professionals.",
+      "Fewer drop-offs between browsing, signup and course access.",
+      "A stronger first impression for UDST’s online learning experience."
+    ]
+  },
   "faq": {
     "eyebrow": "FAQ",
     "title": "Questions, answered.",
@@ -142,7 +173,8 @@
       "privacy": "Privacy"
     },
     "rights": "© {{year}} University of Doha for Science & Technology. All rights reserved.",
-    "location": "Doha, Qatar"
+    "location": "Doha, Qatar",
+    "website": "UDST Website"
   },
   "catalogue": {
     "eyebrow": "Course Catalogue",
@@ -169,5 +201,104 @@
       "body": "Try a different combination — or request a custom course below.",
       "reset": "Reset filters"
     }
+  },
+  "faculty": {
+    "pageTitle": "Faculty · eUDST",
+    "metaDescription": "Support for UDST faculty to design stronger digital learning experiences through eUDST.",
+    "heroBadge": "UDST Faculty",
+    "titleLine1": "Educational technology support",
+    "titleLine2": "for more engaging teaching.",
+    "body": "We provide innovative educational technology support to help faculty and departments create more effective learning experiences. From digital course design guidance to emerging tools and delivery support, eUDST helps turn ideas into stronger online and blended learning.",
+    "primaryCta": "Faculty sign in",
+    "secondaryCta": "Explore online courses",
+    "supportEyebrow": "What we support",
+    "supportTitle": "Practical ed-tech support for course delivery and course innovation.",
+    "supportIntro": "Our team helps faculty adopt technology in ways that improve course quality, student engagement, and instructional effectiveness.",
+    "supportCards": [
+      {
+        "title": "Learning platform support",
+        "body": "We help faculty structure course spaces, organize learning materials, and improve the online learner experience through better setup, content flow, and delivery planning."
+      },
+      {
+        "title": "AR / VR exploration",
+        "body": "We support the use of augmented and virtual reality in teaching where immersive experiences can make learning more dynamic, practical, and memorable."
+      },
+      {
+        "title": "AI tools for teaching",
+        "body": "We help faculty explore AI-powered tools for instructional design, assessment support, and more adaptive learning experiences that better meet student needs."
+      },
+      {
+        "title": "Other educational technologies",
+        "body": "From collaboration tools to multimedia and assessment platforms, we work with faculty on a case-by-case basis to evaluate and integrate the right solutions."
+      }
+    ],
+    "workflowEyebrow": "Faculty workflow",
+    "workflowTitle": "A clearer path from course idea to launch.",
+    "workflowBody": "Bring your concept to one team and move through scoping, design support, and implementation with a more coordinated experience.",
+    "workflowPrimary": "Submit a request",
+    "workflowSecondary": "Browse the catalogue",
+    "workflowSteps": [
+      {
+        "title": "Identify the opportunity",
+        "body": "Share your teaching goals, target learners, and the type of experience you want to improve or build."
+      },
+      {
+        "title": "Shape the digital experience",
+        "body": "Work with our team on structure, tools, learning activities, and support resources aligned to your course outcomes."
+      },
+      {
+        "title": "Launch with confidence",
+        "body": "Move into delivery with clearer workflows, stronger learner experience design, and the right technology in place."
+      }
+    ],
+    "ctaTitle": "Ready to strengthen your next course?",
+    "ctaBody": "Work with eUDST to shape more engaging, technology-enabled learning experiences for your students.",
+    "ctaPrimary": "Submit a request",
+    "ctaSecondary": "Browse the catalogue"
+  },
+  "aboutUdst": {
+    "pageTitle": "About UDST · eUDST",
+    "metaDescription": "Learn about the University of Doha for Science and Technology, its mission, vision and values.",
+    "eyebrow": "About UDST",
+    "title": "University of Doha for Science and Technology",
+    "intro": "University of Doha for Science and Technology was officially established by Emiri Decision No. 13 of 2022 as the first national university in the State of Qatar specializing in applied, technical, and professional education. UDST offers over 70 bachelor’s, master’s, and diploma programs and is known for student-centered learning, modern facilities, and industry-relevant outcomes.",
+    "stats": {
+      "programs": "Bachelor’s, master’s and diploma programs across applied and professional disciplines.",
+      "colleges": "Colleges, alongside specialized training centers for individuals and companies.",
+      "legacy": "A legacy of preparing highly skilled graduates who serve Qatar’s workforce and national development goals."
+    },
+    "visionTitle": "Vision",
+    "visionBody": "UDST shall be a leading institution that promotes excellence in applied education and research, contributing to innovation and sustainable development in the State of Qatar and the global community.",
+    "missionTitle": "Mission",
+    "missionBody": "UDST advances quality applied science and technology through agile applied higher education and research for the socio-economic development of the State of Qatar and the world.",
+    "valuesTitle": "Our Values",
+    "values": [
+      {
+        "name": "Accountability",
+        "body": "UDST believes in being responsible and answerable for the outcomes of every activity, with a focus on measurable impact for students and stakeholders."
+      },
+      {
+        "name": "Adaptability",
+        "body": "UDST responds to changing economic, social, and global conditions by empowering graduates through applied learning and responding to evolving workforce needs."
+      },
+      {
+        "name": "Innovation",
+        "body": "UDST embraces new approaches to teaching, learning, and applied research to solve real-world problems locally and internationally."
+      },
+      {
+        "name": "Integrity",
+        "body": "UDST is committed to sound governance, transparency, and upholding the values of higher education in all its work."
+      },
+      {
+        "name": "Quality",
+        "body": "UDST maintains high standards in educational effectiveness, student success, and continuous improvement through evidence-based practice."
+      },
+      {
+        "name": "Sustainability",
+        "body": "UDST is committed to environmentally sound development and to practices that support present and future generations."
+      }
+    ],
+    "legacyTitle": "A legacy of excellence",
+    "legacyBody": "UDST takes pride in producing generations of highly skilled professionals who build remarkable careers, contribute to Qatar National Vision 2030, and support human, social, and economic development nationally and internationally."
   }
 }
