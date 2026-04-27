@@ -74,7 +74,7 @@ export const Hero = () => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.15 }}
-                  className="mt-6 max-w-md text-left text-base text-primary-foreground/90 text-balance md:text-lg"
+                  className="mt-6 max-w-md text-start text-base text-primary-foreground/90 text-balance md:text-lg rtl:leading-[1.9]"
                 >
                   {t("hero.body")}
                 </motion.p>
