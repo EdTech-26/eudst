@@ -7,7 +7,7 @@ export const sampleCourses: Course[] = [
     title: "Applied Data Analytics for Business",
     desc: "Hands-on data wrangling, visualisation and decision-making with industry tools.",
     type: "Academic · Online",
-    duration: "14 weeks",
+    duration: "42 hrs",
     accent: "bg-[#FFB600]/20 text-[#8a6300]",
     hasDetailPage: true,
     price: 1850,
@@ -15,7 +15,7 @@ export const sampleCourses: Course[] = [
     language: "en",
     startDate: "Sept 15, 2026",
     longDesc:
-      "Applied Data Analytics for Business is a hands-on, fully online course that takes you from raw spreadsheets to confident, data-driven decision-making. You'll learn to clean and shape real datasets, build clear visualisations, and tell a story with numbers — using tools and workflows that mirror what data teams use every day in industry.",
+      "Applied Data Analytics for Business is a hands-on, fully online course that takes you from raw spreadsheets to confident, data-driven decision-making. You'll learn to clean and shape real datasets, build clear visualisations, and tell a story with numbers, using tools and workflows that mirror what data teams use every day in industry.",
     outcomes: [
       "Clean, transform and explore real-world business datasets",
       "Build clear, persuasive visualisations and dashboards",
@@ -23,14 +23,20 @@ export const sampleCourses: Course[] = [
       "Communicate analytical findings to non-technical stakeholders",
       "Design a reproducible analytics workflow end-to-end",
     ],
+    audience:
+      "This course is designed for professionals, analysts, and decision-makers who want to build practical, applied data skills they can use immediately in their day-to-day work.",
+    structure:
+      "The course is organised into a series of focused modules that introduce the analytics workflow step by step, from data thinking and wrangling through to visualisation, modelling and communicating insight.\n\nEach module combines core theory with applied business contexts, helping you connect concepts to the real decisions teams make every day.",
+    howYouLearn:
+      "You will learn through online modules, guided activities, and applied case-based scenarios drawn from real business settings. The course is fully self-paced, so you can progress through the content in the way that best fits your schedule.",
     syllabus: [
-      { week: "Weeks 1–2", topic: "Foundations: data thinking, the analytics workflow, tools setup" },
-      { week: "Weeks 3–4", topic: "Data wrangling: cleaning, joining and reshaping messy data" },
-      { week: "Weeks 5–6", topic: "Exploratory analysis & descriptive statistics for business" },
-      { week: "Weeks 7–8", topic: "Visualisation principles and building stakeholder dashboards" },
-      { week: "Weeks 9–10", topic: "Forecasting, segmentation and intro to predictive modelling" },
-      { week: "Weeks 11–12", topic: "Communicating insight: narrative, ethics and decision support" },
-      { week: "Weeks 13–14", topic: "Capstone: end-to-end analytics project on a real dataset" },
+      { label: "Module 1 · 6 hrs", topic: "Foundations: data thinking, the analytics workflow, tools setup" },
+      { label: "Module 2 · 6 hrs", topic: "Data wrangling: cleaning, joining and reshaping messy data" },
+      { label: "Module 3 · 6 hrs", topic: "Exploratory analysis & descriptive statistics for business" },
+      { label: "Module 4 · 6 hrs", topic: "Visualisation principles and building stakeholder dashboards" },
+      { label: "Module 5 · 6 hrs", topic: "Forecasting, segmentation and intro to predictive modelling" },
+      { label: "Module 6 · 6 hrs", topic: "Communicating insight: narrative, ethics and decision support" },
+      { label: "Module 7 · 6 hrs", topic: "Capstone: end-to-end analytics project on a real dataset" },
     ],
     instructor: {
       name: "Dr. Layla Al-Mansoori",
@@ -59,7 +65,7 @@ export const sampleCourses: Course[] = [
     title: "Sustainable Engineering Systems",
     desc: "Apply lifecycle thinking and energy modelling to real engineering problems.",
     type: "Academic · Applied",
-    duration: "12 weeks",
+    duration: "36 hrs",
     accent: "bg-[#EE7623]/15 text-[#b85412]",
     hasDetailPage: true,
     price: 1650,
@@ -101,7 +107,7 @@ export const sampleCourses: Course[] = [
     title: "Critical Thinking in the Digital Era",
     desc: "Develop reasoning, communication and applied research skills for any field.",
     type: "Academic · Online",
-    duration: "10 weeks",
+    duration: "30 hrs",
     accent: "bg-[#853275]/15 text-[#853275]",
     hasDetailPage: true,
     price: 1450,
@@ -129,7 +135,7 @@ export const sampleCourses: Course[] = [
     title: "Cloud Foundations & DevOps",
     desc: "Applied online learning with hands-on labs across leading cloud platforms.",
     type: "Academic · Applied",
-    duration: "14 weeks",
+    duration: "42 hrs",
     accent: "bg-[#FFB600]/20 text-[#8a6300]",
     hasDetailPage: true,
     price: 1850,
@@ -164,5 +170,73 @@ export const sampleCourses: Course[] = [
     currency: "QAR",
     language: "en",
     startDate: "TBA",
+  },
+  {
+    code: "HDPSG-001",
+    college: "CHS",
+    title: "Health Data Mastery: Privacy and Governance",
+    desc: "Build practical skills in healthcare data privacy, security, and governance for the digital health environment.",
+    type: "Professional",
+    duration: "[XX hrs]",
+    accent: "bg-[#80BC00]/15 text-[#5a8a00]",
+    hasDetailPage: true,
+    language: "en",
+    startDate: "Coming soon",
+    longDesc:
+      "Health data has become one of the most valuable and sensitive assets in modern healthcare. As patient records move from paper files to connected digital systems, organisations need professionals who can protect information, support safe access, and maintain strong governance standards.\n\nThis fully online course introduces the foundations of privacy, security, and governance in healthcare data management. Adapted from university-level learning, it explores the balance between data accessibility for patient care and the legal, ethical, and technical responsibilities required to keep that information secure.\n\nDesigned for healthcare professionals, clinic managers, and those looking to move into health technology roles, the course provides a practical introduction to the systems, frameworks, and emerging trends shaping digital healthcare today.",
+    outcomes: [
+      "Classify healthcare data based on sensitivity, use, and legal requirements",
+      "Apply foundational security practices to reduce the risk of breaches and cyber threats",
+      "Evaluate healthcare information systems using a practical professional framework",
+      "Apply data governance principles to support quality, accountability, and compliance",
+      "Identify emerging trends, including AI and wearable technologies, and their impact on patient care",
+    ],
+    audience:
+      "This course is designed for healthcare professionals, clinic owners, administrators, and aspiring health technology practitioners who want to build a strong foundation in health data privacy, security, and governance.",
+    structure:
+      "This fully online course is organised into a series of focused units that introduce the principles of healthcare data management step by step. Learners move through key topics including classification, privacy, security, governance, system evaluation, and future trends in digital healthcare.\n\nEach unit combines essential theory with practical healthcare contexts, helping learners connect core concepts to real-world data challenges across hospitals, clinics, and digital health environments.",
+    howYouLearn:
+      "You will learn through online modules, practical examples, guided activities, and applied case-based scenarios drawn from healthcare settings. The course is designed to support flexible online study while helping you build knowledge that can be applied directly to professional practice.",
+    syllabus: [
+      { label: "Module 1 · [XX hrs]", topic: "Healthcare data classification and legal foundations" },
+      { label: "Module 2 · [XX hrs]", topic: "Security practices, threats and breach prevention" },
+      { label: "Module 3 · [XX hrs]", topic: "Evaluating healthcare information systems" },
+      { label: "Module 4 · [XX hrs]", topic: "Data governance, quality and compliance" },
+      { label: "Module 5 · [XX hrs]", topic: "Emerging trends: AI, wearables and the future of patient care" },
+    ],
+  },
+  {
+    code: "ALICP-001",
+    college: "CHS",
+    title: "Adaptive Leadership and Collaborative Practice",
+    desc: "Build leadership skills for interprofessional healthcare teams and support person-centred care in complex clinical settings.",
+    type: "Professional",
+    duration: "[XX hrs]",
+    accent: "bg-[#80BC00]/15 text-[#5a8a00]",
+    hasDetailPage: true,
+    language: "en",
+    startDate: "Coming soon",
+    longDesc:
+      "Effective healthcare depends on strong collaboration, clear communication, and leadership that can respond to constant change. This fully online course introduces the principles of adaptive leadership and interprofessional collaborative practice, helping learners understand how to lead effectively within modern healthcare teams.\n\nThe course focuses on the competencies, tools, and techniques needed to mobilise, motivate, organise, and support interprofessional teams in delivering person-centred care. Learners will explore how leadership can be used to address both technical and adaptive challenges in clinical settings, while also examining the barriers that affect change at both personal and organisational level.\n\nOffered through eUDST, the University of Doha for Science & Technology's online learning platform, this course supports professionals who want to strengthen their leadership capability and contribute more effectively within collaborative healthcare environments.",
+    outcomes: [
+      "Compare key theories of leadership relevant to healthcare practice",
+      "Apply interprofessional competencies to support person-centred care",
+      "Analyse leadership approaches used to address technical and adaptive challenges",
+      "Identify personal and organisational barriers to change",
+      "Examine adaptive leadership and its relevance to interprofessional healthcare practice",
+    ],
+    audience:
+      "This course is designed for healthcare professionals and practitioners who want to strengthen their leadership skills and work more effectively within interprofessional teams.",
+    structure:
+      "This fully online course is organised into a series of interactive units that guide learners through the principles and practice of adaptive leadership in interprofessional healthcare settings.\n\nEach unit includes short modules, practical examples, and applied learning activities that connect leadership theory to real clinical practice. The course is designed for flexible, self-paced study, allowing learners to progress through the content in a clear and structured way while building knowledge step by step.",
+    howYouLearn:
+      "You will learn through interactive online modules, real-world healthcare scenarios, reflective activities, and practical examples. The course encourages active engagement with leadership concepts and helps you apply them to collaborative healthcare practice and person-centred care.",
+    syllabus: [
+      { label: "Module 1 · [XX hrs]", topic: "Foundational theories of leadership in healthcare" },
+      { label: "Module 2 · [XX hrs]", topic: "Interprofessional competencies and person-centred care" },
+      { label: "Module 3 · [XX hrs]", topic: "Technical and adaptive challenges in clinical settings" },
+      { label: "Module 4 · [XX hrs]", topic: "Personal and organisational barriers to change" },
+      { label: "Module 5 · [XX hrs]", topic: "Adaptive leadership in interprofessional practice" },
+    ],
   },
 ];

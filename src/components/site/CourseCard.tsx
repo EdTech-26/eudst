@@ -18,7 +18,10 @@ export type Course = {
   language?: "en" | "ar" | "en-ar";
   longDesc?: string;
   outcomes?: string[];
-  syllabus?: { week: string; topic: string }[];
+  audience?: string;
+  structure?: string;
+  howYouLearn?: string;
+  syllabus?: { label: string; topic: string }[];
   instructor?: { name: string; title: string; bio: string; initials: string };
 };
 

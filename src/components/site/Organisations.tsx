@@ -31,7 +31,7 @@ export const Organisations = () => {
             </p>
             <ul className="mt-6 grid gap-2 text-sm text-primary-foreground/80 sm:grid-cols-2">
               <li>· Custom curriculum & outcomes</li>
-              <li>· Cohort or self-paced delivery</li>
+              <li>· Flexible self-paced delivery</li>
               <li>· Industry-aligned microcredentials</li>
               <li>· Dedicated learning design support</li>
             </ul>
