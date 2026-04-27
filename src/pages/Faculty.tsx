@@ -51,7 +51,7 @@ const Faculty = () => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.05 }}
-                  className="mt-5 font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-balance"
+                  className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary-foreground text-balance md:text-5xl lg:text-6xl rtl:leading-[1.5] rtl:tracking-normal"
                 >
                   {t("faculty.titleLine1")}{" "}
                   <span className="font-secondary-title font-normal italic">
