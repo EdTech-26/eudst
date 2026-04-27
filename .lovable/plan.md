@@ -1,37 +1,65 @@
 ## Goal
-Display the language a course is offered in. For now, every course is offered in **English**, but the data model will support adding Arabic (or bilingual) courses later without code changes.
+Add a coherent layer of motion across the home page so it feels more premium and alive — without overdoing it. All animations will be subtle, purposeful, and respect `prefers-reduced-motion`.
 
-## Changes
+## What's already animated today
+- **Hero**: headline, body, CTA, and stats fade-up on load (framer-motion).
+- **Audiences**: the two cards fade-up on scroll.
+- **Courses**: each `CourseCard` fades-up on scroll with a small stagger.
+- **HowItWorks**: the 4 step cards fade-up on scroll with a stagger.
+- **FAQ / CTABanner**: no motion at all.
 
-### 1. Course data model — `src/components/site/CourseCard.tsx`
-- Extend the `Course` type with an optional field:
-  - `language?: "en" | "ar" | "en-ar"` — language of instruction.
+## Proposed enhancements
 
-### 2. Seed data — `src/components/site/courseData.ts`
-- Add `language: "en"` to every course in `sampleCourses`.
+### 1. Hero (`src/components/site/Hero.tsx`)
+- **Stats counter animation**: animate the numbers `6` and `60+` counting up from 0 when they enter view (framer-motion's `useMotionValue` + `animate`).
+- **Stats stagger**: each stat fades + slides up individually instead of the whole row at once.
+- **Hero image subtle Ken Burns**: very slow `scale(1) → scale(1.06)` over 12s on the banner image to give it life.
+- **CTA button**: gentle arrow nudge on hover (`group-hover:translate-x-1`).
 
-### 3. Course card — `src/components/site/CourseCard.tsx`
-- In the meta footer (alongside `type` and `duration`), add a small label showing the language, e.g. a `Languages` icon from lucide + the localized label ("English" / "العربية" / "English & Arabic").
-- Only render when `c.language` is set, so legacy entries don't break.
+### 2. Audiences (`src/components/site/Audiences.tsx`)
+- **Eyebrow + title**: fade-up on scroll (currently static).
+- **Bullets**: stagger each bullet item in (currently they all appear with the card).
+- **Image card**: subtle parallax — image scales slightly on scroll-in.
 
-### 4. Course detail — `src/pages/CourseDetail.tsx`
-- In the hero metadata row (next to instructor / duration / start date), add the language with a `Languages` icon.
-- In the sticky pricing card's `<dl>`, add a row: **Language → English** (translated).
+### 3. Courses (`src/components/site/Courses.tsx`)
+- **Section header & "View all" button**: fade-up on scroll.
+- **Course cards**: keep existing stagger but add a soft hover lift refinement (already partly there) — add an animated underline on the title on hover.
 
-### 5. i18n strings
-- `src/i18n/locales/en.json` and `ar.json` — add a new block:
-  ```json
-  "course": {
-    "language": "Language",
-    "languages": {
-      "en": "English",
-      "ar": "Arabic",
-      "en-ar": "English & Arabic"
-    }
-  }
-  ```
-- Arabic equivalents: `"اللغة"`, `"الإنجليزية"`, `"العربية"`, `"الإنجليزية والعربية"`.
+### 4. HowItWorks (`src/components/site/HowItWorks.tsx`)
+- **Connector line**: animate the horizontal line drawing left-to-right (`scaleX 0 → 1`) as the section enters view.
+- **Step icons**: small pop/scale-in (`scale 0.6 → 1` with spring) staggered after each card appears.
+- **Step number (01, 02…)**: fade in slightly later than the card for a layered reveal.
+- **Highlight box (right)**: slide in from the right.
+- **Outcomes row**: stagger the 3 check items.
+
+### 5. FAQ (`src/components/site/FAQ.tsx`)
+- **Eyebrow / title**: fade-up on scroll.
+- **Accordion items**: stagger fade-up as they enter view.
+- (Accordion open/close animation already exists via Radix.)
+
+### 6. CTABanner (`src/components/site/CTABanner.tsx`)
+- **Whole card**: fade + scale-in on scroll (`opacity 0, scale 0.96 → 1`).
+- **Logo, headline, body, button**: small staggered reveal inside the banner.
+- **Button**: subtle pulse/glow on hover.
+
+### 7. Global polish
+- Add a `useReducedMotion()` check in any new heavy animation (Ken Burns, counters) to disable for accessibility.
+- No new dependencies — `framer-motion` is already installed.
+
+## Files to edit
+- `src/components/site/Hero.tsx`
+- `src/components/site/Audiences.tsx`
+- `src/components/site/Courses.tsx`
+- `src/components/site/HowItWorks.tsx`
+- `src/components/site/FAQ.tsx`
+- `src/components/site/CTABanner.tsx`
 
 ## Out of scope
-- No filter for language in the catalogue (can be added later if you want).
-- No translation of course titles/descriptions — UI labels only, as previously agreed.
+- No layout, copy, or color changes.
+- No changes to the Navbar, Footer, or any non-home-page route.
+- No new images or assets.
+
+## Optional extras (let me know if you want any)
+- A faint floating-shapes / gradient-blob background behind Hero or CTA.
+- Magnetic-cursor effect on primary CTAs.
+- Marquee of college names somewhere on the page.
