@@ -7,7 +7,7 @@ export const sampleCourses: Course[] = [
     title: "Applied Data Analytics for Business",
     desc: "Hands-on data wrangling, visualisation and decision-making with industry tools.",
     type: "Academic · Online",
-    duration: "14 weeks",
+    duration: "42 hrs",
     accent: "bg-[#FFB600]/20 text-[#8a6300]",
     hasDetailPage: true,
     price: 1850,
@@ -15,7 +15,7 @@ export const sampleCourses: Course[] = [
     language: "en",
     startDate: "Sept 15, 2026",
     longDesc:
-      "Applied Data Analytics for Business is a hands-on, fully online course that takes you from raw spreadsheets to confident, data-driven decision-making. You'll learn to clean and shape real datasets, build clear visualisations, and tell a story with numbers — using tools and workflows that mirror what data teams use every day in industry.",
+      "Applied Data Analytics for Business is a hands-on, fully online course that takes you from raw spreadsheets to confident, data-driven decision-making. You'll learn to clean and shape real datasets, build clear visualisations, and tell a story with numbers, using tools and workflows that mirror what data teams use every day in industry.",
     outcomes: [
       "Clean, transform and explore real-world business datasets",
       "Build clear, persuasive visualisations and dashboards",
@@ -23,14 +23,20 @@ export const sampleCourses: Course[] = [
       "Communicate analytical findings to non-technical stakeholders",
       "Design a reproducible analytics workflow end-to-end",
     ],
+    audience:
+      "This course is designed for professionals, analysts, and decision-makers who want to build practical, applied data skills they can use immediately in their day-to-day work.",
+    structure:
+      "The course is organised into a series of focused modules that introduce the analytics workflow step by step, from data thinking and wrangling through to visualisation, modelling and communicating insight.\n\nEach module combines core theory with applied business contexts, helping you connect concepts to the real decisions teams make every day.",
+    howYouLearn:
+      "You will learn through online modules, guided activities, and applied case-based scenarios drawn from real business settings. The course is fully self-paced, so you can progress through the content in the way that best fits your schedule.",
     syllabus: [
-      { week: "Weeks 1–2", topic: "Foundations: data thinking, the analytics workflow, tools setup" },
-      { week: "Weeks 3–4", topic: "Data wrangling: cleaning, joining and reshaping messy data" },
-      { week: "Weeks 5–6", topic: "Exploratory analysis & descriptive statistics for business" },
-      { week: "Weeks 7–8", topic: "Visualisation principles and building stakeholder dashboards" },
-      { week: "Weeks 9–10", topic: "Forecasting, segmentation and intro to predictive modelling" },
-      { week: "Weeks 11–12", topic: "Communicating insight: narrative, ethics and decision support" },
-      { week: "Weeks 13–14", topic: "Capstone: end-to-end analytics project on a real dataset" },
+      { label: "Module 1 · 6 hrs", topic: "Foundations: data thinking, the analytics workflow, tools setup" },
+      { label: "Module 2 · 6 hrs", topic: "Data wrangling: cleaning, joining and reshaping messy data" },
+      { label: "Module 3 · 6 hrs", topic: "Exploratory analysis & descriptive statistics for business" },
+      { label: "Module 4 · 6 hrs", topic: "Visualisation principles and building stakeholder dashboards" },
+      { label: "Module 5 · 6 hrs", topic: "Forecasting, segmentation and intro to predictive modelling" },
+      { label: "Module 6 · 6 hrs", topic: "Communicating insight: narrative, ethics and decision support" },
+      { label: "Module 7 · 6 hrs", topic: "Capstone: end-to-end analytics project on a real dataset" },
     ],
     instructor: {
       name: "Dr. Layla Al-Mansoori",
