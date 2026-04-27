@@ -87,11 +87,30 @@
   },
   "howItWorks": {
     "eyebrow": "How it works",
-    "title": "Your next course starts in four simple steps.",
-    "intro": "eUDST makes it easy to explore online courses from the University of Doha for Science & Technology, create your account, secure your place, and begin learning with confidence.",
-    "highlightLabel": "Why learn through eUDST",
-    "highlightTitle": "A simpler path to enrolment means you can start learning sooner.",
-    "highlightBody": "Every step is designed to be clear, smooth, and straightforward, helping you move from interest to enrolment without unnecessary complexity.",
+    "title": "Asynchronous online learning, built around you.",
+    "intro": "The eUDST online catalogue offers micro-credentials and not-for-credit professional courses designed for focused, skill-based learning aligned with academic and industry standards. Whether you are building credentials for career growth or developing new skills for your own learning journey, you get hands-on, applied learning online, at your pace.",
+    "approach": {
+      "eyebrow": "Our approach",
+      "title": "Applied learning, designed with UDST faculty.",
+      "body": "eUDST is the gateway to online learning at the University of Doha for Science & Technology. Our courses are accessible, engaging and flexible, with for-credit options that may count toward an approved UDST programme (subject to academic regulations and advisor approval) and non-credit options for professional development or personal enrichment. Every course is shaped by experienced faculty alongside online learning and immersive technology specialists, and delivered in flexible formats so you can join in person, live online, or fully at your own pace.",
+      "chips": [
+        "Applied & skill-based",
+        "Immersive & technology-enhanced",
+        "Flexible & self-paced"
+      ]
+    },
+    "immersive": {
+      "eyebrow": "Immersive learning",
+      "title": "Realistic practice that bridges theory and real-world application.",
+      "body": "eUDST brings immersive learning experiences into your courses to deepen applied, experiential learning that meets academic and industry standards. Engage with realistic simulations, interactive environments and technology-enhanced practice, supported by faculty and industry partners, so you build the skills, critical thinking and professional readiness that real careers demand.",
+      "items": [
+        "Realistic simulations",
+        "Interactive environments",
+        "Industry-aligned practice",
+        "Faculty-led design"
+      ]
+    },
+    "stepsHeading": "Your next course starts in four simple steps.",
     "steps": [
       {
         "title": "Discover",

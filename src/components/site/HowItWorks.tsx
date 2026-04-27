@@ -1,8 +1,19 @@
 import { motion } from "framer-motion";
-import { Search, UserPlus, CreditCard, Rocket, CheckCircle2 } from "lucide-react";
+import {
+  Search,
+  UserPlus,
+  CreditCard,
+  Rocket,
+  CheckCircle2,
+  Layers,
+  MonitorPlay,
+  Briefcase,
+  GraduationCap,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const icons = [Search, UserPlus, CreditCard, Rocket];
+const stepIcons = [Search, UserPlus, CreditCard, Rocket];
+const immersiveIcons = [Layers, MonitorPlay, Briefcase, GraduationCap];
 
 type Step = {
   title: string;
@@ -13,70 +24,190 @@ export const HowItWorks = () => {
   const { t } = useTranslation();
   const stepsRaw = t("howItWorks.steps", { returnObjects: true });
   const outcomesRaw = t("howItWorks.outcomes", { returnObjects: true });
+  const chipsRaw = t("howItWorks.approach.chips", { returnObjects: true });
+  const immersiveItemsRaw = t("howItWorks.immersive.items", { returnObjects: true });
+
   const steps: Step[] = Array.isArray(stepsRaw) ? (stepsRaw as Step[]) : [];
   const outcomes: string[] = Array.isArray(outcomesRaw) ? (outcomesRaw as string[]) : [];
+  const chips: string[] = Array.isArray(chipsRaw) ? (chipsRaw as string[]) : [];
+  const immersiveItems: string[] = Array.isArray(immersiveItemsRaw)
+    ? (immersiveItemsRaw as string[])
+    : [];
 
   return (
     <section id="how" className="relative overflow-hidden bg-secondary/40 py-24 md:py-32">
       <div className="container">
-        <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr] lg:items-end">
+        {/* Intro */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.08 } },
+          }}
+          className="max-w-3xl"
+        >
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+            className="text-xs uppercase tracking-[0.2em] text-primary"
+          >
+            {t("howItWorks.eyebrow")}
+          </motion.p>
+          <motion.h2
+            variants={{
+              hidden: { opacity: 0, y: 18 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+            }}
+            className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl text-balance"
+          >
+            {t("howItWorks.title")}
+          </motion.h2>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 16 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            className="mt-5 text-base text-muted-foreground md:text-lg"
+          >
+            {t("howItWorks.intro")}
+          </motion.p>
+        </motion.div>
+
+        {/* Approach block */}
+        <div className="mt-16 grid gap-6 lg:grid-cols-[1.4fr_0.9fr] lg:items-stretch">
           <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="rounded-xl border border-border bg-card p-8 shadow-soft"
+          >
+            <p className="text-xs uppercase tracking-[0.2em] text-primary">
+              {t("howItWorks.approach.eyebrow")}
+            </p>
+            <h3 className="mt-3 font-display text-2xl font-semibold text-ink md:text-3xl text-balance">
+              {t("howItWorks.approach.title")}
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground md:text-base">
+              {t("howItWorks.approach.body")}
+            </p>
+          </motion.div>
+
+          <motion.ul
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             variants={{
               hidden: {},
-              show: { transition: { staggerChildren: 0.08 } },
+              show: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
             }}
-            className="max-w-3xl"
+            className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1"
           >
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 12 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-              }}
-              className="text-xs uppercase tracking-[0.2em] text-primary"
-            >
-              {t("howItWorks.eyebrow")}
-            </motion.p>
-            <motion.h2
-              variants={{
-                hidden: { opacity: 0, y: 18 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-              }}
-              className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl text-balance"
-            >
-              {t("howItWorks.title")}
-            </motion.h2>
-            <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 16 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-              }}
-              className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg"
-            >
-              {t("howItWorks.intro")}
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-xl border border-primary/15 bg-card p-6 shadow-soft"
-          >
-            <p className="text-xs uppercase tracking-[0.2em] text-primary">{t("howItWorks.highlightLabel")}</p>
-            <h3 className="mt-3 font-display text-2xl font-semibold text-ink text-balance">
-              {t("howItWorks.highlightTitle")}
-            </h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              {t("howItWorks.highlightBody")}
-            </p>
-          </motion.div>
+            {chips.map((chip) => (
+              <motion.li
+                key={chip}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+                className="flex items-center gap-3 rounded-xl border border-primary/15 bg-card p-5 shadow-soft"
+              >
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
+                  <CheckCircle2 className="h-5 w-5" />
+                </span>
+                <span className="font-display text-base font-medium text-ink">{chip}</span>
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
 
-        <div className="relative mt-16">
+        {/* Immersive learning band */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.08 } },
+          }}
+          className="mt-12 overflow-hidden rounded-2xl border border-primary/15 bg-primary/5 p-8 md:p-12"
+        >
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
+            <div>
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+                className="text-xs uppercase tracking-[0.2em] text-primary"
+              >
+                {t("howItWorks.immersive.eyebrow")}
+              </motion.p>
+              <motion.h3
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+                }}
+                className="mt-3 font-display text-2xl font-semibold text-ink md:text-3xl text-balance"
+              >
+                {t("howItWorks.immersive.title")}
+              </motion.h3>
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+                }}
+                className="mt-4 text-sm leading-7 text-muted-foreground md:text-base"
+              >
+                {t("howItWorks.immersive.body")}
+              </motion.p>
+            </div>
+
+            <motion.ul
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+              }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {immersiveItems.map((label, index) => {
+                const Icon = immersiveIcons[index] ?? Layers;
+                return (
+                  <motion.li
+                    key={label}
+                    variants={{
+                      hidden: { opacity: 0, y: 16 },
+                      show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                    }}
+                    className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-soft"
+                  >
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary text-primary-foreground shadow-soft">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="text-sm font-medium leading-5 text-ink">{label}</span>
+                  </motion.li>
+                );
+              })}
+            </motion.ul>
+          </div>
+        </motion.div>
+
+        {/* Steps */}
+        <motion.h3
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-20 max-w-2xl font-display text-2xl font-semibold tracking-tight text-ink md:text-3xl text-balance"
+        >
+          {t("howItWorks.stepsHeading")}
+        </motion.h3>
+
+        <div className="relative mt-10">
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -96,7 +227,7 @@ export const HowItWorks = () => {
             className="grid gap-6 lg:grid-cols-4"
           >
             {steps.map((step, index) => {
-              const Icon = icons[index];
+              const Icon = stepIcons[index];
               return (
                 <motion.div
                   key={step.title}
@@ -131,7 +262,7 @@ export const HowItWorks = () => {
                       0{index + 1}
                     </motion.span>
                   </div>
-                  <h3 className="mt-6 font-display text-xl font-semibold text-ink">{step.title}</h3>
+                  <h4 className="mt-6 font-display text-xl font-semibold text-ink">{step.title}</h4>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{step.body}</p>
                 </motion.div>
               );
