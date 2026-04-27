@@ -87,33 +87,33 @@
   },
   "howItWorks": {
     "eyebrow": "How it works",
-    "title": "From discovery to applied learning in four clear steps.",
-    "intro": "We designed the learner journey to feel simple, guided and credible from first click to course access.",
-    "highlightLabel": "Why it matters",
-    "highlightTitle": "A smoother path means faster enrolment and stronger engagement.",
-    "highlightBody": "Each step is built to reduce friction, build confidence, and help learners move from interest to active participation without confusion.",
+    "title": "Your next course starts in four simple steps.",
+    "intro": "eUDST makes it easy to explore online courses from the University of Doha for Science & Technology, create your account, secure your place, and begin learning with confidence.",
+    "highlightLabel": "Why learn through eUDST",
+    "highlightTitle": "A simpler path to enrolment means you can start learning sooner.",
+    "highlightBody": "Every step is designed to be clear, smooth, and straightforward, helping you move from interest to enrolment without unnecessary complexity.",
     "steps": [
       {
         "title": "Discover",
-        "body": "Browse online courses and microcredentials across UDST focus areas and find the option that matches your goals."
+        "body": "Browse courses and microcredentials across UDST's focus areas and find the option that matches your goals, interests, and schedule."
       },
       {
         "title": "Create your account",
-        "body": "Sign up in minutes with email or Google so you can save your place, enrol, and return anytime."
+        "body": "Sign up in minutes so you can save your place, continue your application, and return whenever you're ready."
       },
       {
-        "title": "Enroll",
-        "body": "Confirm your selection and complete the course registration flow with a straightforward learner experience."
+        "title": "Enrol",
+        "body": "Choose your course and complete the enrolment process through a streamlined experience designed to get you started quickly."
       },
       {
         "title": "Start learning",
-        "body": "Access your online course space, track progress, and begin an applied learning experience built around real outcomes."
+        "body": "Access your online course space, track your progress, and begin building practical knowledge and skills that support your next step."
       }
     ],
     "outcomes": [
-      "A clear journey for new learners and returning professionals.",
-      "Fewer drop-offs between browsing, signup and course access.",
-      "A stronger first impression for UDST’s online learning experience."
+      "A straightforward journey for new learners and returning professionals.",
+      "Less friction between discovering a course and getting started.",
+      "A more confident first step into UDST's online learning experience."
     ]
   },
   "faq": {
