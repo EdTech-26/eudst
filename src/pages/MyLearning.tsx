@@ -12,11 +12,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { sampleCourses } from "@/components/site/courseData";
-import { useDemoAuth, useEnrollments } from "@/lib/demoAuth";
+import { useAuth, useEnrollments } from "@/lib/auth";
 import { BookOpen, PlayCircle } from "lucide-react";
 
 const MyLearning = () => {
-  const { user, signOut } = useDemoAuth();
+  const { user, signOut, loading: authLoading } = useAuth();
   const { enrollments } = useEnrollments();
   const navigate = useNavigate();
   const [openCourse, setOpenCourse] = useState<string | null>(null);
@@ -26,8 +26,8 @@ const MyLearning = () => {
   }, []);
 
   useEffect(() => {
-    if (!user) navigate("/courses", { replace: true });
-  }, [user, navigate]);
+    if (!authLoading && !user) navigate("/auth?redirect=/my-learning", { replace: true });
+  }, [user, authLoading, navigate]);
 
   if (!user) return null;
 
@@ -59,8 +59,8 @@ const MyLearning = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => {
-                signOut();
+              onClick={async () => {
+                await signOut();
                 navigate("/");
               }}
             >
