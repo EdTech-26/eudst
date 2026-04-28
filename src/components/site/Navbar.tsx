@@ -103,6 +103,14 @@ export const Navbar = () => {
                     {t("nav.myLearning")}
                   </Link>
                 </DropdownMenuItem>
+                {isFaculty && (
+                  <DropdownMenuItem asChild>
+                    <Link to="/faculty/dashboard">
+                      <Briefcase className="me-2 h-4 w-4" />
+                      {t("nav.facultyDashboard")}
+                    </Link>
+                  </DropdownMenuItem>
+                )}
                 <DropdownMenuItem onClick={handleSignOut}>
                   <LogOut className="me-2 h-4 w-4" />
                   {t("nav.signOut")}
