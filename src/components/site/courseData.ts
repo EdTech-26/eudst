@@ -219,6 +219,9 @@ export const sampleCourses: Course[] = [
       { label: "MC 4", topic: "Advanced Practices for the Critically Ill Infants — Clinical Practicum" },
     ],
   },
+  {
+    code: "DACS2101",
+    isPlaceholder: true,
     college: "CCIT",
     title: "Applied Data Analytics for Business",
     desc: "Hands-on data wrangling, visualisation and decision-making with industry tools.",
