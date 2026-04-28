@@ -79,14 +79,22 @@ export const useAuth = () => {
   }, []);
 
   const signUp = useCallback(
-    async (name: string, email: string, password: string) => {
+    async (
+      name: string,
+      email: string,
+      password: string,
+      options?: { signupSource?: "faculty" | "learner" },
+    ) => {
       const redirectUrl = `${window.location.origin}/`;
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
           emailRedirectTo: redirectUrl,
-          data: { full_name: name },
+          data: {
+            full_name: name,
+            ...(options?.signupSource ? { signup_source: options.signupSource } : {}),
+          },
         },
       });
       if (error) return { error };
@@ -173,3 +181,44 @@ export const useEnrollments = () => {
 
   return { enrollments, enroll, isEnrolled, loading };
 };
+
+export type AppRole = "faculty" | "learner" | "admin";
+
+export const useUserRoles = () => {
+  const [roles, setRoles] = useState<AppRole[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const refresh = useCallback(async () => {
+    const { data: sessionData } = await supabase.auth.getSession();
+    const userId = sessionData.session?.user.id;
+    if (!userId) {
+      setRoles([]);
+      setLoading(false);
+      return;
+    }
+    const { data } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", userId);
+    setRoles((data?.map((r) => r.role) ?? []) as AppRole[]);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    refresh();
+    const { data: sub } = supabase.auth.onAuthStateChange(() => {
+      refresh();
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [refresh]);
+
+  return {
+    roles,
+    loading,
+    isFaculty: roles.includes("faculty"),
+    isLearner: roles.includes("learner"),
+    isAdmin: roles.includes("admin"),
+    refresh,
+  };
+};
+

@@ -9,6 +9,8 @@ import CourseDetail from "./pages/CourseDetail.tsx";
 import Enroll from "./pages/Enroll.tsx";
 import MyLearning from "./pages/MyLearning.tsx";
 import Faculty from "./pages/Faculty.tsx";
+import FacultyAuth from "./pages/FacultyAuth.tsx";
+import FacultyDashboard from "./pages/FacultyDashboard.tsx";
 import AboutUdst from "./pages/AboutUdst.tsx";
 import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/enroll/:code" element={<Enroll />} />
           <Route path="/my-learning" element={<MyLearning />} />
           <Route path="/faculty" element={<Faculty />} />
+          <Route path="/faculty/auth" element={<FacultyAuth />} />
+          <Route path="/faculty/dashboard" element={<FacultyDashboard />} />
           <Route path="/about-udst" element={<AboutUdst />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="*" element={<NotFound />} />

@@ -7,6 +7,7 @@
     "signIn": "Sign in",
     "getStarted": "Get started",
     "myLearning": "My Learning",
+    "facultyDashboard": "Faculty dashboard",
     "signOut": "Sign out",
     "toggleMenu": "Toggle menu"
   },
@@ -39,6 +40,54 @@
     "toast": {
       "welcome": "Welcome, {{name}}!",
       "signedIn": "Signed in successfully."
+    }
+  },
+  "facultyAuth": {
+    "pageTitle": "Faculty sign in · eUDST",
+    "heroBadge": "For UDST faculty",
+    "heroTitle": "A dedicated space for teaching staff.",
+    "heroBody": "Sign in to access faculty tools, course support resources, and the team that helps you bring stronger online learning to life.",
+    "heroNote": "Faculty access is reserved for University of Doha for Science & Technology staff.",
+    "backToFaculty": "Back to faculty home",
+    "formBadge": "Faculty access",
+    "title": "Faculty sign in",
+    "subtitle": "Use your UDST email to sign in or request a faculty account.",
+    "requestAccount": "Create account",
+    "createFacultyAccount": "Create faculty account",
+    "fields": {
+      "workEmail": "UDST email",
+      "workEmailHint": "Your @udst.edu.qa email is required for faculty access."
+    },
+    "errors": {
+      "udstOnly": "Please use your @udst.edu.qa email to access faculty sign in."
+    },
+    "toast": {
+      "welcome": "Welcome, {{name}}. Your faculty account is ready."
+    },
+    "learnerPrompt": "Looking for the learner sign in?",
+    "learnerLink": "Go to learner sign in"
+  },
+  "facultyDashboard": {
+    "pageTitle": "Faculty dashboard · eUDST",
+    "loading": "Loading your dashboard…",
+    "eyebrow": "Faculty dashboard",
+    "greeting": "Welcome, {{name}}.",
+    "intro": "Your starting point for course support, learning technology, and the resources our team offers to UDST faculty.",
+    "exploreSupport": "Explore faculty support",
+    "browseCatalogue": "Browse course catalogue",
+    "cards": {
+      "courses": {
+        "title": "Your courses",
+        "body": "Course management tools will appear here as we connect them to your faculty profile."
+      },
+      "support": {
+        "title": "Learner support resources",
+        "body": "Quick links to guides, templates, and support contacts that help your students succeed online."
+      },
+      "production": {
+        "title": "Course production",
+        "body": "Get in touch with the eUDST team to scope, design, and launch new digital learning experiences."
+      }
     }
   },
   "hero": {

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { LanguageToggle } from "./LanguageToggle";
-import { Menu, X, LogOut, GraduationCap } from "lucide-react";
+import { Menu, X, LogOut, GraduationCap, Briefcase } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -14,7 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAuth } from "@/lib/auth";
+import { useAuth, useUserRoles } from "@/lib/auth";
 
 type NavLinkItem = { to: string; key: string; hash?: boolean };
 
@@ -38,6 +38,7 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const { user, signOut } = useAuth();
+  const { isFaculty } = useUserRoles();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.startsWith("ar");
@@ -102,6 +103,14 @@ export const Navbar = () => {
                     {t("nav.myLearning")}
                   </Link>
                 </DropdownMenuItem>
+                {isFaculty && (
+                  <DropdownMenuItem asChild>
+                    <Link to="/faculty/dashboard">
+                      <Briefcase className="me-2 h-4 w-4" />
+                      {t("nav.facultyDashboard")}
+                    </Link>
+                  </DropdownMenuItem>
+                )}
                 <DropdownMenuItem onClick={handleSignOut}>
                   <LogOut className="me-2 h-4 w-4" />
                   {t("nav.signOut")}
