@@ -9,6 +9,8 @@ import CourseDetail from "./pages/CourseDetail.tsx";
 import Enroll from "./pages/Enroll.tsx";
 import MyLearning from "./pages/MyLearning.tsx";
 import Faculty from "./pages/Faculty.tsx";
+import FacultyAuth from "./pages/FacultyAuth.tsx";
+import FacultyDashboard from "./pages/FacultyDashboard.tsx";
 import AboutUdst from "./pages/AboutUdst.tsx";
 import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
