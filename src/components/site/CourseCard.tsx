@@ -12,6 +12,7 @@ export type Course = {
   duration: string;
   accent: string;
   hasDetailPage?: boolean;
+  isPlaceholder?: boolean;
   price?: number;
   currency?: string;
   startDate?: string;
