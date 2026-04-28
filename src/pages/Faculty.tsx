@@ -73,7 +73,7 @@ const Faculty = () => {
                   className="mt-8 flex flex-wrap gap-3"
                 >
                   <Button variant="hero" size="xl" asChild>
-                    <Link to="/auth?mode=signin">{t("faculty.primaryCta")}</Link>
+                    <Link to="/faculty/auth">{t("faculty.primaryCta")}</Link>
                   </Button>
                   <Button
                     variant="ghost"
