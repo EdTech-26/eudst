@@ -109,6 +109,7 @@ export const sampleCourses: Course[] = [
       { label: "Module 4 · 1 hr", topic: "Artificial intelligence in teaching, learning and assessment" },
       { label: "Module 5 · 1 hr", topic: "Sustainable learning environments and long-term impact" },
     ],
+    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f126712%2funits%2f2734196",
   },
   {
     code: "DSC-CCIT-001",
@@ -147,6 +148,7 @@ export const sampleCourses: Course[] = [
       { label: "Module 5 · 8 hrs", topic: "Counting techniques and discrete probability" },
       { label: "Module 6 · 9 hrs", topic: "Relations, graphs and trees" },
     ],
+    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f140924%2funits%2f3050780",
   },
   {
     code: "ELE-CGE-001",
@@ -182,6 +184,7 @@ export const sampleCourses: Course[] = [
       { label: "Module 4 · 9 hrs", topic: "Innovation, creativity and the entrepreneurial mindset" },
       { label: "Module 5 · 9 hrs", topic: "Applied entrepreneurship and project showcase" },
     ],
+    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f140944%2funits%2f3051145",
   },
   {
     code: "PGD-INIC-001",
@@ -218,6 +221,7 @@ export const sampleCourses: Course[] = [
       { label: "MC 3", topic: "Applied Therapeutics for Critically Ill Term Infants" },
       { label: "MC 4", topic: "Advanced Practices for the Critically Ill Infants — Clinical Practicum" },
     ],
+    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f144413%2funits%2f3115857",
   },
   {
     code: "DACS2101",

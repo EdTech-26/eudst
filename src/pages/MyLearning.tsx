@@ -100,15 +100,24 @@ const MyLearning = () => {
                     </h3>
                     <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.desc}</p>
                     <div className="mt-5 flex items-center gap-2">
-                      <Button
-                        variant="hero"
-                        size="sm"
-                        className="flex-1"
-                        onClick={() => setOpenCourse(c.code)}
-                      >
-                        <PlayCircle className="mr-1 h-4 w-4" />
-                        Continue learning
-                      </Button>
+                      {c.launchUrl ? (
+                        <Button variant="hero" size="sm" className="flex-1" asChild>
+                          <a href={c.launchUrl} target="_blank" rel="noopener noreferrer">
+                            <PlayCircle className="mr-1 h-4 w-4" />
+                            Continue learning
+                          </a>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="hero"
+                          size="sm"
+                          className="flex-1"
+                          onClick={() => setOpenCourse(c.code)}
+                        >
+                          <PlayCircle className="mr-1 h-4 w-4" />
+                          Continue learning
+                        </Button>
+                      )}
                     </div>
                   </article>
                 ))}
