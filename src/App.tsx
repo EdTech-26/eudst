@@ -32,6 +32,8 @@ const App = () => (
           <Route path="/enroll/:code" element={<Enroll />} />
           <Route path="/my-learning" element={<MyLearning />} />
           <Route path="/faculty" element={<Faculty />} />
+          <Route path="/faculty/auth" element={<FacultyAuth />} />
+          <Route path="/faculty/dashboard" element={<FacultyDashboard />} />
           <Route path="/about-udst" element={<AboutUdst />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="*" element={<NotFound />} />
