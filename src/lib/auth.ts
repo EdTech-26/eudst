@@ -181,3 +181,44 @@ export const useEnrollments = () => {
 
   return { enrollments, enroll, isEnrolled, loading };
 };
+
+export type AppRole = "faculty" | "learner" | "admin";
+
+export const useUserRoles = () => {
+  const [roles, setRoles] = useState<AppRole[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const refresh = useCallback(async () => {
+    const { data: sessionData } = await supabase.auth.getSession();
+    const userId = sessionData.session?.user.id;
+    if (!userId) {
+      setRoles([]);
+      setLoading(false);
+      return;
+    }
+    const { data } = await supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", userId);
+    setRoles((data?.map((r) => r.role) ?? []) as AppRole[]);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    refresh();
+    const { data: sub } = supabase.auth.onAuthStateChange(() => {
+      refresh();
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [refresh]);
+
+  return {
+    roles,
+    loading,
+    isFaculty: roles.includes("faculty"),
+    isLearner: roles.includes("learner"),
+    isAdmin: roles.includes("admin"),
+    refresh,
+  };
+};
+
