@@ -62,6 +62,27 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
   const baseClass =
     "group relative flex flex-col rounded-xl border border-border bg-card p-6 shadow-soft transition-smooth hover:-translate-y-1 hover:border-primary/30 hover:shadow-elegant";
 
+  const placeholderClass =
+    "group relative flex flex-col rounded-xl border border-border bg-card p-6 shadow-soft opacity-50 grayscale cursor-not-allowed pointer-events-none select-none";
+
+  if (c.isPlaceholder) {
+    return (
+      <motion.article
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5, delay: index * 0.05 }}
+        aria-disabled="true"
+        className={placeholderClass}
+      >
+        <span className="absolute right-3 top-3 rounded-full bg-muted px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+          Coming soon
+        </span>
+        {inner}
+      </motion.article>
+    );
+  }
+
   if (c.hasDetailPage) {
     return (
       <motion.div
