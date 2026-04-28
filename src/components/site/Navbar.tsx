@@ -38,6 +38,7 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const { user, signOut } = useAuth();
+  const { isFaculty } = useUserRoles();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language?.startsWith("ar");
