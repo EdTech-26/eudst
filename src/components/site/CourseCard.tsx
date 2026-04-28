@@ -24,6 +24,7 @@ export type Course = {
   howYouLearn?: string;
   syllabus?: { label: string; topic: string }[];
   instructor?: { name: string; title: string; bio: string; initials: string };
+  launchUrl?: string;
 };
 
 export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
