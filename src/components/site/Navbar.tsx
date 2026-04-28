@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
 import { LanguageToggle } from "./LanguageToggle";
-import { Menu, X, LogOut, GraduationCap } from "lucide-react";
+import { Menu, X, LogOut, GraduationCap, Briefcase } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -14,7 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useAuth } from "@/lib/auth";
+import { useAuth, useUserRoles } from "@/lib/auth";
 
 type NavLinkItem = { to: string; key: string; hash?: boolean };
 
