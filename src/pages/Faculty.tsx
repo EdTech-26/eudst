@@ -135,7 +135,9 @@ const Faculty = () => {
               {t("faculty.ctaBody")}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button variant="hero" size="xl">{t("faculty.ctaPrimary")}</Button>
+              <Button variant="hero" size="xl" asChild>
+                <Link to="/faculty/auth">{t("faculty.ctaPrimary")}</Link>
+              </Button>
               <Button variant="soft" size="xl" asChild>
                 <Link to="/courses">{t("faculty.ctaSecondary")}</Link>
               </Button>
