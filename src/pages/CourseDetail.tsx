@@ -92,7 +92,7 @@ const CourseDetail = () => {
                 <span className="inline-flex items-center gap-1.5">
                   <Clock className="h-4 w-4" /> {course.duration}
                 </span>
-                {course.startDate && (
+                {course.startDate && course.startDate !== "Enrol anytime" && (
                   <span className="inline-flex items-center gap-1.5">
                     <Calendar className="h-4 w-4" /> Starts {course.startDate}
                   </span>
@@ -239,7 +239,7 @@ const CourseDetail = () => {
                   <dt className="text-muted-foreground">Delivery</dt>
                   <dd className="font-medium text-ink">{course.type}</dd>
                 </div>
-                {course.startDate && (
+                {course.startDate && course.startDate !== "Enrol anytime" && (
                   <div className="flex justify-between">
                     <dt className="text-muted-foreground">Starts</dt>
                     <dd className="font-medium text-ink">{course.startDate}</dd>
