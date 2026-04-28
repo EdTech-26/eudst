@@ -266,6 +266,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "PROF1042",
+    isPlaceholder: true,
     college: "CPE",
     title: "Cybersecurity Essentials Microcredential",
     desc: "Foundational practitioner skills covering threats, controls and incident response.",
@@ -280,6 +281,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "DAEN3210",
+    isPlaceholder: true,
     college: "CET",
     title: "Sustainable Engineering Systems",
     desc: "Apply lifecycle thinking and energy modelling to real engineering problems.",
@@ -294,6 +296,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "PROF2200",
+    isPlaceholder: true,
     college: "CB",
     title: "AI for Managers: Strategy & Adoption",
     desc: "Translate AI capabilities into operating models, governance and business value.",
@@ -308,6 +311,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "PROF3110",
+    isPlaceholder: true,
     college: "CHS",
     title: "Patient-Centered Digital Health",
     desc: "Design immersive online experiences for modern healthcare delivery and care teams.",
@@ -322,6 +326,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "DACG2050",
+    isPlaceholder: true,
     college: "CGE",
     title: "Critical Thinking in the Digital Era",
     desc: "Develop reasoning, communication and applied research skills for any field.",
@@ -336,6 +341,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "PROF1180",
+    isPlaceholder: true,
     college: "CB",
     title: "Project Management Professional Pathway",
     desc: "Stackable microcredentials covering agile, planning and stakeholder management.",
@@ -350,6 +356,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "DACT2210",
+    isPlaceholder: true,
     college: "CCIT",
     title: "Cloud Foundations & DevOps",
     desc: "Applied online learning with hands-on labs across leading cloud platforms.",
@@ -364,6 +371,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "PROF2410",
+    isPlaceholder: true,
     college: "CET",
     title: "Renewable Energy Operations",
     desc: "Immersive learning combining simulations and real-world site studies.",
@@ -378,6 +386,7 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "PROF1320",
+    isPlaceholder: true,
     college: "CPE",
     title: "Workplace Communication for Professionals",
     desc: "Build confident, applied communication skills for the modern workplace.",
