@@ -1,43 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useReducedMotion, animate } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroBanner from "@/assets/hero-banner.png";
 
-const CountUp = ({ to, suffix = "", duration = 1.6 }: { to: number; suffix?: string; duration?: number }) => {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
-  const reduce = useReducedMotion();
-  const [val, setVal] = useState(reduce ? to : 0);
-
-  useEffect(() => {
-    if (!inView || reduce) return;
-    const controls = animate(0, to, {
-      duration,
-      ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setVal(Math.round(v)),
-    });
-    return () => controls.stop();
-  }, [inView, to, duration, reduce]);
-
-  return (
-    <span ref={ref}>
-      {val}
-      {suffix}
-    </span>
-  );
-};
-
 export const Hero = () => {
   const { t } = useTranslation();
   const reduce = useReducedMotion();
 
-  const stats: { node: React.ReactNode; v: string }[] = [
-    { node: <CountUp to={6} />, v: t("hero.stats.colleges") },
-    { node: <CountUp to={60} suffix="+" />, v: t("hero.stats.coursesReady") },
-    { node: <>{t("hero.stats.appliedLabel")}</>, v: t("hero.stats.immersive") },
+  const stats: { value: string; label: string }[] = [
+    { value: t("hero.stats.onlineCoursesValue"), label: t("hero.stats.onlineCoursesLabel") },
+    { value: t("hero.stats.satisfactionValue"), label: t("hero.stats.satisfactionLabel") },
+    { value: t("hero.stats.workReadyValue"), label: t("hero.stats.workReadyLabel") },
+    { value: t("hero.stats.completionsValue"), label: t("hero.stats.completionsLabel") },
   ];
 
   return (
