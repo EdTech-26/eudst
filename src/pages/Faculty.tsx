@@ -4,21 +4,12 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { FacultyService } from "@/components/site/FacultyService";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Monitor, ScanSearch, Sparkles, Blocks } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import facultyImg from "@/assets/faculty.jpg";
-
-type SupportCard = {
-  title: string;
-  body: string;
-};
-
-const icons = [Monitor, ScanSearch, Sparkles, Blocks];
 
 const Faculty = () => {
   const { t } = useTranslation();
-  const supportCards = t("faculty.supportCards", { returnObjects: true }) as SupportCard[];
 
   useEffect(() => {
     document.title = t("faculty.pageTitle");
