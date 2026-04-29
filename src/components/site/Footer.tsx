@@ -53,7 +53,7 @@ export const Footer = () => {
           <div className="grid grid-cols-2 gap-8 lg:col-span-8 lg:grid-cols-3">
             {groups.map((g) => (
               <div key={g.titleKey}>
-                <h4 className="font-display text-sm font-semibold text-ink">{t(g.titleKey)}</h4>
+                <h4 className="font-display text-sm font-semibold text-ink whitespace-pre-line">{t(g.titleKey)}</h4>
                 <ul className="mt-4 space-y-2.5">
                   {g.links.map((l) => (
                     <li key={l.labelKey}>

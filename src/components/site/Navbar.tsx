@@ -59,7 +59,7 @@ export const Navbar = () => {
               <Link
                 key={l.to}
                 to={l.to}
-                className="text-sm font-medium text-muted-foreground transition-smooth hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-smooth hover:text-primary whitespace-pre-line"
               >
                 {t(l.key)}
               </Link>
@@ -67,7 +67,7 @@ export const Navbar = () => {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`text-sm font-medium transition-smooth hover:text-primary ${
+                className={`text-sm font-medium transition-smooth hover:text-primary whitespace-pre-line ${
                   active ? "text-primary" : "text-muted-foreground"
                 }`}
               >
