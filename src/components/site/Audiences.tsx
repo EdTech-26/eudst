@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, BookOpen, Users, Award, FileCheck } from "lucide-react";
+import { ArrowUpRight, BookOpen, Award, FileCheck } from "lucide-react";
 import femaleStudentNotes from "@/assets/female-student-notes.png";
 
 export const Audiences = () => {
@@ -62,10 +62,7 @@ export const Audiences = () => {
           }}
           className="group relative overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-soft transition-smooth hover:shadow-lift md:p-10 lg:col-span-2"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            <Users className="h-3.5 w-3.5" /> {t("audiences.cardBadge")}
-          </div>
-          <h3 className="mt-6 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+          <h3 className="mt-2 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
             {t("audiences.cardTitle")}
           </h3>
           <p className="mt-4 max-w-xl text-muted-foreground">
