@@ -255,7 +255,7 @@ export const sampleCourses: Course[] = [
       { label: "Module 4 · 9 hrs", topic: "Innovation, creativity and the entrepreneurial mindset" },
       { label: "Module 5 · 9 hrs", topic: "Applied entrepreneurship and project showcase" },
     ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f140944%2funits%2f3051145",
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/133782/units/3013381",
   },
   {
     code: "PGD-INIC-001",
