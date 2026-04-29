@@ -81,7 +81,7 @@ export const Hero = () => {
             hidden: {},
             show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
           }}
-          className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-6 border-t border-border pt-8"
+          className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-6 border-t border-border pt-8 md:grid-cols-4"
           dir="ltr"
         >
           {stats.map((s, i) => (
@@ -94,10 +94,10 @@ export const Hero = () => {
               className="text-center"
             >
               <dt className="font-display text-3xl font-semibold text-primary md:text-4xl">
-                {s.node}
+                {s.value}
               </dt>
               <dd className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
-                {s.v}
+                {s.label}
               </dd>
             </motion.div>
           ))}
