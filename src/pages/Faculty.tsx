@@ -82,40 +82,8 @@ const Faculty = () => {
           </div>
         </section>
 
-        <section className="container py-20 md:py-28">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-primary">{t("faculty.supportEyebrow")}</p>
-            <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl text-balance">
-              {t("faculty.supportTitle")}
-            </h2>
-            <p className="mt-5 text-base text-muted-foreground md:text-lg">
-              {t("faculty.supportIntro")}
-            </p>
-          </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {supportCards.map((card, index) => {
-              const Icon = icons[index];
-              return (
-                <motion.div
-                  key={card.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="rounded-xl border border-border bg-card p-8 shadow-soft"
-                >
-                  <span className="grid h-11 w-11 place-items-center rounded-lg bg-primary text-primary-foreground">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-5 font-display text-xl font-semibold text-ink">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{card.body}</p>
-                </motion.div>
-              );
-            })}
-          </div>
         </section>
 
-        <FacultyService />
 
         <section className="container py-20">
           <div className="rounded-xl border border-border bg-secondary/50 p-10 text-center md:p-16">
