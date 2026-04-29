@@ -1,6 +1,6 @@
 {
   "nav": {
-    "courses": "Online Courses",
+    "courses": "Online Course Catalog",
     "faculty": "Faculty Workspace\n",
     "howItWorks": "How it works",
     "faq": "FAQ",
@@ -92,14 +92,18 @@
   },
   "hero": {
     "titleLine1": "Applied online learning,",
-    "titleLine2": "built for the way you work.",
-    "body": "eUDST is the gateway to online and professional learning from the University of Doha for Science & Technology, making it easier to explore flexible courses, build new skills, and access opportunities.",
+    "titleLine2": "preparing you for the real world.",
+    "body": "eUDST is the gateway to online learning at the University of Doha for Science and Technology (UDST), offering flexible access to courses, programs, and certifications that build skills and advance careers.",
     "cta": "Explore the catalogue",
     "stats": {
-      "colleges": "Colleges",
-      "coursesReady": "Courses ready",
-      "immersive": "Immersive learning",
-      "appliedLabel": "Applied"
+      "onlineCoursesValue": "150+",
+      "onlineCoursesLabel": "Online Courses",
+      "satisfactionValue": "4.8/5",
+      "satisfactionLabel": "Student Satisfaction",
+      "workReadyValue": "100%",
+      "workReadyLabel": "Work Ready. World Ready.",
+      "completionsValue": "100,000+",
+      "completionsLabel": "Online Course Completions"
     }
   },
   "audiences": {
@@ -203,14 +207,6 @@
       {
         "q": "What is a microcredential?",
         "a": "A microcredential is a short, focused credential that proves a specific skill. They're designed to be stackable — combine several to build toward a larger qualification."
-      },
-      {
-        "q": "Are eUDST courses recognised by UDST?",
-        "a": "Yes. All academic and professional courses offered through eUDST are developed and accredited by the University of Doha for Science and Technology."
-      },
-      {
-        "q": "Which colleges offer courses through eUDST?",
-        "a": "Courses are available across all UDST colleges: CB, CCIT, CET, CGE, CHS and CPE."
       }
     ]
   },
@@ -274,9 +270,9 @@
     "pageTitle": "Faculty · eUDST",
     "metaDescription": "Support for UDST faculty to design stronger digital learning experiences through eUDST.",
     "heroBadge": "UDST Faculty",
-    "titleLine1": "Educational technology support",
-    "titleLine2": "for more engaging teaching.",
-    "body": "We provide innovative educational technology support to help faculty and departments create more effective learning experiences. From digital course design guidance to emerging tools and delivery support, eUDST helps turn ideas into stronger online and blended learning.",
+    "titleLine1": "Support for faculty,",
+    "titleLine2": "every step of the way.",
+    "body": "eUDST partners with UDST faculty to design, develop, and deliver stronger online courses. Sign in to access the support, guidance, and resources that help you bring your teaching to life online.",
     "primaryCta": "Faculty sign in",
     "secondaryCta": "Explore online courses",
     "supportEyebrow": "What we support",
