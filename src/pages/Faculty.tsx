@@ -82,9 +82,6 @@ const Faculty = () => {
           </div>
         </section>
 
-        </section>
-
-
         <section className="container py-20">
           <div className="rounded-xl border border-border bg-secondary/50 p-10 text-center md:p-16">
             <h2 className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl text-balance">
