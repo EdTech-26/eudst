@@ -1,6 +1,6 @@
 {
   "nav": {
-    "courses": "Online Course Catalog",
+    "courses": "Online Course Catalogue",
     "faculty": "Faculty Workspace\n",
     "howItWorks": "How it works",
     "faq": "FAQ",
@@ -14,7 +14,7 @@
   "auth": {
     "pageTitle": "Sign in · eUDST",
     "title": "Welcome to eUDST",
-    "subtitle": "Create an account or sign in to enroll in courses and track your learning.",
+    "subtitle": "Create an account or sign in to enrol in courses and track your learning.",
     "backHome": "Back to home",
     "continueWithGoogle": "Continue with Google",
     "or": "or",
@@ -93,7 +93,7 @@
   "hero": {
     "titleLine1": "Applied online learning,",
     "titleLine2": "preparing you for the real world.",
-    "body": "eUDST is the gateway to online learning at the University of Doha for Science and Technology (UDST), offering flexible access to courses, programs, and certifications that build skills and advance careers.",
+    "body": "eUDST is the gateway to online learning at the University of Doha for Science and Technology (UDST), offering flexible access to courses, programmes, and certifications that build skills and advance careers.",
     "cta": "Explore the catalogue",
     "stats": {
       "onlineCoursesValue": "150+",
@@ -108,7 +108,7 @@
   },
   "audiences": {
     "eyebrow": "For learners & professionals",
-    "title": "Skills that move careers forward — built around how you actually learn.",
+    "title": "Skills that move careers forward, built around how you actually learn.",
     "cardBadge": "External Learners",
     "cardTitle": "Applied, immersive online learning from UDST.",
     "cardBody": "Explore online academic and professional learning from the University of Doha for Science & Technology. Discover flexible courses, build in-demand skills, and take the next step with learning designed around real goals.",
@@ -194,11 +194,11 @@
     "items": [
       {
         "q": "Who can register on eUDST?",
-        "a": "Anyone — you don't need to be a UDST student. External learners and professionals can register for online academic and professional courses, and microcredentials."
+        "a": "Anyone. You don't need to be a UDST student. External learners and professionals can register for online academic and professional courses, and microcredentials."
       },
       {
         "q": "How do I access my course after enrolling?",
-        "a": "Once you complete payment, your course is unlocked from your eUDST dashboard. Launch any time from the same place — no extra logins, no extra setup."
+        "a": "Once you complete payment, your course is unlocked from your eUDST dashboard. Launch any time from the same place, with no extra logins or setup."
       },
       {
         "q": "What types of learning are available?",
@@ -206,17 +206,17 @@
       },
       {
         "q": "What is a microcredential?",
-        "a": "A microcredential is a short, focused credential that proves a specific skill. They're designed to be stackable — combine several to build toward a larger qualification."
+        "a": "A microcredential is a short, focused credential that proves a specific skill. They're designed to be stackable, so you can combine several to build towards a larger qualification."
       }
     ]
   },
   "cta": {
     "title": "Start your applied learning journey today.",
-    "body": "Discover immersive online courses and microcredentials from UDST — built for skills that matter.",
+    "body": "Discover immersive online courses and microcredentials from UDST, built for skills that matter.",
     "button": "Explore the catalogue"
   },
   "footer": {
-    "tagline": "eUDST is the University of Doha for Science & Technology eLearning Hub — applied, immersive online learning that builds skills and careers.",
+    "tagline": "eUDST is the University of Doha for Science & Technology eLearning Hub, offering applied, immersive online learning that builds skills and careers.",
     "groups": {
       "learners": "Learners",
       "faculty": "Faculty Workspace\n",
@@ -243,7 +243,7 @@
   "catalogue": {
     "eyebrow": "Course Catalogue",
     "title": "Explore applied, immersive online learning.",
-    "body": "Browse academic courses, professional learning and stackable microcredentials from the University of Doha for Science & Technology — designed for real-world outcomes.",
+    "body": "Browse academic courses, professional learning and stackable microcredentials from the University of Doha for Science & Technology, designed for real-world outcomes.",
     "collegeLabel": "College",
     "typeLabel": "Type",
     "all": "All",
@@ -262,7 +262,7 @@
     "courseCount_other": "courses",
     "empty": {
       "title": "No courses match these filters yet.",
-      "body": "Try a different combination — or request a custom course below.",
+      "body": "Try a different combination, or request a custom course below.",
       "reset": "Reset filters"
     }
   },
@@ -281,7 +281,7 @@
     "supportCards": [
       {
         "title": "Learning platform support",
-        "body": "We help faculty structure course spaces, organize learning materials, and improve the online learner experience through better setup, content flow, and delivery planning."
+        "body": "We help faculty structure course spaces, organise learning materials, and improve the online learner experience through better setup, content flow, and delivery planning."
       },
       {
         "title": "AR / VR exploration",
@@ -325,10 +325,10 @@
     "metaDescription": "Learn about the University of Doha for Science and Technology, its mission, vision and values.",
     "eyebrow": "About UDST",
     "title": "University of Doha for Science and Technology",
-    "intro": "University of Doha for Science and Technology was officially established by Emiri Decision No. 13 of 2022 as the first national university in the State of Qatar specializing in applied, technical, and professional education. UDST offers over 70 bachelor’s, master’s, and diploma programs and is known for student-centered learning, modern facilities, and industry-relevant outcomes.",
+    "intro": "University of Doha for Science and Technology was officially established by Emiri Decision No. 13 of 2022 as the first national university in the State of Qatar specialising in applied, technical, and professional education. UDST offers over 70 bachelor’s, master’s, and diploma programmes and is known for student-centred learning, modern facilities, and industry-relevant outcomes.",
     "stats": {
-      "programs": "Bachelor’s, master’s and diploma programs across applied and professional disciplines.",
-      "colleges": "Colleges, alongside specialized training centers for individuals and companies.",
+      "programs": "Bachelor’s, master’s and diploma programmes across applied and professional disciplines.",
+      "colleges": "Colleges, alongside specialised training centres for individuals and companies.",
       "legacy": "A legacy of preparing highly skilled graduates who serve Qatar’s workforce and national development goals."
     },
     "visionTitle": "Vision",

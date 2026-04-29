@@ -24,7 +24,7 @@ const Catalogue = () => {
 
   useEffect(() => {
     document.title = "Course Catalogue · eUDST";
-    const desc = "Explore the eUDST catalogue — applied, immersive online courses and microcredentials from the University of Doha for Science & Technology.";
+    const desc = "Explore the eUDST catalogue: applied, immersive online courses and microcredentials from the University of Doha for Science & Technology.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");

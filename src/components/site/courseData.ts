@@ -212,14 +212,14 @@ export const sampleCourses: Course[] = [
     audience:
       "This pathway is designed for NICU nurses and interprofessional healthcare team members seeking to advance their clinical expertise, leadership capability, and evidence-based practice across the full continuum of neonatal intensive care.",
     structure:
-      "The PGD INIC programme consists of four stackable Micro-Credentials, delivered through blended learning over 18 months.\n\nMC 1: Critical Competencies for Managing and Leading Change — supporting NICU nurses to enhance leadership and evidence-based decision-making.\n\nMC 2: Applied Therapeutics for Critically Ill Preterm Infants — deepening clinical expertise in care of preterm infants.\n\nMC 3: Applied Therapeutics for Critically Ill Term Infants — deepening clinical expertise in care of term infants.\n\nMC 4: Advanced Practices for the Critically Ill Infants — an immersive, hands-on clinical practicum integrating advanced clinical skills, real-time decision-making and collaborative interprofessional practice.",
+      "The PGD INIC programme consists of four stackable Micro-Credentials, delivered through blended learning over 18 months.\n\nMC 1: Critical Competencies for Managing and Leading Change, supporting NICU nurses to enhance leadership and evidence-based decision-making.\n\nMC 2: Applied Therapeutics for Critically Ill Preterm Infants, deepening clinical expertise in care of preterm infants.\n\nMC 3: Applied Therapeutics for Critically Ill Term Infants, deepening clinical expertise in care of term infants.\n\nMC 4: Advanced Practices for the Critically Ill Infants, an immersive, hands-on clinical practicum integrating advanced clinical skills, real-time decision-making and collaborative interprofessional practice.",
     howYouLearn:
       "You will learn through blended delivery combining online theory, applied case-based learning, and immersive clinical practicum within high-acuity neonatal environments. The programme emphasises interprofessional collaboration and real-time decision-making in complex NICU contexts.",
     syllabus: [
       { label: "MC 1", topic: "Critical Competencies for Managing and Leading Change" },
       { label: "MC 2", topic: "Applied Therapeutics for Critically Ill Preterm Infants" },
       { label: "MC 3", topic: "Applied Therapeutics for Critically Ill Term Infants" },
-      { label: "MC 4", topic: "Advanced Practices for the Critically Ill Infants — Clinical Practicum" },
+      { label: "MC 4", topic: "Advanced Practices for the Critically Ill Infants, Clinical Practicum" },
     ],
     launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f144413%2funits%2f3115857",
   },
@@ -263,7 +263,7 @@ export const sampleCourses: Course[] = [
     ],
     instructor: {
       name: "Dr. Layla Al-Mansoori",
-      title: "Senior Lecturer, Applied Analytics — CCIT",
+      title: "Senior Lecturer, Applied Analytics, CCIT",
       bio: "Layla leads applied analytics teaching at UDST and has spent over a decade helping organisations across Qatar turn operational data into measurable business outcomes.",
       initials: "LA",
     },
