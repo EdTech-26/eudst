@@ -7,6 +7,13 @@ import { CourseCard } from "@/components/site/CourseCard";
 import { Organisations } from "@/components/site/Organisations";
 import { sampleCourses } from "@/components/site/courseData";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const subjects = ["All", "Health", "Education", "Computing", "Business", "Engineering", "Communication"];
 const typeKeys: { value: string; key: string }[] = [
