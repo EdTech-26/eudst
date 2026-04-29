@@ -44,7 +44,7 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
       </h3>
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.desc}</p>
       <div className="mt-6 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-border pt-4 text-xs text-muted-foreground">
-        <span>{c.type}</span>
+        <span>{c.delivery}</span>
         <span className="inline-flex items-center gap-1">
           <Clock className="h-3 w-3" /> {c.duration}
         </span>
