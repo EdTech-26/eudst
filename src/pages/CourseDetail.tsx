@@ -256,7 +256,7 @@ const CourseDetail = () => {
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Delivery</dt>
-                  <dd className="font-medium text-ink">{course.type}</dd>
+                  <dd className="font-medium text-ink">Online</dd>
                 </div>
                 {course.startDate && course.startDate !== "Enrol anytime" && (
                   <div className="flex justify-between">
