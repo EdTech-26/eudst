@@ -138,15 +138,15 @@ export const sampleCourses: Course[] = [
       { label: "Module 5 · 4 hrs", topic: "Agile, hybrid, and traditional delivery approaches" },
     ],
   },
-  // Featured 4: Adaptive Leadership and Collaborative Practice
+  // Featured 4: Adaptive Leadership and Interprofessional Collaborative Practice
   {
     code: "ALICP-001",
     subject: "Health",
-    title: "Adaptive Leadership and Collaborative Practice",
+    title: "Adaptive Leadership and Interprofessional Collaborative Practice",
     desc: "Build leadership skills for interprofessional healthcare teams and support person-centred care in complex clinical settings.",
     type: "Professional",
     delivery: "Online",
-    duration: "25 hrs",
+    duration: "5 hrs",
     accent: accent.Health,
     bannerImage: bannerALICP,
     hasDetailPage: true,
@@ -155,13 +155,13 @@ export const sampleCourses: Course[] = [
     language: "en",
     startDate: "Enrol anytime",
     longDesc:
-      "Effective healthcare depends on strong collaboration, clear communication, and leadership that can respond to constant change. This fully online course introduces the principles of adaptive leadership and interprofessional collaborative practice, helping learners understand how to lead effectively within modern healthcare teams.\n\nThe course focuses on the competencies, tools, and techniques needed to mobilise, motivate, organise, and support interprofessional teams in delivering person-centred care. Learners will explore how leadership can be used to address both technical and adaptive challenges in clinical settings, while also examining the barriers that affect change at both personal and organisational level.\n\nOffered through eUDST, the University of Doha for Science & Technology's online learning platform, this course supports professionals who want to strengthen their leadership capability and contribute more effectively within collaborative healthcare environments.",
+      "This course aims to assist learners to learn the art of adaptive leadership for clinical leadership and practice within interprofessional teams to enhance person-centred health care.\n\nThere is a focus on interprofessional competencies and the principles, tools, and techniques of adaptive leadership to mobilise, motivate, organise, and focus interprofessional healthcare teams to navigate the complexities of change for effective health care.\n\nOffered through eUDST, the University of Doha for Science & Technology's online learning platform, this course supports professionals who want to strengthen their leadership capability and contribute more effectively within collaborative healthcare environments.",
     outcomes: [
-      "Compare key theories of leadership relevant to healthcare practice",
-      "Apply interprofessional competencies to support person-centred care",
-      "Analyse leadership approaches used to address technical and adaptive challenges",
-      "Identify personal and organisational barriers to change",
-      "Examine adaptive leadership and its relevance to interprofessional healthcare practice",
+      "Compare theories of leadership",
+      "Apply interprofessional competencies to support person-centred care in clinical practice",
+      "Analyse the practice of leadership for addressing technical and adaptive challenges",
+      "Analyse personal and organisational barriers to change",
+      "Examine adaptive leadership and its relevance to person-centred health care",
     ],
     audience:
       "This course is designed for healthcare professionals and practitioners who want to strengthen their leadership skills and work more effectively within interprofessional teams.",
@@ -170,12 +170,13 @@ export const sampleCourses: Course[] = [
     howYouLearn:
       "You will learn through interactive online modules, real-world healthcare scenarios, reflective activities, and practical examples. The course encourages active engagement with leadership concepts and helps you apply them to collaborative healthcare practice and person-centred care.",
     syllabus: [
-      { label: "Module 1 · 5 hrs", topic: "Foundational theories of leadership in healthcare" },
-      { label: "Module 2 · 5 hrs", topic: "Interprofessional competencies and person-centred care" },
-      { label: "Module 3 · 5 hrs", topic: "Technical and adaptive challenges in clinical settings" },
-      { label: "Module 4 · 5 hrs", topic: "Personal and organisational barriers to change" },
-      { label: "Module 5 · 5 hrs", topic: "Adaptive leadership in interprofessional practice" },
+      { label: "Module 1 · 1 hr", topic: "Foundational theories of leadership in healthcare" },
+      { label: "Module 2 · 1 hr", topic: "Interprofessional competencies and person-centred care" },
+      { label: "Module 3 · 1 hr", topic: "Technical and adaptive challenges in clinical settings" },
+      { label: "Module 4 · 1 hr", topic: "Personal and organisational barriers to change" },
+      { label: "Module 5 · 1 hr", topic: "Adaptive leadership in interprofessional practice" },
     ],
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/187827/lessons/3747206",
   },
   // Other detailed courses
   {
