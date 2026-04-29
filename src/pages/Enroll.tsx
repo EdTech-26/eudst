@@ -140,7 +140,7 @@ const Enroll = () => {
                 <div>
                   <p className="font-semibold text-ink">{course.title}</p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    {course.college} · {course.code}
+                    {course.subject} · {course.type}
                   </p>
                 </div>
                 <span className="font-display text-lg font-semibold text-ink">

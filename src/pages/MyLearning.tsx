@@ -91,9 +91,9 @@ const MyLearning = () => {
                   >
                     <div className="flex items-center justify-between">
                       <span className={`rounded-md px-2 py-0.5 text-[11px] font-semibold ${c.accent}`}>
-                        {c.college}
+                        {c.subject}
                       </span>
-                      <span className="font-mono text-[11px] text-muted-foreground">{c.code}</span>
+                      <span className="text-[11px] text-muted-foreground">{c.type}</span>
                     </div>
                     <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-ink">
                       {c.title}

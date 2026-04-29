@@ -74,10 +74,9 @@ const CourseDetail = () => {
             >
               <div className="flex items-center gap-3">
                 <span className={`rounded-md px-2 py-0.5 text-[11px] font-semibold ${course.accent}`}>
-                  {course.college}
+                  {course.subject}
                 </span>
-                <span className="font-mono text-xs text-muted-foreground">{course.code}</span>
-                <span className="text-xs text-muted-foreground">· {course.type}</span>
+                <span className="text-xs text-muted-foreground">{course.type}</span>
               </div>
               <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink md:text-5xl text-balance">
                 {course.title}
@@ -106,6 +105,26 @@ const CourseDetail = () => {
             </motion.div>
           </div>
         </section>
+
+        {course.bannerImage && (
+          <section className="container -mt-4 md:-mt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="overflow-hidden rounded-2xl border border-border shadow-soft"
+            >
+              <img
+                src={course.bannerImage}
+                alt={course.title}
+                width={1600}
+                height={640}
+                loading="lazy"
+                className="h-56 w-full object-cover md:h-80 lg:h-96"
+              />
+            </motion.div>
+          </section>
+        )}
 
         {/* Body */}
         <section className="container grid gap-12 py-16 lg:grid-cols-[1fr_360px]">
@@ -237,7 +256,7 @@ const CourseDetail = () => {
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Delivery</dt>
-                  <dd className="font-medium text-ink">{course.type}</dd>
+                  <dd className="font-medium text-ink">Online</dd>
                 </div>
                 {course.startDate && course.startDate !== "Enrol anytime" && (
                   <div className="flex justify-between">
