@@ -1,7 +1,7 @@
 {
   "nav": {
     "courses": "Online Courses",
-    "faculty": "Faculty",
+    "faculty": "Faculty Workspace\n",
     "howItWorks": "How it works",
     "faq": "FAQ",
     "signIn": "Sign in",
@@ -106,7 +106,7 @@
     "eyebrow": "For learners & professionals",
     "title": "Skills that move careers forward — built around how you actually learn.",
     "cardBadge": "External Learners",
-    "cardTitle": "Applied, immersive learning from UDST.",
+    "cardTitle": "Applied, immersive online learning from UDST.",
     "cardBody": "Explore online academic and professional learning from the University of Doha for Science & Technology. Discover flexible courses, build in-demand skills, and take the next step with learning designed around real goals.",
     "bullets": {
       "selfPaced": "Flexible self-paced courses",
@@ -223,7 +223,7 @@
     "tagline": "eUDST is the University of Doha for Science & Technology eLearning Hub — applied, immersive online learning that builds skills and careers.",
     "groups": {
       "learners": "Learners",
-      "faculty": "Faculty",
+      "faculty": "Faculty Workspace\n",
       "about": "About"
     },
     "links": {
