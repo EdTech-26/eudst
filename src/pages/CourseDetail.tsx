@@ -113,7 +113,7 @@ const CourseDetail = () => {
             {isPlaceholder && (
               <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-sm text-ink">
                 <span className="font-semibold text-primary">Placeholder content:</span>{" "}
-                Full course details, syllabus and instructor bio are being finalised. You can still enroll to reserve your seat.
+                Full course details, syllabus and instructor bio are being finalised. You can still enrol to reserve your seat.
               </div>
             )}
 
@@ -259,7 +259,7 @@ const CourseDetail = () => {
                 </Button>
               ) : course.price ? (
                 <Button variant="hero" className="mt-6 w-full" asChild>
-                  <Link to={`/enroll/${course.code}`}>Enroll now</Link>
+                  <Link to={`/enroll/${course.code}`}>Enrol now</Link>
                 </Button>
               ) : (
                 <Button variant="hero" className="mt-6 w-full" disabled>

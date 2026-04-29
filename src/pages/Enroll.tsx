@@ -21,7 +21,7 @@ const Enroll = () => {
   const [paying, setPaying] = useState(false);
 
   useEffect(() => {
-    document.title = course ? `Enroll · ${course.title}` : "Enroll · eUDST";
+    document.title = course ? `Enrol · ${course.title}` : "Enrol · eUDST";
   }, [course]);
 
   useEffect(() => {
@@ -91,7 +91,7 @@ const Enroll = () => {
                 <Lock className="h-3 w-3" /> Secure checkout
               </div>
               <h1 className="mt-3 font-display text-2xl font-semibold text-ink">
-                Complete your enrollment
+                Complete your enrolment
               </h1>
               <p className="mt-2 text-sm text-muted-foreground">
                 Signed in as <strong>{user.email}</strong>
@@ -122,12 +122,12 @@ const Enroll = () => {
                 </div>
                 <div className="rounded-md bg-secondary/60 p-3 text-xs text-muted-foreground">
                   <ShieldCheck className="me-1 inline h-3 w-3 text-primary" />
-                  This is a demo — no real payment is processed.
+                  This is a demo. No real payment is processed.
                 </div>
                 <Button type="submit" variant="hero" className="w-full" disabled={paying}>
                   {paying
                     ? "Processing…"
-                    : `Pay ${course.price?.toLocaleString()} ${course.currency} & enroll`}
+                    : `Pay ${course.price?.toLocaleString()} ${course.currency} & enrol`}
                 </Button>
               </form>
             </div>

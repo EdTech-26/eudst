@@ -76,7 +76,7 @@ const MyLearning = () => {
                   Nothing here yet
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Browse the catalogue and enroll in your first course.
+                  Browse the catalogue and enrol in your first course.
                 </p>
                 <Button variant="hero" className="mt-6" asChild>
                   <Link to="/courses">Browse catalogue</Link>
@@ -132,7 +132,7 @@ const MyLearning = () => {
           <DialogHeader>
             <DialogTitle>{opened?.title}</DialogTitle>
             <DialogDescription className="pt-3">
-              Your learning environment will open here in the live product — including lessons,
+              Your learning environment will open here in the live product, including lessons,
               applied exercises, and your progress dashboard.
             </DialogDescription>
           </DialogHeader>
