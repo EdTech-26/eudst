@@ -68,11 +68,13 @@ const Catalogue = () => {
     return match ? t(match.key) : value;
   };
 
-  const pillBase =
-    "rounded-full border px-3 py-1 text-xs font-medium transition-smooth";
-  const pillActive = "border-primary bg-primary text-primary-foreground";
-  const pillIdle =
-    "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-primary";
+  const hasActiveFilter = subject !== "All" || type !== "All" || delivery !== "All";
+
+  const resetFilters = () => {
+    setSubject("All");
+    setType("All");
+    setDelivery("All");
+  };
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -99,49 +101,72 @@ const Catalogue = () => {
         </section>
 
         {/* Filter bar */}
-        <section className="sticky top-[72px] z-30 border-y border-border bg-background/85 py-5 backdrop-blur">
-          <div className="container flex flex-col gap-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="w-20 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                {t("catalogue.subjectLabel")}
-              </span>
-              {subjects.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => setSubject(s)}
-                  className={`${pillBase} ${subject === s ? pillActive : pillIdle}`}
+        <section className="sticky top-[72px] z-30 border-y border-border bg-background/85 py-3 backdrop-blur">
+          <div className="container flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3 md:flex md:items-center">
+              <Select value={subject} onValueChange={setSubject}>
+                <SelectTrigger className="w-full md:w-[180px]">
+                  <SelectValue>
+                    <span className="text-muted-foreground">{t("catalogue.subjectLabel")}:</span>{" "}
+                    <span className="font-medium text-ink">{labelForSubject(subject)}</span>
+                  </SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {subjects.map((s) => (
+                    <SelectItem key={s} value={s}>
+                      {labelForSubject(s)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              <Select value={type} onValueChange={setType}>
+                <SelectTrigger className="w-full md:w-[200px]">
+                  <SelectValue>
+                    <span className="text-muted-foreground">{t("catalogue.typeLabel")}:</span>{" "}
+                    <span className="font-medium text-ink">{labelForType(type)}</span>
+                  </SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {typeKeys.map((tk) => (
+                    <SelectItem key={tk.value} value={tk.value}>
+                      {labelForType(tk.value)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              <Select value={delivery} onValueChange={setDelivery}>
+                <SelectTrigger className="w-full md:w-[180px]">
+                  <SelectValue>
+                    <span className="text-muted-foreground">{t("catalogue.deliveryLabel")}:</span>{" "}
+                    <span className="font-medium text-ink">{labelForDelivery(delivery)}</span>
+                  </SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {deliveryKeys.map((dk) => (
+                    <SelectItem key={dk.value} value={dk.value}>
+                      {labelForDelivery(dk.value)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {hasActiveFilter && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={resetFilters}
+                  className="text-muted-foreground hover:text-ink"
                 >
-                  {labelForSubject(s)}
-                </button>
-              ))}
+                  {t("catalogue.empty.reset")}
+                </Button>
+              )}
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="w-20 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                {t("catalogue.typeLabel")}
-              </span>
-              {typeKeys.map((tk) => (
-                <button
-                  key={tk.value}
-                  onClick={() => setType(tk.value)}
-                  className={`${pillBase} ${type === tk.value ? pillActive : pillIdle}`}
-                >
-                  {labelForType(tk.value)}
-                </button>
-              ))}
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="w-20 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                {t("catalogue.deliveryLabel")}
-              </span>
-              {deliveryKeys.map((dk) => (
-                <button
-                  key={dk.value}
-                  onClick={() => setDelivery(dk.value)}
-                  className={`${pillBase} ${delivery === dk.value ? pillActive : pillIdle}`}
-                >
-                  {labelForDelivery(dk.value)}
-                </button>
-              ))}
+
+            <div className="hidden text-sm text-muted-foreground md:block">
+              <span className="font-semibold text-ink">{filtered.length}</span>{" "}
+              {t("catalogue.courseCount", { count: filtered.length })}
             </div>
           </div>
         </section>
@@ -156,21 +181,13 @@ const Catalogue = () => {
               <p className="mt-2 text-sm text-muted-foreground">
                 {t("catalogue.empty.body")}
               </p>
-              <Button
-                variant="soft"
-                className="mt-6"
-                onClick={() => {
-                  setSubject("All");
-                  setType("All");
-                  setDelivery("All");
-                }}
-              >
+              <Button variant="soft" className="mt-6" onClick={resetFilters}>
                 {t("catalogue.empty.reset")}
               </Button>
             </div>
           ) : (
             <>
-              <div className="mb-8 text-sm text-muted-foreground">
+              <div className="mb-8 text-sm text-muted-foreground md:hidden">
                 {t("catalogue.showing")}{" "}
                 <span className="font-semibold text-ink">{filtered.length}</span>{" "}
                 {t("catalogue.courseCount", { count: filtered.length })}
