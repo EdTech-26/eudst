@@ -114,7 +114,7 @@
     "cardBody": "Explore online academic and professional learning from the University of Doha for Science & Technology. Discover flexible courses, build in-demand skills, and take the next step with learning designed around real goals.",
     "bullets": {
       "selfPaced": "Flexible self-paced courses",
-      "stackable": "Stackable microcredentials",
+      "stackable": "Stackable micro-credentials",
       "applied": "Applied, project-based learning",
       "immersive": "Immersive online experiences"
     },
@@ -167,7 +167,7 @@
     "steps": [
       {
         "title": "Discover",
-        "body": "Browse courses and microcredentials across UDST's focus areas and find the option that matches your goals, interests, and schedule."
+        "body": "Browse courses and micro-credentials across UDST's focus areas and find the option that matches your goals, interests, and schedule."
       },
       {
         "title": "Create your account",
@@ -194,7 +194,7 @@
     "items": [
       {
         "q": "Who can register on eUDST?",
-        "a": "Anyone. You don't need to be a UDST student. External learners and professionals can register for online academic and professional courses, and microcredentials."
+        "a": "Anyone. You don't need to be a UDST student. External learners and professionals can register for online academic and professional courses, and micro-credentials."
       },
       {
         "q": "How do I access my course after enrolling?",
@@ -202,17 +202,17 @@
       },
       {
         "q": "What types of learning are available?",
-        "a": "eUDST offers fully online, blended, and applied / immersive courses, plus stackable microcredentials designed around real-world skills and outcomes."
+        "a": "eUDST offers fully online, blended, and applied / immersive courses, plus stackable micro-credentials designed around real-world skills and outcomes."
       },
       {
-        "q": "What is a microcredential?",
-        "a": "A microcredential is a short, focused credential that proves a specific skill. They're designed to be stackable, so you can combine several to build towards a larger qualification."
+        "q": "What is a micro-credential?",
+        "a": "A micro-credential is a short, focused credential that proves a specific skill. They're designed to be stackable, so you can combine several to build towards a larger qualification."
       }
     ]
   },
   "cta": {
     "title": "Start your applied learning journey today.",
-    "body": "Discover immersive online courses and microcredentials from UDST, built for skills that matter.",
+    "body": "Discover immersive online courses and micro-credentials from UDST, built for skills that matter.",
     "button": "Explore the catalogue"
   },
   "footer": {
@@ -224,7 +224,7 @@
     },
     "links": {
       "browseCourses": "Browse courses",
-      "microcredentials": "Microcredentials",
+      "micro-credentials": "Micro-credentials",
       "howEnrolment": "How enrolment works",
       "faq": "FAQ",
       "facultyHome": "Faculty home",
@@ -251,7 +251,7 @@
     "types": {
       "academic": "Academic",
       "professional": "Professional",
-      "microcredential": "Micro-credential"
+      "micro-credential": "Micro-credential"
     },
     "delivery": {
       "online": "Online",

@@ -27,12 +27,12 @@ export const Organisations = () => {
             <p className="mt-4 max-w-lg text-primary-foreground/85">
               Request a customised course built around your organisation's goals. Our team
               partners with you to design applied, immersive learning experiences and
-              microcredentials tailored to the skills your people need most.
+              micro-credentials tailored to the skills your people need most.
             </p>
             <ul className="mt-6 grid gap-2 text-sm text-primary-foreground/80 sm:grid-cols-2">
               <li>· Custom curriculum & outcomes</li>
               <li>· Flexible self-paced delivery</li>
-              <li>· Industry-aligned microcredentials</li>
+              <li>· Industry-aligned micro-credentials</li>
               <li>· Dedicated learning design support</li>
             </ul>
           </div>

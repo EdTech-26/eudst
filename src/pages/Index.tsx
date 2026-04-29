@@ -11,7 +11,7 @@ import { Footer } from "@/components/site/Footer";
 const Index = () => {
   useEffect(() => {
     document.title = "eUDST · Applied Online Learning | University of Doha for Science & Technology";
-    const desc = "eUDST is UDST's eLearning Hub. Explore applied, immersive online courses and microcredentials designed around real-world skills.";
+    const desc = "eUDST is UDST's eLearning Hub. Explore applied, immersive online courses and micro-credentials designed around real-world skills.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
