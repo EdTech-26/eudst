@@ -74,10 +74,9 @@ const CourseDetail = () => {
             >
               <div className="flex items-center gap-3">
                 <span className={`rounded-md px-2 py-0.5 text-[11px] font-semibold ${course.accent}`}>
-                  {course.college}
+                  {course.subject}
                 </span>
-                <span className="font-mono text-xs text-muted-foreground">{course.code}</span>
-                <span className="text-xs text-muted-foreground">· {course.type}</span>
+                <span className="text-xs text-muted-foreground">{course.type}</span>
               </div>
               <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink md:text-5xl text-balance">
                 {course.title}
