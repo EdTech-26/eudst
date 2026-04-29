@@ -106,6 +106,26 @@ const CourseDetail = () => {
           </div>
         </section>
 
+        {course.bannerImage && (
+          <section className="container -mt-4 md:-mt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="overflow-hidden rounded-2xl border border-border shadow-soft"
+            >
+              <img
+                src={course.bannerImage}
+                alt={course.title}
+                width={1600}
+                height={640}
+                loading="lazy"
+                className="h-56 w-full object-cover md:h-80 lg:h-96"
+              />
+            </motion.div>
+          </section>
+        )}
+
         {/* Body */}
         <section className="container grid gap-12 py-16 lg:grid-cols-[1fr_360px]">
           <div className="space-y-12">
