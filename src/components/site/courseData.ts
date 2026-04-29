@@ -217,7 +217,7 @@ export const sampleCourses: Course[] = [
       { label: "Module 5 · 8 hrs", topic: "Counting techniques and discrete probability" },
       { label: "Module 6 · 9 hrs", topic: "Relations, graphs and trees" },
     ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f140924%2funits%2f3050780",
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/133782/units/3013381",
   },
   {
     code: "ELE-CGE-001",
