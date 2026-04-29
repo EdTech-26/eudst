@@ -294,7 +294,7 @@ export const sampleCourses: Course[] = [
       { label: "MC 3", topic: "Applied Therapeutics for Critically Ill Term Infants" },
       { label: "MC 4", topic: "Advanced Practices for the Critically Ill Infants, Clinical Practicum" },
     ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f144413%2funits%2f3115857",
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/144413/units/3115857",
   },
   // Placeholder catalogue entries
   {
