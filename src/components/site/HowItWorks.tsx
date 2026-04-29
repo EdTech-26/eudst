@@ -11,6 +11,25 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const xrExperiences = [
+  {
+    title: "Cleaver Brooks Boiler Unit",
+    src: "https://www.thinglink.com/view/scene/1951262043235418789",
+    aspect: 1080 / 1920,
+  },
+  {
+    title: "Sidra NICU Simulation Centre",
+    src: "https://www.thinglink.com/view/scene/1989329705412592293",
+    aspect: 1920 / 3840,
+  },
+];
 
 const stepIcons = [Search, UserPlus, CreditCard, Rocket];
 const immersiveIcons = [Layers, MonitorPlay, Briefcase, GraduationCap];
@@ -193,6 +212,39 @@ export const HowItWorks = () => {
                 );
               })}
             </motion.ul>
+          </div>
+
+          <div className="mt-10">
+            <p className="font-display text-lg font-semibold text-ink">
+              Sample our immersive learning experiences
+            </p>
+            <Accordion type="single" collapsible className="mt-4 space-y-3">
+              {xrExperiences.map((xr, i) => (
+                <AccordionItem
+                  key={xr.title}
+                  value={`xr-${i}`}
+                  className="overflow-hidden rounded-xl border border-border bg-card shadow-soft"
+                >
+                  <AccordionTrigger className="px-5 py-4 text-left font-display text-base font-medium text-ink hover:no-underline">
+                    {xr.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="px-5 pb-5">
+                    <div
+                      className="relative w-full overflow-hidden rounded-lg bg-muted"
+                      style={{ paddingTop: `${xr.aspect * 100}%` }}
+                    >
+                      <iframe
+                        src={xr.src}
+                        title={xr.title}
+                        className="absolute inset-0 h-full w-full border-0"
+                        allowFullScreen
+                        scrolling="no"
+                      />
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </motion.div>
 
