@@ -243,15 +243,20 @@
   "catalogue": {
     "eyebrow": "Course Catalogue",
     "title": "Explore applied, immersive online learning.",
-    "body": "Browse academic courses, professional learning and stackable microcredentials from the University of Doha for Science & Technology, designed for real-world outcomes.",
-    "collegeLabel": "College",
+    "body": "Browse academic courses, professional learning and stackable micro-credentials from the University of Doha for Science & Technology, designed for real-world outcomes.",
+    "subjectLabel": "Subject",
     "typeLabel": "Type",
+    "deliveryLabel": "Delivery",
     "all": "All",
     "types": {
-      "academicOnline": "Academic · Online",
-      "academicApplied": "Academic · Applied",
+      "academic": "Academic",
       "professional": "Professional",
-      "microcredential": "Microcredential"
+      "microcredential": "Micro-credential"
+    },
+    "delivery": {
+      "online": "Online",
+      "blended": "Blended",
+      "hyflex": "HyFlex"
     },
     "demoBanner": {
       "label": "Demo preview:",
