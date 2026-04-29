@@ -13,7 +13,7 @@ export const Logo = forwardRef<HTMLAnchorElement, LogoProps>(
         ref={ref}
         href="/"
         className={`inline-flex items-center justify-start ${className}`}
-        aria-label="eUDST — Applied Online Learning"
+        aria-label="eUDST, Applied Online Learning"
       >
         <img
           src={logoFull}
