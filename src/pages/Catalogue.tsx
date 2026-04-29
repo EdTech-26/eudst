@@ -8,23 +8,29 @@ import { Organisations } from "@/components/site/Organisations";
 import { sampleCourses } from "@/components/site/courseData";
 import { Button } from "@/components/ui/button";
 
-const collegeCodes = ["All", "CB", "CCIT", "CET", "CGE", "CHS", "CPE"];
+const subjects = ["All", "Health", "Education", "Computing", "Business", "Engineering", "Communication"];
 const typeKeys: { value: string; key: string }[] = [
   { value: "All", key: "catalogue.all" },
-  { value: "Academic · Online", key: "catalogue.types.academicOnline" },
-  { value: "Academic · Applied", key: "catalogue.types.academicApplied" },
+  { value: "Academic", key: "catalogue.types.academic" },
   { value: "Professional", key: "catalogue.types.professional" },
-  { value: "Microcredential", key: "catalogue.types.microcredential" },
+  { value: "Micro-credential", key: "catalogue.types.microcredential" },
+];
+const deliveryKeys: { value: string; key: string }[] = [
+  { value: "All", key: "catalogue.all" },
+  { value: "Online", key: "catalogue.delivery.online" },
+  { value: "Blended", key: "catalogue.delivery.blended" },
+  { value: "HyFlex", key: "catalogue.delivery.hyflex" },
 ];
 
 const Catalogue = () => {
   const { t } = useTranslation();
-  const [college, setCollege] = useState("All");
+  const [subject, setSubject] = useState("All");
   const [type, setType] = useState("All");
+  const [delivery, setDelivery] = useState("All");
 
   useEffect(() => {
     document.title = "Course Catalogue · eUDST";
-    const desc = "Explore the eUDST catalogue: applied, immersive online courses and microcredentials from the University of Doha for Science & Technology.";
+    const desc = "Explore the eUDST catalogue: applied, immersive online courses and micro-credentials from the University of Doha for Science & Technology.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
@@ -38,19 +44,28 @@ const Catalogue = () => {
     () =>
       sampleCourses.filter(
         (c) =>
-          (college === "All" || c.college === college) &&
-          (type === "All" || c.type === type)
+          (subject === "All" || c.subject === subject) &&
+          (type === "All" || c.type === type) &&
+          (delivery === "All" || c.delivery === delivery)
       ),
-    [college, type]
+    [subject, type, delivery]
   );
 
-  const labelForCollege = (code: string) =>
-    code === "All" ? t("catalogue.all") : code;
-
+  const labelForSubject = (s: string) => (s === "All" ? t("catalogue.all") : s);
   const labelForType = (value: string) => {
     const match = typeKeys.find((k) => k.value === value);
     return match ? t(match.key) : value;
   };
+  const labelForDelivery = (value: string) => {
+    const match = deliveryKeys.find((k) => k.value === value);
+    return match ? t(match.key) : value;
+  };
+
+  const pillBase =
+    "rounded-full border px-3 py-1 text-xs font-medium transition-smooth";
+  const pillActive = "border-primary bg-primary text-primary-foreground";
+  const pillIdle =
+    "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-primary";
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -78,40 +93,46 @@ const Catalogue = () => {
 
         {/* Filter bar */}
         <section className="sticky top-[72px] z-30 border-y border-border bg-background/85 py-5 backdrop-blur">
-          <div className="container flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div className="container flex flex-col gap-4">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                {t("catalogue.collegeLabel")}
+              <span className="w-20 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                {t("catalogue.subjectLabel")}
               </span>
-              {collegeCodes.map((c) => (
+              {subjects.map((s) => (
                 <button
-                  key={c}
-                  onClick={() => setCollege(c)}
-                  className={`rounded-full border px-3 py-1 text-xs font-medium transition-smooth ${
-                    college === c
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-primary"
-                  }`}
+                  key={s}
+                  onClick={() => setSubject(s)}
+                  className={`${pillBase} ${subject === s ? pillActive : pillIdle}`}
                 >
-                  {labelForCollege(c)}
+                  {labelForSubject(s)}
                 </button>
               ))}
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <span className="w-20 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 {t("catalogue.typeLabel")}
               </span>
               {typeKeys.map((tk) => (
                 <button
                   key={tk.value}
                   onClick={() => setType(tk.value)}
-                  className={`rounded-full border px-3 py-1 text-xs font-medium transition-smooth ${
-                    type === tk.value
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-primary"
-                  }`}
+                  className={`${pillBase} ${type === tk.value ? pillActive : pillIdle}`}
                 >
                   {labelForType(tk.value)}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="w-20 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                {t("catalogue.deliveryLabel")}
+              </span>
+              {deliveryKeys.map((dk) => (
+                <button
+                  key={dk.value}
+                  onClick={() => setDelivery(dk.value)}
+                  className={`${pillBase} ${delivery === dk.value ? pillActive : pillIdle}`}
+                >
+                  {labelForDelivery(dk.value)}
                 </button>
               ))}
             </div>
@@ -132,8 +153,9 @@ const Catalogue = () => {
                 variant="soft"
                 className="mt-6"
                 onClick={() => {
-                  setCollege("All");
+                  setSubject("All");
                   setType("All");
+                  setDelivery("All");
                 }}
               >
                 {t("catalogue.empty.reset")}
