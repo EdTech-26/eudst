@@ -57,7 +57,7 @@ export const sampleCourses: Course[] = [
       { label: "Module 4 · 1 hr", topic: "Artificial intelligence in teaching, learning and assessment" },
       { label: "Module 5 · 1 hr", topic: "Sustainable learning environments and long-term impact" },
     ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/login?sessionExpired=1&target=%2fd2l%2fle%2flessons%2f126712%2funits%2f2734196",
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/187819/units/3744272",
   },
   // Featured 2: Health Data Mastery
   {
