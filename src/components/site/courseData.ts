@@ -1,7 +1,7 @@
 import { Course } from "./CourseCard";
 import bannerTL21C from "@/assets/course-tl21c.jpg";
 import bannerHDPSG from "@/assets/course-hdpsg.png";
-import bannerALICP from "@/assets/course-alicp.jpg";
+import bannerALICP from "@/assets/course-alicp.png";
 import bannerPM from "@/assets/course-pm.jpg";
 import bannerDSC from "@/assets/course-dsc.jpg";
 import bannerELE from "@/assets/course-ele.jpg";
