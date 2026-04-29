@@ -20,7 +20,7 @@ const typeKeys: { value: string; key: string }[] = [
   { value: "All", key: "catalogue.all" },
   { value: "Academic", key: "catalogue.types.academic" },
   { value: "Professional", key: "catalogue.types.professional" },
-  { value: "Micro-credential", key: "catalogue.types.microcredential" },
+  { value: "Micro-credential", key: "catalogue.types.micro-credential" },
 ];
 const deliveryKeys: { value: string; key: string }[] = [
   { value: "All", key: "catalogue.all" },
