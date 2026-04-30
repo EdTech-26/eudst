@@ -22,12 +22,6 @@ const typeKeys: { value: string; key: string }[] = [
   { value: "Professional", key: "catalogue.types.professional" },
   { value: "Micro-credential", key: "catalogue.types.micro-credential" },
 ];
-const deliveryKeys: { value: string; key: string }[] = [
-  { value: "All", key: "catalogue.all" },
-  { value: "Online", key: "catalogue.delivery.online" },
-  { value: "Blended", key: "catalogue.delivery.blended" },
-  { value: "HyFlex", key: "catalogue.delivery.hyflex" },
-];
 
 const Catalogue = () => {
   const { t } = useTranslation();
