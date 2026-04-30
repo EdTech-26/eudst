@@ -27,8 +27,14 @@ export const FacultyService = () => {
             {t("faculty.workflowBody")}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button variant="hero" className="bg-accent text-accent-foreground shadow-elegant hover:bg-accent/90">
-              {t("faculty.workflowPrimary")} <ArrowUpRight className="ml-1 h-4 w-4" />
+            <Button asChild variant="hero" className="bg-accent text-accent-foreground shadow-elegant hover:bg-accent/90">
+              <a
+                href="https://forms.cloud.microsoft/Pages/DesignPageV2.aspx?prevorigin=shell&origin=NeoPortalPage&subpage=design&id=REsPs8ZGcECZl_h7ONR3HFPgEcgIJRlLtMrcFhCx8AVUM0VPVTJUUU1FOFhNQUpMVjNEQkwzTDJPMS4u"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("faculty.workflowPrimary")} <ArrowUpRight className="ml-1 h-4 w-4" />
+              </a>
             </Button>
             <Button
               variant="ghost"
