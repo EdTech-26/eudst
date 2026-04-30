@@ -22,18 +22,11 @@ const typeKeys: { value: string; key: string }[] = [
   { value: "Professional", key: "catalogue.types.professional" },
   { value: "Micro-credential", key: "catalogue.types.micro-credential" },
 ];
-const deliveryKeys: { value: string; key: string }[] = [
-  { value: "All", key: "catalogue.all" },
-  { value: "Online", key: "catalogue.delivery.online" },
-  { value: "Blended", key: "catalogue.delivery.blended" },
-  { value: "HyFlex", key: "catalogue.delivery.hyflex" },
-];
 
 const Catalogue = () => {
   const { t } = useTranslation();
   const [subject, setSubject] = useState("All");
   const [type, setType] = useState("All");
-  const [delivery, setDelivery] = useState("All");
 
   useEffect(() => {
     document.title = "Course Catalogue · eUDST";
@@ -52,10 +45,9 @@ const Catalogue = () => {
       sampleCourses.filter(
         (c) =>
           (subject === "All" || c.subject === subject) &&
-          (type === "All" || c.type === type) &&
-          (delivery === "All" || c.delivery === delivery)
+          (type === "All" || c.type === type)
       ),
-    [subject, type, delivery]
+    [subject, type]
   );
 
   const labelForSubject = (s: string) => (s === "All" ? t("catalogue.all") : s);
@@ -63,17 +55,12 @@ const Catalogue = () => {
     const match = typeKeys.find((k) => k.value === value);
     return match ? t(match.key) : value;
   };
-  const labelForDelivery = (value: string) => {
-    const match = deliveryKeys.find((k) => k.value === value);
-    return match ? t(match.key) : value;
-  };
 
-  const hasActiveFilter = subject !== "All" || type !== "All" || delivery !== "All";
+  const hasActiveFilter = subject !== "All" || type !== "All";
 
   const resetFilters = () => {
     setSubject("All");
     setType("All");
-    setDelivery("All");
   };
 
   return (
@@ -103,7 +90,7 @@ const Catalogue = () => {
         {/* Filter bar */}
         <section className="sticky top-[72px] z-30 border-y border-border bg-background/85 py-3 backdrop-blur">
           <div className="container flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3 md:flex md:items-center">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:flex md:items-center">
               <Select value={subject} onValueChange={setSubject}>
                 <SelectTrigger className="w-full md:w-[180px]">
                   <SelectValue>
@@ -131,22 +118,6 @@ const Catalogue = () => {
                   {typeKeys.map((tk) => (
                     <SelectItem key={tk.value} value={tk.value}>
                       {labelForType(tk.value)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Select value={delivery} onValueChange={setDelivery}>
-                <SelectTrigger className="w-full md:w-[180px]">
-                  <SelectValue>
-                    <span className="text-muted-foreground">{t("catalogue.deliveryLabel")}:</span>{" "}
-                    <span className="font-medium text-ink">{labelForDelivery(delivery)}</span>
-                  </SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  {deliveryKeys.map((dk) => (
-                    <SelectItem key={dk.value} value={dk.value}>
-                      {labelForDelivery(dk.value)}
                     </SelectItem>
                   ))}
                 </SelectContent>
