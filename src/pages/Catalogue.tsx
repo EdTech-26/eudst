@@ -27,7 +27,6 @@ const Catalogue = () => {
   const { t } = useTranslation();
   const [subject, setSubject] = useState("All");
   const [type, setType] = useState("All");
-  const [delivery, setDelivery] = useState("All");
 
   useEffect(() => {
     document.title = "Course Catalogue · eUDST";
@@ -46,10 +45,9 @@ const Catalogue = () => {
       sampleCourses.filter(
         (c) =>
           (subject === "All" || c.subject === subject) &&
-          (type === "All" || c.type === type) &&
-          (delivery === "All" || c.delivery === delivery)
+          (type === "All" || c.type === type)
       ),
-    [subject, type, delivery]
+    [subject, type]
   );
 
   const labelForSubject = (s: string) => (s === "All" ? t("catalogue.all") : s);
@@ -57,17 +55,12 @@ const Catalogue = () => {
     const match = typeKeys.find((k) => k.value === value);
     return match ? t(match.key) : value;
   };
-  const labelForDelivery = (value: string) => {
-    const match = deliveryKeys.find((k) => k.value === value);
-    return match ? t(match.key) : value;
-  };
 
-  const hasActiveFilter = subject !== "All" || type !== "All" || delivery !== "All";
+  const hasActiveFilter = subject !== "All" || type !== "All";
 
   const resetFilters = () => {
     setSubject("All");
     setType("All");
-    setDelivery("All");
   };
 
   return (
