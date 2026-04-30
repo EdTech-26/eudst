@@ -1,27 +1,24 @@
-## Goal
-Replace the three rows of filter pills (Subject, Type, Delivery) on the Course Catalogue page with a compact, single-row dropdown filter bar.
+## Update hero heading
 
-## Changes
+The hero `<h1>` is composed of two translation keys: `hero.titleLine1` (regular weight) and `hero.titleLine2` (italic, secondary display font). To preserve the existing visual treatment (a styled italic phrase), I'll split the new copy across both keys.
 
-**File: `src/pages/Catalogue.tsx`**
+### New text
+"Applied Online Learning for Professional Development"
 
-Replace the sticky filter section (the three pill rows) with a single horizontal row containing three Select dropdowns plus a "Reset" link when any filter is active.
+Split:
+- `titleLine1`: "Applied online learning"
+- `titleLine2`: "for professional development."
 
-Layout:
-```text
-[ Subject ▾ ]  [ Type ▾ ]  [ Delivery ▾ ]      Reset filters
-```
+(Sentence case per workspace style; the italic span keeps the elegant secondary phrase styling already in use.)
 
-- Use the existing shadcn `Select` component (`@/components/ui/select`) — already in the codebase.
-- Each dropdown uses a small label above or inline placeholder ("Subject", "Type", "Delivery").
-- Default value `"All"` shows as the placeholder/label so the trigger reads e.g. "Subject: All".
-- Triggers fixed width (~180px) on desktop, full width stacked on mobile (`grid grid-cols-1 sm:grid-cols-3` with a max-width container).
-- Keep the sticky positioning and backdrop blur, but reduce vertical padding (`py-3` instead of `py-5`) since it is now a single row.
-- Show the result count ("Showing X courses") inline on the right of the filter bar on desktop, instead of above the grid, to further reduce vertical space. Keep it above the grid on mobile.
-- A subtle "Reset" ghost button appears only when any filter ≠ "All".
+### Files to update
 
-No changes to filtering logic, course data, or i18n keys (existing `catalogue.subjectLabel`, `catalogue.typeLabel`, `catalogue.deliveryLabel`, `catalogue.all`, type/delivery keys are reused).
+1. `src/i18n/locales/en.json` → `hero.titleLine1` and `hero.titleLine2`
+2. `src/i18n/locales/ar.json` → matching Arabic translation:
+   - `titleLine1`: "التعلّم الإلكتروني التطبيقي"
+   - `titleLine2`: "للتطوير المهني."
 
-## Out of scope
-- No changes to course cards, course data, or other pages.
-- No new translation keys needed (reusing existing ones).
+No component changes needed — `Hero.tsx` already renders both keys with a space between them.
+
+### Note
+The hero body paragraph (`hero.body`) still references "online learning at UDST" and remains accurate, so no further copy edits are required.
