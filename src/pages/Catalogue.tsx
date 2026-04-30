@@ -123,22 +123,6 @@ const Catalogue = () => {
                 </SelectContent>
               </Select>
 
-              <Select value={delivery} onValueChange={setDelivery}>
-                <SelectTrigger className="w-full md:w-[180px]">
-                  <SelectValue>
-                    <span className="text-muted-foreground">{t("catalogue.deliveryLabel")}:</span>{" "}
-                    <span className="font-medium text-ink">{labelForDelivery(delivery)}</span>
-                  </SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  {deliveryKeys.map((dk) => (
-                    <SelectItem key={dk.value} value={dk.value}>
-                      {labelForDelivery(dk.value)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
               {hasActiveFilter && (
                 <Button
                   variant="ghost"
