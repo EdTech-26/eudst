@@ -90,7 +90,7 @@ const Catalogue = () => {
         {/* Filter bar */}
         <section className="sticky top-[72px] z-30 border-y border-border bg-background/85 py-3 backdrop-blur">
           <div className="container flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 sm:gap-3 md:flex md:items-center">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:flex md:items-center">
               <Select value={subject} onValueChange={setSubject}>
                 <SelectTrigger className="w-full md:w-[180px]">
                   <SelectValue>
