@@ -138,6 +138,46 @@ export const sampleCourses: Course[] = [
       { label: "Module 5 · 4 hrs", topic: "Agile, hybrid, and traditional delivery approaches" },
     ],
   },
+  // Project Management Essentials (General Education)
+  {
+    code: "PME-GE-001",
+    subject: "Professional Skills",
+    title: "Project Management Essentials",
+    desc: "Build practical project management skills you can apply at work, in study, and in everyday life, from planning through to successful completion.",
+    type: "Professional",
+    delivery: "Online",
+    duration: "5–6 hrs",
+    accent: accent.Business,
+    bannerImage: bannerPM,
+    hasDetailPage: true,
+    price: 450,
+    currency: "QAR",
+    language: "en",
+    startDate: "Enrol anytime",
+    longDesc:
+      "This course introduces learners to the essential concepts and practical skills of project management in everyday contexts. It explores how projects differ from routine activities and guides learners through the key stages of managing a project, from planning to completion.\n\nLearners will develop the ability to organise tasks, manage time and resources, solve problems, and achieve goals effectively. The course is designed to be accessible to all learners, regardless of their background, and highlights how project management skills can be applied in work, study, and personal life.",
+    outcomes: [
+      "Identify the key characteristics of a project and distinguish it from routine tasks",
+      "Apply basic project management steps to plan and complete a task or goal",
+      "Analyse common challenges in projects such as time, resources, and risks",
+      "Select appropriate tools and strategies to organise and manage tasks",
+      "Evaluate the success of a project and suggest ways to improve outcomes",
+    ],
+    audience:
+      "This course is designed for learners from any background who want to build practical project management skills they can apply in work, study, and personal life.",
+    structure:
+      "This fully online course is organised into focused units that introduce project management step by step, from understanding what makes a project to planning, managing, and reviewing it.\n\nEach unit combines clear explanations with relatable examples and practical activities, making the content accessible to learners with no prior experience.",
+    howYouLearn:
+      "You will learn through self-paced online modules, guided activities, and practical examples drawn from everyday work, study, and personal contexts. The course is fully online and can be completed flexibly at your own pace.",
+    syllabus: [
+      { label: "Module 1 · 1 hr", topic: "What is a project? Key characteristics and everyday examples" },
+      { label: "Module 2 · 1 hr", topic: "Planning a project: goals, tasks, and timelines" },
+      { label: "Module 3 · 1 hr", topic: "Managing time, resources, and risks" },
+      { label: "Module 4 · 1 hr", topic: "Tools and strategies to organise and track work" },
+      { label: "Module 5 · 1–2 hrs", topic: "Reviewing outcomes and improving future projects" },
+    ],
+    launchUrl: "https://d2l.udst.edu.qa/d2l/home/187828",
+  },
   // Featured 4: Adaptive Leadership and Interprofessional Collaborative Practice
   {
     code: "ALICP-001",
