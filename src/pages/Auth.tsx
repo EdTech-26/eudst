@@ -13,11 +13,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/lib/auth";
 import { ArrowLeft } from "lucide-react";
 
-const signUpSchema = z.object({
-  name: z.string().trim().min(1).max(80),
-  email: z.string().trim().email().max(255),
-  password: z.string().min(6).max(100),
-});
+const signUpSchema = z
+  .object({
+    name: z.string().trim().min(1).max(80),
+    email: z.string().trim().email().max(255),
+    password: z.string().min(6).max(100),
+    confirmPassword: z.string().min(1).max(100),
+  })
+  .refine((d) => d.password === d.confirmPassword, {
+    path: ["confirmPassword"],
+    message: "passwordMismatch",
+  });
 const signInSchema = z.object({
   email: z.string().trim().email().max(255),
   password: z.string().min(1).max(100),
@@ -59,9 +65,15 @@ const Auth = () => {
       name: fd.get("name"),
       email: fd.get("email"),
       password: fd.get("password"),
+      confirmPassword: fd.get("confirmPassword"),
     });
     if (!parsed.success) {
-      setError(t(`auth.errors.${parsed.error.issues[0].path[0]}`, t("auth.errors.invalid")));
+      const issue = parsed.error.issues[0];
+      if (issue.message === "passwordMismatch") {
+        setError(t("auth.errors.passwordMismatch", "Passwords do not match"));
+      } else {
+        setError(t(`auth.errors.${issue.path[0]}`, t("auth.errors.invalid")));
+      }
       return;
     }
     setSubmitting(true);
@@ -137,21 +149,6 @@ const Auth = () => {
             </h1>
             <p className="mt-2 text-sm text-muted-foreground">{t("auth.subtitle")}</p>
 
-            <Button
-              type="button"
-              variant="outline"
-              className="mt-6 w-full"
-              onClick={handleGoogle}
-            >
-              <GoogleIcon />
-              <span className="ms-2">{t("auth.continueWithGoogle")}</span>
-            </Button>
-
-            <div className="my-5 flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
-              <span className="h-px flex-1 bg-border" />
-              {t("auth.or")}
-              <span className="h-px flex-1 bg-border" />
-            </div>
 
             <Tabs defaultValue={initialTab}>
               <TabsList className="grid w-full grid-cols-2">
@@ -179,6 +176,17 @@ const Auth = () => {
                       placeholder={t("auth.fields.passwordHint")}
                     />
                   </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="confirmPassword">
+                      {t("auth.fields.confirmPassword", "Confirm password")}
+                    </Label>
+                    <Input
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      type="password"
+                      autoComplete="new-password"
+                    />
+                  </div>
                   {error && <p className="text-sm text-destructive">{error}</p>}
                   <Button type="submit" variant="hero" className="w-full" disabled={submitting}>
                     {submitting ? t("auth.creating") : t("auth.createAccount")}
@@ -186,7 +194,23 @@ const Auth = () => {
                 </form>
               </TabsContent>
 
-              <TabsContent value="signin" className="mt-6">
+              <TabsContent value="signin" className="mt-6 space-y-5">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full"
+                  onClick={handleGoogle}
+                >
+                  <GoogleIcon />
+                  <span className="ms-2">{t("auth.continueWithGoogle")}</span>
+                </Button>
+
+                <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
+                  <span className="h-px flex-1 bg-border" />
+                  {t("auth.or")}
+                  <span className="h-px flex-1 bg-border" />
+                </div>
+
                 <form onSubmit={handleSignIn} className="space-y-4">
                   <div className="space-y-1.5">
                     <Label htmlFor="si-email">{t("auth.fields.email")}</Label>
