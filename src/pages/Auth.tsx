@@ -149,21 +149,6 @@ const Auth = () => {
             </h1>
             <p className="mt-2 text-sm text-muted-foreground">{t("auth.subtitle")}</p>
 
-            <Button
-              type="button"
-              variant="outline"
-              className="mt-6 w-full"
-              onClick={handleGoogle}
-            >
-              <GoogleIcon />
-              <span className="ms-2">{t("auth.continueWithGoogle")}</span>
-            </Button>
-
-            <div className="my-5 flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
-              <span className="h-px flex-1 bg-border" />
-              {t("auth.or")}
-              <span className="h-px flex-1 bg-border" />
-            </div>
 
             <Tabs defaultValue={initialTab}>
               <TabsList className="grid w-full grid-cols-2">
