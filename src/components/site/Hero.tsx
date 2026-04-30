@@ -41,9 +41,7 @@ export const Hero = () => {
                   className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary-foreground text-balance md:text-5xl lg:text-6xl rtl:leading-[1.5] rtl:tracking-normal"
                 >
                   {t("hero.titleLine1")}{" "}
-                  <span className="font-secondary-title font-normal italic">
-                    {t("hero.titleLine2")}
-                  </span>
+                  <span>{t("hero.titleLine2")}</span>
                 </motion.h1>
 
                 <motion.p
