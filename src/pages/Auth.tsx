@@ -176,6 +176,17 @@ const Auth = () => {
                       placeholder={t("auth.fields.passwordHint")}
                     />
                   </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="confirmPassword">
+                      {t("auth.fields.confirmPassword", "Confirm password")}
+                    </Label>
+                    <Input
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      type="password"
+                      autoComplete="new-password"
+                    />
+                  </div>
                   {error && <p className="text-sm text-destructive">{error}</p>}
                   <Button type="submit" variant="hero" className="w-full" disabled={submitting}>
                     {submitting ? t("auth.creating") : t("auth.createAccount")}
