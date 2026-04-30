@@ -194,7 +194,23 @@ const Auth = () => {
                 </form>
               </TabsContent>
 
-              <TabsContent value="signin" className="mt-6">
+              <TabsContent value="signin" className="mt-6 space-y-5">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full"
+                  onClick={handleGoogle}
+                >
+                  <GoogleIcon />
+                  <span className="ms-2">{t("auth.continueWithGoogle")}</span>
+                </Button>
+
+                <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
+                  <span className="h-px flex-1 bg-border" />
+                  {t("auth.or")}
+                  <span className="h-px flex-1 bg-border" />
+                </div>
+
                 <form onSubmit={handleSignIn} className="space-y-4">
                   <div className="space-y-1.5">
                     <Label htmlFor="si-email">{t("auth.fields.email")}</Label>
