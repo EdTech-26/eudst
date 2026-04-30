@@ -337,4 +337,128 @@ export const sampleCourses: Course[] = [
     ],
     launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/144413/units/3115857",
   },
+
+  // ───────────────────────────────────────────────
+  // Upcoming courses (coming soon)
+  // ───────────────────────────────────────────────
+
+  // College of Business
+  {
+    code: "ECON-2010",
+    subject: "Business",
+    title: "Business Economics",
+    desc: "Core economic principles applied to real business decisions, with instructor Jaywant Michael.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Business,
+    isPlaceholder: true,
+  },
+  {
+    code: "MGMT-3035",
+    subject: "Business",
+    title: "Business Ethics",
+    desc: "Explore ethical decision-making in modern organisations, with instructor David Booker.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Business,
+    isPlaceholder: true,
+  },
+
+  // College of Health Sciences
+  {
+    code: "HSOH-2050",
+    subject: "Health",
+    title: "Epidemiology",
+    desc: "Foundations of epidemiology and population health, with Dr Musa Harona Moda.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Health,
+    isPlaceholder: true,
+  },
+  {
+    code: "NURS-4104",
+    subject: "Health",
+    title: "Adaptive Leadership and Clinical Management",
+    desc: "Develop adaptive leadership and clinical management skills, with Dr Ayat.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Health,
+    isPlaceholder: true,
+  },
+
+  // College of Computing and IT
+  {
+    code: "DSAI-3203",
+    subject: "Computing",
+    title: "Fundamentals of AI",
+    desc: "An introduction to the core concepts and techniques of artificial intelligence, with Dr Bekir.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Computing,
+    isPlaceholder: true,
+  },
+  {
+    code: "DACS-2201",
+    subject: "Computing",
+    title: "Introduction to Cybersecurity",
+    desc: "Build foundational knowledge of cybersecurity principles and practice, with Dr Abdullatif.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Computing,
+    isPlaceholder: true,
+  },
+
+  // College of Engineering
+  {
+    code: "AEMA-4100",
+    subject: "Engineering",
+    title: "Project Management and Leadership",
+    desc: "Project management and leadership for engineering contexts, with Luay Hussein.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Engineering,
+    isPlaceholder: true,
+  },
+  {
+    code: "AEEP-4100",
+    subject: "Engineering",
+    title: "Project Management",
+    desc: "Project management foundations for engineering professionals, with Dr Ahmad Awad.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Engineering,
+    isPlaceholder: true,
+  },
+
+  // College of General Education
+  {
+    code: "SCIE-1002",
+    subject: "Education",
+    title: "General Science",
+    desc: "An accessible introduction to general science, with instructor Majid Ibraheem.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Education,
+    isPlaceholder: true,
+  },
+  {
+    code: "GARC-2002",
+    subject: "Communication",
+    title: "Arabic Language and Communication",
+    desc: "Strengthen Arabic language and communication skills, with instructor Mariam Alisi.",
+    type: "Academic",
+    delivery: "Blended",
+    duration: "Coming soon",
+    accent: accent.Communication,
+    isPlaceholder: true,
+  },
 ];
