@@ -13,11 +13,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/lib/auth";
 import { ArrowLeft } from "lucide-react";
 
-const signUpSchema = z.object({
-  name: z.string().trim().min(1).max(80),
-  email: z.string().trim().email().max(255),
-  password: z.string().min(6).max(100),
-});
+const signUpSchema = z
+  .object({
+    name: z.string().trim().min(1).max(80),
+    email: z.string().trim().email().max(255),
+    password: z.string().min(6).max(100),
+    confirmPassword: z.string().min(1).max(100),
+  })
+  .refine((d) => d.password === d.confirmPassword, {
+    path: ["confirmPassword"],
+    message: "passwordMismatch",
+  });
 const signInSchema = z.object({
   email: z.string().trim().email().max(255),
   password: z.string().min(1).max(100),
