@@ -42,11 +42,14 @@ const Catalogue = () => {
 
   const filtered = useMemo(
     () =>
-      sampleCourses.filter(
-        (c) =>
-          (subject === "All" || c.subject === subject) &&
-          (type === "All" || c.type === type)
-      ),
+      sampleCourses
+        .filter(
+          (c) =>
+            (subject === "All" || c.subject === subject) &&
+            (type === "All" || c.type === type)
+        )
+        .slice()
+        .sort((a, b) => Number(!!a.isPlaceholder) - Number(!!b.isPlaceholder)),
     [subject, type]
   );
 
