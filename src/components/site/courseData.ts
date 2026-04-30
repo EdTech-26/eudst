@@ -98,46 +98,6 @@ export const sampleCourses: Course[] = [
     ],
     launchUrl: "https://d2l.udst.edu.qa/d2l/home/187826",
   },
-  // Featured 3: Project Management Essentials
-  {
-    code: "PMES-001",
-    subject: "Business",
-    title: "Project Management Essentials",
-    desc: "Build practical project management skills covering planning, execution, stakeholder communication, and delivery in any professional setting.",
-    type: "Professional",
-    delivery: "Online",
-    duration: "20 hrs",
-    accent: accent.Business,
-    bannerImage: bannerPM,
-    hasDetailPage: true,
-    price: 850,
-    currency: "QAR",
-    language: "en",
-    startDate: "Enrol anytime",
-    longDesc:
-      "Strong project management is one of the most transferable, in-demand skills across every industry. Whether you are leading a small team, supporting a larger initiative, or stepping into your first project role, the ability to plan, communicate, and deliver work with confidence is essential.\n\nThis fully online course introduces the core principles, tools, and techniques of effective project management. Learners explore how to scope work, manage timelines and resources, engage stakeholders, and respond to risk, all through a practical, applied lens.\n\nDesigned for professionals at any stage of their career, the course offers a clear, structured introduction to the project management discipline, with the flexibility to study entirely online at your own pace.",
-    outcomes: [
-      "Define project scope, objectives, and success criteria with clarity",
-      "Plan timelines, resources, and dependencies using practical project tools",
-      "Manage stakeholder communication and expectations throughout a project lifecycle",
-      "Identify, assess, and respond to project risks and changes",
-      "Apply agile and traditional approaches to suit different types of work",
-      "Lead project delivery with confidence and accountability",
-    ],
-    audience:
-      "This course is designed for professionals, team leads, and aspiring project managers who want to build practical project management skills they can apply immediately in their roles.",
-    structure:
-      "This fully online course is organised into focused modules that introduce the project management lifecycle step by step, from initiation and planning through to delivery, monitoring, and closure.\n\nEach module combines core theory with practical, workplace-ready examples, helping learners apply concepts to the real projects they manage day to day.",
-    howYouLearn:
-      "You will learn through self-paced online modules, guided activities, applied case studies, and practical templates you can take into your work. The course is designed for flexible online study and can be completed entirely at your own pace.",
-    syllabus: [
-      { label: "Module 1 · 4 hrs", topic: "Project management foundations and the project lifecycle" },
-      { label: "Module 2 · 4 hrs", topic: "Scoping, planning, and resource management" },
-      { label: "Module 3 · 4 hrs", topic: "Stakeholder engagement and communication" },
-      { label: "Module 4 · 4 hrs", topic: "Risk, change, and quality management" },
-      { label: "Module 5 · 4 hrs", topic: "Agile, hybrid, and traditional delivery approaches" },
-    ],
-  },
   // Project Management Essentials (General Education)
   {
     code: "PME-GE-001",
