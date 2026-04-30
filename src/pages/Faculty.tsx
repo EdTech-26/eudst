@@ -66,16 +66,6 @@ const Faculty = () => {
                   <Button variant="hero" size="xl" asChild>
                     <Link to="/faculty/auth">{t("faculty.primaryCta")}</Link>
                   </Button>
-                  <Button
-                    variant="ghost"
-                    size="xl"
-                    asChild
-                    className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                  >
-                    <Link to="/courses">
-                      {t("faculty.secondaryCta")} <ArrowUpRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </Button>
                 </motion.div>
               </div>
             </div>
