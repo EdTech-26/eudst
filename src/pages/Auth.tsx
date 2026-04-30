@@ -65,9 +65,15 @@ const Auth = () => {
       name: fd.get("name"),
       email: fd.get("email"),
       password: fd.get("password"),
+      confirmPassword: fd.get("confirmPassword"),
     });
     if (!parsed.success) {
-      setError(t(`auth.errors.${parsed.error.issues[0].path[0]}`, t("auth.errors.invalid")));
+      const issue = parsed.error.issues[0];
+      if (issue.message === "passwordMismatch") {
+        setError(t("auth.errors.passwordMismatch", "Passwords do not match"));
+      } else {
+        setError(t(`auth.errors.${issue.path[0]}`, t("auth.errors.invalid")));
+      }
       return;
     }
     setSubmitting(true);
