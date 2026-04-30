@@ -452,13 +452,15 @@ export const sampleCourses: Course[] = [
   },
   {
     code: "GARC-2002",
-    subject: "Communication",
-    title: "Arabic Language and Communication",
-    desc: "Strengthen Arabic language and communication skills, with instructor Mariam Alisi.",
+    subject: "General Education",
+    title: "Globalisation and the Environment",
+    desc: "Explore the complex links between globalisation and the environment through ecological, social, political, cultural, and economic perspectives, with instructor Mariam Alisi.",
     type: "Academic",
     delivery: "Blended",
     duration: "Coming soon",
-    accent: accent.Communication,
+    accent: accent.Education,
     isPlaceholder: true,
+    longDesc:
+      "It is important that students understand the intricate nexus between globalisation and the environment as many of our contemporary challenges relate to issues stemming from this complex relationship.\n\nThis interdisciplinary course examines multiple perspectives on ecological, social, political, cultural, and economic drivers. Students perform a multi-level analysis of diverse topics such as international cooperation, the global economy, and science and technology in the context of Qatar.\n\nStudents are expected to plan and execute a small project related to one of the primary case studies that will be explored throughout the semester.",
   },
 ];
