@@ -63,9 +63,11 @@ const Faculty = () => {
                   transition={{ duration: 0.7, delay: 0.25 }}
                   className="mt-8 flex flex-wrap gap-3"
                 >
-                  <Button variant="hero" size="xl" asChild>
-                    <Link to="/faculty/auth">{t("faculty.primaryCta")}</Link>
-                  </Button>
+                  {false && (
+                    <Button variant="hero" size="xl" asChild>
+                      <Link to="/faculty/auth">{t("faculty.primaryCta")}</Link>
+                    </Button>
+                  )}
                 </motion.div>
               </div>
             </div>
@@ -81,9 +83,11 @@ const Faculty = () => {
               {t("faculty.ctaBody")}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/faculty/auth">{t("faculty.ctaPrimary")}</Link>
-              </Button>
+              {false && (
+                <Button variant="hero" size="xl" asChild>
+                  <Link to="/faculty/auth">{t("faculty.ctaPrimary")}</Link>
+                </Button>
+              )}
               <Button variant="soft" size="xl" asChild>
                 <Link to="/courses">{t("faculty.ctaSecondary")}</Link>
               </Button>
