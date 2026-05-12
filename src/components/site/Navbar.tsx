@@ -20,7 +20,6 @@ type NavLinkItem = { to: string; key: string; hash?: boolean };
 
 const links: NavLinkItem[] = [
   { to: "/courses", key: "nav.courses" },
-  { to: "/faculty", key: "nav.faculty" },
   { to: "/#how", key: "nav.howItWorks", hash: true },
   { to: "/#faq", key: "nav.faq", hash: true },
 ];
