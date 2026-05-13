@@ -336,7 +336,13 @@ const CourseDetail = () => {
                 )}
               </dl>
 
-              {course.academicOnly ? (
+              {course.isMicroCredential && course.subCourseCodes ? (
+                <>
+                  <div className="mt-6 rounded-lg border border-border bg-secondary/40 p-4 text-xs text-muted-foreground">
+                    Each of the {course.subCourseCodes.length} courses in this Micro-credential is available individually. Browse the list below to enrol in the courses that suit you.
+                  </div>
+                </>
+              ) : course.academicOnly ? (
                 <>
                   <div className="mt-6 rounded-lg border border-border bg-secondary/40 p-4 text-sm">
                     <p className="font-semibold text-ink">Register your interest</p>
