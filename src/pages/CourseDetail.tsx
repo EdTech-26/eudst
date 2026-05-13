@@ -224,7 +224,19 @@ const CourseDetail = () => {
           {/* Sticky pricing card */}
           <aside>
             <div className="sticky top-24 rounded-2xl border border-border bg-card p-6 shadow-elegant">
-              {course.price ? (
+              {course.academicOnly ? (
+                <>
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                    UDST academics only
+                  </span>
+                  <div className="mt-3 font-display text-2xl font-bold text-ink">
+                    No fee
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    This course is offered to University of Doha for Science & Technology academic staff and students. There is no cost to enrol.
+                  </p>
+                </>
+              ) : course.price ? (
                 <>
                   <div className="flex items-baseline gap-1">
                     <span className="font-display text-3xl font-bold text-ink">
@@ -256,7 +268,7 @@ const CourseDetail = () => {
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-muted-foreground">Delivery</dt>
-                  <dd className="font-medium text-ink">Online</dd>
+                  <dd className="font-medium text-ink">{course.delivery}</dd>
                 </div>
                 {course.startDate && course.startDate !== "Enrol anytime" && (
                   <div className="flex justify-between">
@@ -272,22 +284,61 @@ const CourseDetail = () => {
                 )}
               </dl>
 
-              {enrolled ? (
-                <Button variant="hero" className="mt-6 w-full" asChild>
-                  <Link to="/my-learning">Go to My Learning</Link>
-                </Button>
+              {course.academicOnly ? (
+                <>
+                  <div className="mt-6 rounded-lg border border-border bg-secondary/40 p-4 text-sm">
+                    <p className="font-semibold text-ink">Register your interest</p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      Contact the eUDST team to confirm eligibility and receive enrolment instructions for this academic course.
+                    </p>
+                    <dl className="mt-3 space-y-1.5 text-xs">
+                      <div>
+                        <dt className="text-muted-foreground">Email</dt>
+                        <dd className="font-medium text-ink">eudst@udst.edu.qa</dd>
+                      </div>
+                      <div>
+                        <dt className="text-muted-foreground">Phone</dt>
+                        <dd className="font-medium text-ink">+974 4495 2222</dd>
+                      </div>
+                    </dl>
+                  </div>
+                  <Button variant="hero" className="mt-4 w-full" asChild>
+                    <a href="mailto:eudst@udst.edu.qa?subject=Academic course registration">
+                      Email to register
+                    </a>
+                  </Button>
+                  <p className="mt-3 text-center text-[11px] text-muted-foreground">
+                    Open to UDST academic staff and students only
+                  </p>
+                </>
+              ) : enrolled ? (
+                <>
+                  <Button variant="hero" className="mt-6 w-full" asChild>
+                    <Link to="/my-learning">Go to My Learning</Link>
+                  </Button>
+                  <p className="mt-3 text-center text-[11px] text-muted-foreground">
+                    Secure checkout · Cancel anytime before start
+                  </p>
+                </>
               ) : course.price ? (
-                <Button variant="hero" className="mt-6 w-full" asChild>
-                  <Link to={`/enroll/${course.code}`}>Enrol now</Link>
-                </Button>
+                <>
+                  <Button variant="hero" className="mt-6 w-full" asChild>
+                    <Link to={`/enroll/${course.code}`}>Enrol now</Link>
+                  </Button>
+                  <p className="mt-3 text-center text-[11px] text-muted-foreground">
+                    Secure checkout · Cancel anytime before start
+                  </p>
+                </>
               ) : (
-                <Button variant="hero" className="mt-6 w-full" disabled>
-                  Enrolment opening soon
-                </Button>
+                <>
+                  <Button variant="hero" className="mt-6 w-full" disabled>
+                    Enrolment opening soon
+                  </Button>
+                  <p className="mt-3 text-center text-[11px] text-muted-foreground">
+                    Register interest with our team for first access
+                  </p>
+                </>
               )}
-              <p className="mt-3 text-center text-[11px] text-muted-foreground">
-                {course.price ? "Secure checkout · Cancel anytime before start" : "Register interest with our team for first access"}
-              </p>
             </div>
           </aside>
         </section>

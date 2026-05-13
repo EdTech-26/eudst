@@ -49,7 +49,10 @@ const Catalogue = () => {
             (type === "All" || c.type === type)
         )
         .slice()
-        .sort((a, b) => Number(!!a.isPlaceholder) - Number(!!b.isPlaceholder)),
+        .sort((a, b) => {
+          const rank = (c: typeof a) => (c.academicOnly ? 2 : c.isPlaceholder ? 1 : 0);
+          return rank(a) - rank(b);
+        }),
     [subject, type]
   );
 

@@ -27,6 +27,7 @@ export type Course = {
   syllabus?: { label: string; topic: string }[];
   instructor?: { name: string; title: string; bio: string; initials: string };
   launchUrl?: string;
+  academicOnly?: boolean;
 };
 
 export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
@@ -39,6 +40,11 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
         </span>
         <span className="text-[11px] text-muted-foreground">{c.type}</span>
       </div>
+      {c.academicOnly && (
+        <span className="mt-3 inline-flex w-fit items-center rounded-full border border-primary/30 bg-primary/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+          UDST academics only
+        </span>
+      )}
       <h3 className="mt-5 font-display text-xl font-semibold leading-snug text-ink">
         {c.title}
       </h3>
