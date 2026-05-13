@@ -261,6 +261,8 @@ const CourseDetail = () => {
                 </div>
               </div>
             )}
+
+            {course.instructor && (
               <div className="rounded-2xl border border-border bg-card p-6">
                 <h2 className="font-display text-2xl font-semibold text-ink">Your instructor</h2>
                 <div className="mt-5 flex gap-4">
