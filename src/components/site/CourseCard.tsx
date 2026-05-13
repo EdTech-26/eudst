@@ -28,6 +28,10 @@ export type Course = {
   instructor?: { name: string; title: string; bio: string; initials: string };
   launchUrl?: string;
   academicOnly?: boolean;
+  headline?: string;
+  isMicroCredential?: boolean;
+  subCourseCodes?: string[];
+  parentCode?: string;
 };
 
 export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
@@ -49,6 +53,11 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
         {c.title}
       </h3>
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.desc}</p>
+      {c.isMicroCredential && c.subCourseCodes && (
+        <div className="mt-5 inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-smooth group-hover:bg-primary/90">
+          {c.subCourseCodes.length} Course Micro-credential
+        </div>
+      )}
       <div className="mt-6 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-border pt-4 text-xs text-muted-foreground">
         <span>{c.delivery}</span>
         <span className="inline-flex items-center gap-1">
@@ -60,7 +69,7 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
           </span>
         )}
       </div>
-      {c.hasDetailPage && (
+      {c.hasDetailPage && !c.isMicroCredential && (
         <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition-smooth group-hover:opacity-100">
           {t("courses.viewCourse")} <ArrowRight className="h-3 w-3 rtl:rotate-180" />
         </span>

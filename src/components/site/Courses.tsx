@@ -8,7 +8,7 @@ import { sampleCourses } from "./courseData";
 
 export const Courses = () => {
   const { t } = useTranslation();
-  const featured = sampleCourses.slice(0, 4);
+  const featured = sampleCourses.filter((c) => !c.parentCode).slice(0, 4);
 
   return (
     <section id="courses" className="bg-secondary/50 py-24 md:py-32">

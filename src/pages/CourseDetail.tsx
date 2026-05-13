@@ -12,8 +12,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { sampleCourses } from "@/components/site/courseData";
+import { CourseCard } from "@/components/site/CourseCard";
 import { useEnrollments } from "@/lib/auth";
-import { ArrowLeft, Calendar, CheckCircle2, Clock, GraduationCap, Languages } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, Clock, GraduationCap, Languages, Layers } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const CourseDetail = () => {
@@ -22,6 +23,14 @@ const CourseDetail = () => {
   const course = sampleCourses.find((c) => c.code === code);
   const { isEnrolled } = useEnrollments();
   const enrolled = course ? isEnrolled(course.code) : false;
+  const parentCourse = course?.parentCode
+    ? sampleCourses.find((c) => c.code === course.parentCode)
+    : undefined;
+  const subCourses = course?.isMicroCredential && course.subCourseCodes
+    ? course.subCourseCodes
+        .map((sc) => sampleCourses.find((c) => c.code === sc))
+        .filter((c): c is NonNullable<typeof c> => Boolean(c))
+    : [];
 
   useEffect(() => {
     if (course) {
@@ -60,12 +69,21 @@ const CourseDetail = () => {
         {/* Hero band */}
         <section className="bg-gradient-to-b from-secondary/60 to-background py-16 md:py-20">
           <div className="container">
-            <Link
-              to="/courses"
-              className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-smooth hover:text-primary"
-            >
-              <ArrowLeft className="h-3 w-3" /> Back to catalogue
-            </Link>
+            {parentCourse ? (
+              <Link
+                to={`/courses/${parentCourse.code}`}
+                className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-smooth hover:text-primary"
+              >
+                <ArrowLeft className="h-3 w-3" /> Back to {parentCourse.title}
+              </Link>
+            ) : (
+              <Link
+                to="/courses"
+                className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-smooth hover:text-primary"
+              >
+                <ArrowLeft className="h-3 w-3" /> Back to catalogue
+              </Link>
+            )}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -77,11 +95,19 @@ const CourseDetail = () => {
                   {course.subject}
                 </span>
                 <span className="text-xs text-muted-foreground">{course.type}</span>
+                {course.isMicroCredential && course.subCourseCodes && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary">
+                    <Layers className="h-3 w-3" /> {course.subCourseCodes.length} courses
+                  </span>
+                )}
               </div>
               <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink md:text-5xl text-balance">
                 {course.title}
               </h1>
-              <p className="mt-4 text-lg text-muted-foreground">{course.desc}</p>
+              {course.headline && (
+                <p className="mt-3 text-base font-medium text-primary">{course.headline}</p>
+              )}
+              
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 {course.instructor?.name && (
                   <span className="inline-flex items-center gap-1.5">
@@ -219,12 +245,38 @@ const CourseDetail = () => {
                 </div>
               </div>
             )}
+
+            {course.isMicroCredential && subCourses.length > 0 && (
+              <div>
+                <h2 className="font-display text-2xl font-semibold text-ink">Courses in this Micro-credential</h2>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Each course can be enrolled in individually. Click a course to view details and enrol.
+                </p>
+                <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                  {subCourses.map((sc, i) => (
+                    <CourseCard key={sc.code} c={sc} index={i} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Sticky pricing card */}
           <aside>
             <div className="sticky top-24 rounded-2xl border border-border bg-card p-6 shadow-elegant">
-              {course.academicOnly ? (
+              {course.isMicroCredential && course.subCourseCodes ? (
+                <>
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                    Micro-credential
+                  </span>
+                  <div className="mt-3 font-display text-2xl font-bold text-ink">
+                    {course.subCourseCodes.length}-course pathway
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Enrol in each course individually, or complete all {course.subCourseCodes.length} to earn the full Micro-credential.
+                  </p>
+                </>
+              ) : course.academicOnly ? (
                 <>
                   <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
                     UDST academics only
@@ -284,7 +336,13 @@ const CourseDetail = () => {
                 )}
               </dl>
 
-              {course.academicOnly ? (
+              {course.isMicroCredential && course.subCourseCodes ? (
+                <>
+                  <div className="mt-6 rounded-lg border border-border bg-secondary/40 p-4 text-xs text-muted-foreground">
+                    Each of the {course.subCourseCodes.length} courses in this Micro-credential is available individually. Browse the list below to enrol in the courses that suit you.
+                  </div>
+                </>
+              ) : course.academicOnly ? (
                 <>
                   <div className="mt-6 rounded-lg border border-border bg-secondary/40 p-4 text-sm">
                     <p className="font-semibold text-ink">Register your interest</p>
