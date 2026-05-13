@@ -22,6 +22,169 @@ const accent = {
   Communication: "bg-[#8E1537]/15 text-[#8E1537]",
 } as const;
 
+const pmeAudience =
+  "This course is designed for university and college students, early-career professionals, administrative and support staff, entrepreneurs and small business owners, individuals interested in developing project management skills, and individuals considering professional project management certification pathways. No advanced technical background is required.";
+
+const pmeSyllabus = [
+  { label: "Module 1", topic: "Introduction" },
+  { label: "Module 2", topic: "Watch & Think" },
+  { label: "Module 3", topic: "Concept Exploration" },
+  { label: "Module 4", topic: "Worked Example" },
+  { label: "Module 5", topic: "Knowledge Check" },
+  { label: "Module 6", topic: "Reflection" },
+];
+
+const makePmeCourse = (
+  code: string,
+  title: string,
+  headline: string,
+  longDesc: string,
+  outcomes: string[],
+): Course => ({
+  code,
+  subject: "Professional Skills",
+  title,
+  headline,
+  desc: headline,
+  type: "Professional",
+  delivery: "Online",
+  duration: "1 hr",
+  accent: accent.Business,
+  bannerImage: bannerPM,
+  hasDetailPage: true,
+  parentCode: "PME-GE-001",
+  price: 100,
+  currency: "QAR",
+  language: "en",
+  startDate: "Enrol anytime",
+  longDesc,
+  outcomes,
+  audience: pmeAudience,
+  syllabus: pmeSyllabus,
+});
+
+const pmeSubCourses: Course[] = [
+  makePmeCourse(
+    "PME-C1",
+    "Introduction to Project Management",
+    "Discover how successful projects are planned, organised, and delivered.",
+    "This course introduces learners to the foundational concepts of project management and explains how projects differ from routine operations. Learners will explore the characteristics of projects, the triple constraint of scope, time, and cost, and the role of the project manager in coordinating project activities. Through practical examples and simple scenarios, learners will develop a foundational understanding of project management principles and their application in everyday life and work environments.",
+    [
+      "Define a project and distinguish it from routine operations",
+      "Identify the components of the triple constraint",
+      "Describe the role of a project manager",
+      "Recognise the major process groups in project management",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C2",
+    "Project Lifecycle and Phases",
+    "Understand the complete project journey from initiation to successful completion.",
+    "This course explores the major phases of the project lifecycle and explains how projects progress from initiation to closure. Learners will examine the activities involved in planning, execution, monitoring, and project closing while understanding how each phase contributes to project success. Practical examples and interactive learning activities will help learners connect project lifecycle concepts to real-world projects.",
+    [
+      "Identify the phases of the project lifecycle",
+      "Sequence project phases correctly",
+      "Describe key activities within each phase",
+      "Explain how project phases support project success",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C3",
+    "Defining Scope and Requirements",
+    "Learn how clear scope and requirements keep projects focused and on track.",
+    "This course focuses on defining project scope and gathering project requirements effectively. Learners will explore how unclear requirements and uncontrolled changes can impact project success. The course introduces scope definition, stakeholder requirements, scope creep, and Work Breakdown Structure (WBS) concepts using practical examples and activities that support effective project planning and control.",
+    [
+      "Define project scope and requirements",
+      "Identify examples of scope creep",
+      "Explain the purpose of Work Breakdown Structure (WBS)",
+      "Apply scope management concepts to simple project scenarios",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C4",
+    "Scheduling and Time Management",
+    "Build realistic schedules and manage timelines with confidence.",
+    "This course introduces learners to the principles of project scheduling and time management. Learners will examine task sequencing, dependencies, Gantt charts, and critical path analysis while exploring how scheduling tools help projects stay organised and reduce delays. Through practical examples and scheduling activities, learners will build foundational skills in managing project timelines effectively.",
+    [
+      "Identify task dependencies and sequencing relationships",
+      "Interpret simple project schedules and Gantt charts",
+      "Explain the concept of the critical path",
+      "Analyse scheduling challenges and project delays",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C5",
+    "Cost Estimation and Budgeting",
+    "Plan project budgets effectively and make smarter financial decisions.",
+    "This course introduces learners to the fundamental concepts of project budgeting and cost estimation. Learners will explore how project costs are estimated, how budgets are developed, and how direct and indirect costs influence project decisions. The course also examines contingency planning and the importance of preparing for unexpected expenses. Through practical examples and worked activities, learners will build confidence in managing project finances effectively.",
+    [
+      "Define cost estimation and budgeting concepts",
+      "Differentiate between direct and indirect costs",
+      "Explain the purpose of contingency planning",
+      "Apply budgeting concepts to simple project scenarios",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C6",
+    "Risk Management",
+    "Identify project risks early and respond before problems grow.",
+    "This course explores the importance of identifying, analysing, and managing project risks. Learners will examine different types of project risks, evaluate likelihood and impact, and explore common response strategies such as avoidance, mitigation, transfer, and acceptance. Through practical examples and simple risk analysis activities, learners will develop foundational skills for reducing uncertainty and improving project outcomes.",
+    [
+      "Define project risk and explain its impact on projects",
+      "Identify and analyse project risks",
+      "Differentiate between likelihood and impact",
+      "Select appropriate risk response strategies",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C7",
+    "Team Management and Communication",
+    "Strengthen teamwork, communication, and collaboration for project success.",
+    "This course focuses on the importance of teamwork and communication in project success. Learners will explore team roles and responsibilities, communication planning, stakeholder management, and conflict resolution strategies. Through practical scenarios and interactive activities, learners will develop communication and collaboration skills that support effective teamwork in project environments.",
+    [
+      "Describe the importance of communication in project success",
+      "Identify team roles and stakeholder responsibilities",
+      "Apply communication planning concepts",
+      "Recognise basic conflict resolution strategies",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C8",
+    "Monitoring, Control, and Quality",
+    "Track project performance and maintain quality every step of the way.",
+    "This course introduces learners to the processes used to monitor project performance and maintain quality standards. Learners will examine key performance indicators (KPIs), progress tracking methods, quality assurance, quality control, and change management processes. The course emphasises how monitoring and quality practices help projects stay aligned with timelines, budgets, and project goals.",
+    [
+      "Define key performance indicators (KPIs)",
+      "Differentiate between quality assurance and quality control",
+      "Explain the purpose of project monitoring and change control",
+      "Identify corrective actions for common project issues",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C9",
+    "Project Closure and Lessons Learned",
+    "Close projects successfully and turn experience into future improvement.",
+    "This course explores the final stage of the project lifecycle: project closure. Learners will examine the importance of finalising deliverables, completing project documentation, and capturing lessons learned to improve future projects. The course highlights how proper project closure supports accountability, organisational learning, and continuous improvement through practical examples and reflection activities.",
+    [
+      "Explain the importance of project closure",
+      "Identify key project closure activities",
+      "Describe the purpose of lessons learned documentation",
+      "Evaluate project closure scenarios and identify improvements",
+    ],
+  ),
+  makePmeCourse(
+    "PME-C10",
+    "Course Review and Completion",
+    "Review key concepts, reinforce your learning, and complete the programme with confidence.",
+    "This course provides a comprehensive review of the major concepts covered throughout the Project Management Essentials Micro-credential. Learners will revisit topics including project lifecycle phases, scope management, scheduling, budgeting, risk management, communication, quality management, and project closure. The course is designed to reinforce understanding, support reflection, and prepare learners to successfully complete the final assessment and apply project management concepts in real-world situations.",
+    [
+      "Recall key project management concepts from previous courses",
+      "Apply project management concepts to simple scenarios",
+      "Evaluate project situations and identify improvements",
+    ],
+  ),
+];
+
 export const sampleCourses: Course[] = [
   // Featured 1: Teaching and Learning for the 21st Century — Micro-credential parent
   {
@@ -398,46 +561,44 @@ export const sampleCourses: Course[] = [
       { label: "Module 2", topic: "The Future of Remote Care (Wearables, Telemedicine, Capstone: Your Future in Health-Tech)" },
     ],
   },
-  // Project Management Essentials (General Education)
+  // Project Management Essentials — Micro-credential parent
   {
     code: "PME-GE-001",
     subject: "Professional Skills",
     title: "Project Management Essentials",
+    headline: "Master the essential skills to plan, manage, and deliver successful projects with confidence.",
     desc: "Build practical project management skills you can apply at work, in study, and in everyday life, from planning through to successful completion.",
-    type: "Professional",
+    type: "Micro-credential",
     delivery: "Online",
-    duration: "5–6 hrs",
+    duration: "10 hrs",
     accent: accent.Business,
     bannerImage: bannerPM,
     hasDetailPage: true,
-    price: 450,
+    isMicroCredential: true,
+    subCourseCodes: [
+      "PME-C1", "PME-C2", "PME-C3", "PME-C4", "PME-C5",
+      "PME-C6", "PME-C7", "PME-C8", "PME-C9", "PME-C10",
+    ],
     currency: "QAR",
     language: "en",
     startDate: "Enrol anytime",
     longDesc:
-      "This course introduces learners to the essential concepts and practical skills of project management in everyday contexts. It explores how projects differ from routine activities and guides learners through the key stages of managing a project, from planning to completion.\n\nLearners will develop the ability to organise tasks, manage time and resources, solve problems, and achieve goals effectively. The course is designed to be accessible to all learners, regardless of their background, and highlights how project management skills can be applied in work, study, and personal life.",
+      "This comprehensive 10-course Micro-credential is designed to introduce learners to the essential concepts, tools, and practical skills used in project management. Learners will explore how projects differ from routine operations and examine the major phases of managing projects, including planning, scheduling, budgeting, communication, risk management, monitoring, and project closure. Through practical examples, interactive activities, and scenario-based learning, learners will develop foundational project management skills that can be applied in professional, academic, and personal contexts.\n\nThis Micro-credential may also support individuals interested in pursuing professional certifications such as the Project Management Professional (PMP) Certification by introducing core project management concepts, terminology, and practices.\n\nLearners who successfully complete all 10 Micro-credential courses and required assessments will receive a Project Management Essentials Micro-credential certificate recognising their completion of the programme and foundational knowledge in project management.",
     outcomes: [
-      "Identify the key characteristics of a project and distinguish it from routine tasks",
-      "Apply basic project management steps to plan and complete a task or goal",
-      "Analyse common challenges in projects such as time, resources, and risks",
-      "Select appropriate tools and strategies to organise and manage tasks",
-      "Evaluate the success of a project and suggest ways to improve outcomes",
+      "Identify the key characteristics of projects and distinguish them from routine operations",
+      "Apply project management principles to plan and organise tasks effectively",
+      "Analyse common project challenges related to scope, time, cost, quality, communication, and risk",
+      "Select appropriate tools and strategies to support project success",
+      "Evaluate project outcomes and identify opportunities for improvement",
     ],
     audience:
-      "This course is designed for learners from any background who want to build practical project management skills they can apply in work, study, and personal life.",
+      "This Micro-credential is designed for university and college students, early-career professionals, administrative and support staff, entrepreneurs and small business owners, individuals interested in developing project management skills, and individuals considering professional project management certification pathways. No advanced technical background is required.",
     structure:
-      "This fully online course is organised into focused units that introduce project management step by step, from understanding what makes a project to planning, managing, and reviewing it.\n\nEach unit combines clear explanations with relatable examples and practical activities, making the content accessible to learners with no prior experience.",
+      "Project Management Essentials is a 10-course Micro-credential delivered in a self-paced online learning environment, designed to provide learners with practical project management knowledge and foundational workplace skills.\n\nEach course can be enrolled in individually, or completed as a full pathway.",
     howYouLearn:
-      "You will learn through self-paced online modules, guided activities, and practical examples drawn from everyday work, study, and personal contexts. The course is fully online and can be completed flexibly at your own pace.",
-    syllabus: [
-      { label: "Module 1 · 1 hr", topic: "What is a project? Key characteristics and everyday examples" },
-      { label: "Module 2 · 1 hr", topic: "Planning a project: goals, tasks, and timelines" },
-      { label: "Module 3 · 1 hr", topic: "Managing time, resources, and risks" },
-      { label: "Module 4 · 1 hr", topic: "Tools and strategies to organise and track work" },
-      { label: "Module 5 · 1–2 hrs", topic: "Reviewing outcomes and improving future projects" },
-    ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/home/187828",
+      "You will learn through self-paced online modules, guided activities, worked examples, knowledge checks, and reflection tasks. Each of the 10 courses is fully online and can be completed flexibly at your own pace.",
   },
+  ...pmeSubCourses,
   // Featured 4: Adaptive Leadership and Interprofessional Collaborative Practice
   {
     code: "ALICP-001",
