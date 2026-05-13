@@ -286,7 +286,7 @@ const CourseDetail = () => {
             )}
 
             {course.isMicroCredential && subCourses.length > 0 && (
-              <div>
+              <div id="sub-courses">
                 <h2 className="font-display text-2xl font-semibold text-ink">Courses in this Micro-credential</h2>
                 <p className="mt-3 text-sm text-muted-foreground">
                   Each course can be enrolled in individually. Click a course to view details and enrol.
@@ -313,11 +313,16 @@ const CourseDetail = () => {
                   <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
                     Micro-credential
                   </span>
-                  <div className="mt-3 font-display text-2xl font-bold text-ink">
-                    {course.subCourseCodes.length}-course pathway
+                  <div className="mt-3 flex items-baseline gap-1">
+                    <span className="font-display text-3xl font-bold text-ink">
+                      {bulkPrice.toLocaleString()}
+                    </span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {course.currency}
+                    </span>
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    Enrol in each course individually, or complete all {course.subCourseCodes.length} to earn the full Micro-credential.
+                    Enrol in all {course.subCourseCodes.length} courses and earn the full Micro-credential.
                   </p>
                 </>
               ) : course.academicOnly ? (
@@ -382,9 +387,20 @@ const CourseDetail = () => {
 
               {course.isMicroCredential && course.subCourseCodes ? (
                 <>
-                  <div className="mt-6 rounded-lg border border-border bg-secondary/40 p-4 text-xs text-muted-foreground">
-                    Each of the {course.subCourseCodes.length} courses in this Micro-credential is available individually. Browse the list below to enrol in the courses that suit you.
-                  </div>
+                  <Button variant="hero" className="mt-6 w-full" asChild>
+                    <Link to={`/enroll/${course.code}`}>
+                      Enrol in all {course.subCourseCodes.length} courses
+                    </Link>
+                  </Button>
+                  <a
+                    href="#sub-courses"
+                    className="mt-3 block text-center text-sm font-medium text-primary underline-offset-4 hover:underline"
+                  >
+                    Or enrol in individual courses
+                  </a>
+                  <p className="mt-3 text-center text-[11px] text-muted-foreground">
+                    Secure checkout · Cancel anytime before start
+                  </p>
                 </>
               ) : course.academicOnly ? (
                 <>
