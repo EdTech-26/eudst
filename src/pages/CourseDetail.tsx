@@ -31,6 +31,15 @@ const CourseDetail = () => {
         .map((sc) => sampleCourses.find((c) => c.code === sc))
         .filter((c): c is NonNullable<typeof c> => Boolean(c))
     : [];
+  const siblingCourses = course?.parentCode
+    ? sampleCourses
+        .filter((c) => c.parentCode === course.parentCode)
+        .sort((a, b) => {
+          const idxA = parentCourse?.subCourseCodes?.indexOf(a.code) ?? 0;
+          const idxB = parentCourse?.subCourseCodes?.indexOf(b.code) ?? 0;
+          return idxA - idxB;
+        })
+    : [];
 
   useEffect(() => {
     if (course) {
