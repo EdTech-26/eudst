@@ -264,7 +264,19 @@ const CourseDetail = () => {
           {/* Sticky pricing card */}
           <aside>
             <div className="sticky top-24 rounded-2xl border border-border bg-card p-6 shadow-elegant">
-              {course.academicOnly ? (
+              {course.isMicroCredential && course.subCourseCodes ? (
+                <>
+                  <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                    Micro-credential
+                  </span>
+                  <div className="mt-3 font-display text-2xl font-bold text-ink">
+                    {course.subCourseCodes.length}-course pathway
+                  </div>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Enrol in each course individually, or complete all {course.subCourseCodes.length} to earn the full Micro-credential.
+                  </p>
+                </>
+              ) : course.academicOnly ? (
                 <>
                   <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
                     UDST academics only
