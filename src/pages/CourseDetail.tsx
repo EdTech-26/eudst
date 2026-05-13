@@ -235,7 +235,32 @@ const CourseDetail = () => {
               </div>
             )}
 
-            {course.instructor && (
+            {siblingCourses.length > 0 && (
+              <div>
+                <h2 className="font-display text-2xl font-semibold text-ink">Other courses in this Micro-credential</h2>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  You can also view and enrol in the other courses in this pathway.
+                </p>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {siblingCourses.map((sc, i) => (
+                    <Link
+                      key={sc.code}
+                      to={`/courses/${sc.code}`}
+                      className={`group flex flex-col rounded-xl border border-border bg-card p-4 shadow-soft transition-smooth hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-elegant ${sc.code === course?.code ? "ring-2 ring-primary/20" : ""}`}
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Course {i + 1} {sc.code === course?.code && <span className="text-primary">(current)</span>}
+                      </p>
+                      <p className="mt-2 font-display text-base font-semibold text-ink">{sc.title}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{sc.headline ?? sc.desc}</p>
+                      <div className="mt-3 flex items-center gap-1 text-xs font-semibold text-primary opacity-0 transition-smooth group-hover:opacity-100">
+                        View course <ArrowLeft className="h-3 w-3 rotate-180" />
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
               <div className="rounded-2xl border border-border bg-card p-6">
                 <h2 className="font-display text-2xl font-semibold text-ink">Your instructor</h2>
                 <div className="mt-5 flex gap-4">
