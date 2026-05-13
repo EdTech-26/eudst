@@ -245,6 +245,20 @@ const CourseDetail = () => {
                 </div>
               </div>
             )}
+
+            {course.isMicroCredential && subCourses.length > 0 && (
+              <div>
+                <h2 className="font-display text-2xl font-semibold text-ink">Courses in this Micro-credential</h2>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Each course can be enrolled in individually. Click a course to view details and enrol.
+                </p>
+                <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                  {subCourses.map((sc, i) => (
+                    <CourseCard key={sc.code} c={sc} index={i} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Sticky pricing card */}
