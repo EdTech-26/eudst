@@ -107,7 +107,7 @@ const CourseDetail = () => {
               {course.headline && (
                 <p className="mt-3 text-base font-medium text-primary">{course.headline}</p>
               )}
-              <p className="mt-4 text-lg text-muted-foreground">{course.desc}</p>
+              
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 {course.instructor?.name && (
                   <span className="inline-flex items-center gap-1.5">
