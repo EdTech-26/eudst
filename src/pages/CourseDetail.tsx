@@ -40,6 +40,9 @@ const CourseDetail = () => {
           return idxA - idxB;
         })
     : [];
+  const bulkPrice = course?.isMicroCredential && subCourses.length > 0
+    ? subCourses.reduce((sum, sc) => sum + (sc.price ?? 0), 0)
+    : 0;
 
   useEffect(() => {
     if (course) {
