@@ -715,30 +715,6 @@ export const sampleCourses: Course[] = [
     isPlaceholder: true,
   },
 
-  // College of Engineering
-  {
-    code: "AEMA-4100",
-    subject: "Engineering",
-    title: "Project Management and Leadership",
-    desc: "Project management and leadership for engineering contexts, with Luay Hussein.",
-    type: "Academic",
-    delivery: "Blended",
-    duration: "Coming soon",
-    accent: accent.Engineering,
-    isPlaceholder: true,
-  },
-  {
-    code: "AEEP-4100",
-    subject: "Engineering",
-    title: "Project Management",
-    desc: "Project management foundations for engineering professionals, with Dr Ahmad Awad.",
-    type: "Academic",
-    delivery: "Blended",
-    duration: "Coming soon",
-    accent: accent.Engineering,
-    isPlaceholder: true,
-  },
-
   // College of General Education
   {
     code: "SCIE-1002",
@@ -807,41 +783,6 @@ export const sampleCourses: Course[] = [
     ],
   },
 
-  // College of General Education
-  {
-    code: "EFFL1003",
-    subject: "Education",
-    title: "Experiential Learning and Entrepreneurship",
-    desc: "Develop the academic, collaborative and entrepreneurial skills needed to thrive at university and in your future career.",
-    type: "Academic",
-    delivery: "Blended",
-    duration: "Semester",
-    accent: accent.Education,
-    hasDetailPage: true,
-    academicOnly: true,
-    language: "en",
-    longDesc:
-      "In today's fast-paced and ever-changing global landscape, the ability to innovate, work effectively in teams, and lead with vision is more crucial than ever.\n\nThis introductory hybrid course provides students with a broad understanding of the critical skills needed to succeed in both their academic and future professional careers. Through a blend of theoretical knowledge and practical application, students are introduced to a range of strategies for academic success, innovation, and entrepreneurship.",
-    outcomes: [
-      "Demonstrate effective learning strategies for a university environment",
-      "Develop critical thinking and problem-solving skills to address diverse situations and challenges",
-      "Show effective group dynamics and strategies in group project work at the university level",
-      "Demonstrate an understanding of an entrepreneurial mindset and innovative thinking skills",
-    ],
-    syllabus: [
-      { label: "Module 0", topic: "Welcome and Introduction" },
-      { label: "Module 1", topic: "Overview of experiential learning and entrepreneurship" },
-      { label: "Module 2", topic: "Strategies for student success" },
-      { label: "Module 3", topic: "Academic success planning" },
-      { label: "Module 4", topic: "Working in teams" },
-      { label: "Module 5", topic: "Critical thinking and problem solving" },
-      { label: "Module 6", topic: "Introduction to entrepreneurship" },
-      { label: "Module 7", topic: "Design thinking and innovation" },
-      { label: "Module 8", topic: "Understanding the market and conducting a needs analysis" },
-      { label: "Module 9", topic: "Ideation, research and development" },
-      { label: "Module 10", topic: "Project planning" },
-    ],
-  },
   {
     code: "SSHA1004",
     subject: "Education",
