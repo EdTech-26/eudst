@@ -69,12 +69,21 @@ const CourseDetail = () => {
         {/* Hero band */}
         <section className="bg-gradient-to-b from-secondary/60 to-background py-16 md:py-20">
           <div className="container">
-            <Link
-              to="/courses"
-              className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-smooth hover:text-primary"
-            >
-              <ArrowLeft className="h-3 w-3" /> Back to catalogue
-            </Link>
+            {parentCourse ? (
+              <Link
+                to={`/courses/${parentCourse.code}`}
+                className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-smooth hover:text-primary"
+              >
+                <ArrowLeft className="h-3 w-3" /> Back to {parentCourse.title}
+              </Link>
+            ) : (
+              <Link
+                to="/courses"
+                className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground transition-smooth hover:text-primary"
+              >
+                <ArrowLeft className="h-3 w-3" /> Back to catalogue
+              </Link>
+            )}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -86,10 +95,18 @@ const CourseDetail = () => {
                   {course.subject}
                 </span>
                 <span className="text-xs text-muted-foreground">{course.type}</span>
+                {course.isMicroCredential && course.subCourseCodes && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary">
+                    <Layers className="h-3 w-3" /> {course.subCourseCodes.length} courses
+                  </span>
+                )}
               </div>
               <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink md:text-5xl text-balance">
                 {course.title}
               </h1>
+              {course.headline && (
+                <p className="mt-3 text-base font-medium text-primary">{course.headline}</p>
+              )}
               <p className="mt-4 text-lg text-muted-foreground">{course.desc}</p>
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 {course.instructor?.name && (
