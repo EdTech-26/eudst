@@ -19,7 +19,6 @@ const subjects = ["All", "Health", "Education", "Computing", "Business", "Engine
 const typeKeys: { value: string; key: string }[] = [
   { value: "All", key: "catalogue.all" },
   { value: "Academic", key: "catalogue.types.academic" },
-  { value: "Professional", key: "catalogue.types.professional" },
   { value: "Micro-credential", key: "catalogue.types.micro-credential" },
 ];
 
@@ -142,10 +141,6 @@ const Catalogue = () => {
               )}
             </div>
 
-            <div className="hidden text-sm text-muted-foreground md:block">
-              <span className="font-semibold text-ink">{filtered.length}</span>{" "}
-              {t("catalogue.courseCount", { count: filtered.length })}
-            </div>
           </div>
         </section>
 
@@ -165,11 +160,6 @@ const Catalogue = () => {
             </div>
           ) : (
             <>
-              <div className="mb-8 text-sm text-muted-foreground md:hidden">
-                {t("catalogue.showing")}{" "}
-                <span className="font-semibold text-ink">{filtered.length}</span>{" "}
-                {t("catalogue.courseCount", { count: filtered.length })}
-              </div>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {filtered.map((c, i) => (
                   <CourseCard key={c.code} c={c} index={i} />
