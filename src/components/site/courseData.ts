@@ -64,7 +64,7 @@ export const sampleCourses: Course[] = [
     delivery: "Online",
     duration: "1 hr",
     accent: accent.Education,
-    bannerImage: bannerTL21C,
+    bannerImage: bannerTL21C_C1,
     hasDetailPage: true,
     parentCode: "TL21C-001",
     price: 100,
