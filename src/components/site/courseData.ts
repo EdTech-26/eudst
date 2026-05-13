@@ -3,6 +3,7 @@ import bannerTL21C from "@/assets/course-tl21c.jpg";
 import bannerTL21C_C1 from "@/assets/tl21c-c1-banner.png";
 import bannerTL21C_C2 from "@/assets/tl21c-c2-banner.png";
 import bannerTL21C_C3 from "@/assets/tl21c-c3-banner-v2.png";
+import bannerTL21C_C4 from "@/assets/tl21c-c4-banner.png";
 import bannerTL21C_C5 from "@/assets/tl21c-c5-banner.png";
 import bannerHDPSG from "@/assets/course-hdpsg.png";
 import bannerALICP from "@/assets/course-alicp.png";
@@ -173,7 +174,7 @@ export const sampleCourses: Course[] = [
     delivery: "Online",
     duration: "1 hr",
     accent: accent.Education,
-    bannerImage: bannerTL21C,
+    bannerImage: bannerTL21C_C4,
     hasDetailPage: true,
     parentCode: "TL21C-001",
     price: 100,
