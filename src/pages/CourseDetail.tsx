@@ -23,6 +23,14 @@ const CourseDetail = () => {
   const course = sampleCourses.find((c) => c.code === code);
   const { isEnrolled } = useEnrollments();
   const enrolled = course ? isEnrolled(course.code) : false;
+  const parentCourse = course?.parentCode
+    ? sampleCourses.find((c) => c.code === course.parentCode)
+    : undefined;
+  const subCourses = course?.isMicroCredential && course.subCourseCodes
+    ? course.subCourseCodes
+        .map((sc) => sampleCourses.find((c) => c.code === sc))
+        .filter((c): c is NonNullable<typeof c> => Boolean(c))
+    : [];
 
   useEffect(() => {
     if (course) {
