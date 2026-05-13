@@ -398,46 +398,44 @@ export const sampleCourses: Course[] = [
       { label: "Module 2", topic: "The Future of Remote Care (Wearables, Telemedicine, Capstone: Your Future in Health-Tech)" },
     ],
   },
-  // Project Management Essentials (General Education)
+  // Project Management Essentials — Micro-credential parent
   {
     code: "PME-GE-001",
     subject: "Professional Skills",
     title: "Project Management Essentials",
+    headline: "Master the essential skills to plan, manage, and deliver successful projects with confidence.",
     desc: "Build practical project management skills you can apply at work, in study, and in everyday life, from planning through to successful completion.",
-    type: "Professional",
+    type: "Micro-credential",
     delivery: "Online",
-    duration: "5–6 hrs",
+    duration: "10 hrs",
     accent: accent.Business,
     bannerImage: bannerPM,
     hasDetailPage: true,
-    price: 450,
+    isMicroCredential: true,
+    subCourseCodes: [
+      "PME-C1", "PME-C2", "PME-C3", "PME-C4", "PME-C5",
+      "PME-C6", "PME-C7", "PME-C8", "PME-C9", "PME-C10",
+    ],
     currency: "QAR",
     language: "en",
     startDate: "Enrol anytime",
     longDesc:
-      "This course introduces learners to the essential concepts and practical skills of project management in everyday contexts. It explores how projects differ from routine activities and guides learners through the key stages of managing a project, from planning to completion.\n\nLearners will develop the ability to organise tasks, manage time and resources, solve problems, and achieve goals effectively. The course is designed to be accessible to all learners, regardless of their background, and highlights how project management skills can be applied in work, study, and personal life.",
+      "This comprehensive 10-course Micro-credential is designed to introduce learners to the essential concepts, tools, and practical skills used in project management. Learners will explore how projects differ from routine operations and examine the major phases of managing projects, including planning, scheduling, budgeting, communication, risk management, monitoring, and project closure. Through practical examples, interactive activities, and scenario-based learning, learners will develop foundational project management skills that can be applied in professional, academic, and personal contexts.\n\nThis Micro-credential may also support individuals interested in pursuing professional certifications such as the Project Management Professional (PMP) Certification by introducing core project management concepts, terminology, and practices.\n\nLearners who successfully complete all 10 Micro-credential courses and required assessments will receive a Project Management Essentials Micro-credential certificate recognising their completion of the programme and foundational knowledge in project management.",
     outcomes: [
-      "Identify the key characteristics of a project and distinguish it from routine tasks",
-      "Apply basic project management steps to plan and complete a task or goal",
-      "Analyse common challenges in projects such as time, resources, and risks",
-      "Select appropriate tools and strategies to organise and manage tasks",
-      "Evaluate the success of a project and suggest ways to improve outcomes",
+      "Identify the key characteristics of projects and distinguish them from routine operations",
+      "Apply project management principles to plan and organise tasks effectively",
+      "Analyse common project challenges related to scope, time, cost, quality, communication, and risk",
+      "Select appropriate tools and strategies to support project success",
+      "Evaluate project outcomes and identify opportunities for improvement",
     ],
     audience:
-      "This course is designed for learners from any background who want to build practical project management skills they can apply in work, study, and personal life.",
+      "This Micro-credential is designed for university and college students, early-career professionals, administrative and support staff, entrepreneurs and small business owners, individuals interested in developing project management skills, and individuals considering professional project management certification pathways. No advanced technical background is required.",
     structure:
-      "This fully online course is organised into focused units that introduce project management step by step, from understanding what makes a project to planning, managing, and reviewing it.\n\nEach unit combines clear explanations with relatable examples and practical activities, making the content accessible to learners with no prior experience.",
+      "Project Management Essentials is a 10-course Micro-credential delivered in a self-paced online learning environment, designed to provide learners with practical project management knowledge and foundational workplace skills.\n\nEach course can be enrolled in individually, or completed as a full pathway.",
     howYouLearn:
-      "You will learn through self-paced online modules, guided activities, and practical examples drawn from everyday work, study, and personal contexts. The course is fully online and can be completed flexibly at your own pace.",
-    syllabus: [
-      { label: "Module 1 · 1 hr", topic: "What is a project? Key characteristics and everyday examples" },
-      { label: "Module 2 · 1 hr", topic: "Planning a project: goals, tasks, and timelines" },
-      { label: "Module 3 · 1 hr", topic: "Managing time, resources, and risks" },
-      { label: "Module 4 · 1 hr", topic: "Tools and strategies to organise and track work" },
-      { label: "Module 5 · 1–2 hrs", topic: "Reviewing outcomes and improving future projects" },
-    ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/home/187828",
+      "You will learn through self-paced online modules, guided activities, worked examples, knowledge checks, and reflection tasks. Each of the 10 courses is fully online and can be completed flexibly at your own pace.",
   },
+  ...pmeSubCourses,
   // Featured 4: Adaptive Leadership and Interprofessional Collaborative Practice
   {
     code: "ALICP-001",
