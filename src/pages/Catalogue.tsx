@@ -43,6 +43,7 @@ const Catalogue = () => {
   const filtered = useMemo(
     () =>
       sampleCourses
+        .filter((c) => !c.parentCode)
         .filter(
           (c) =>
             (subject === "All" || c.subject === subject) &&
