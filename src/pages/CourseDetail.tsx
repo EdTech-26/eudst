@@ -254,7 +254,12 @@ const CourseDetail = () => {
                 </p>
                 <div className="mt-6 grid gap-5 sm:grid-cols-2">
                   {subCourses.map((sc, i) => (
-                    <CourseCard key={sc.code} c={sc} index={i} />
+                    <div key={sc.code}>
+                      <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Course {i + 1}
+                      </p>
+                      <CourseCard c={sc} index={i} />
+                    </div>
                   ))}
                 </div>
               </div>
