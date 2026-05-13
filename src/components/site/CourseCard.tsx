@@ -48,9 +48,6 @@ export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
       <h3 className="mt-5 font-display text-xl font-semibold leading-snug text-ink">
         {c.title}
       </h3>
-      <h3 className="mt-5 font-display text-xl font-semibold leading-snug text-ink">
-        {c.title}
-      </h3>
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.desc}</p>
       <div className="mt-6 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-border pt-4 text-xs text-muted-foreground">
         <span>{c.delivery}</span>
