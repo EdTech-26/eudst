@@ -28,6 +28,10 @@ export type Course = {
   instructor?: { name: string; title: string; bio: string; initials: string };
   launchUrl?: string;
   academicOnly?: boolean;
+  headline?: string;
+  isMicroCredential?: boolean;
+  subCourseCodes?: string[];
+  parentCode?: string;
 };
 
 export const CourseCard = ({ c, index = 0 }: { c: Course; index?: number }) => {
