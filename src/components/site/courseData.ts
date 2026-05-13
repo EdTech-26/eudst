@@ -1,6 +1,7 @@
 import { Course } from "./CourseCard";
 import bannerTL21C from "@/assets/course-tl21c.jpg";
 import bannerTL21C_C1 from "@/assets/tl21c-c1-banner.png";
+import bannerTL21C_C2 from "@/assets/tl21c-c2-banner.png";
 import bannerHDPSG from "@/assets/course-hdpsg.png";
 import bannerALICP from "@/assets/course-alicp.png";
 import bannerPM from "@/assets/course-pm.jpg";
@@ -100,7 +101,7 @@ export const sampleCourses: Course[] = [
     delivery: "Online",
     duration: "1 hr",
     accent: accent.Education,
-    bannerImage: bannerTL21C,
+    bannerImage: bannerTL21C_C2,
     hasDetailPage: true,
     parentCode: "TL21C-001",
     price: 100,
