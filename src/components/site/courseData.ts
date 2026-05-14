@@ -48,6 +48,122 @@ const pmeSyllabus = [
   { label: "Module 6", topic: "Reflection" },
 ];
 
+const alAudience =
+  "This Micro-credential is designed for healthcare professionals, graduate students interested in healthcare settings, university and college faculty in health, healthcare startup founders and entrepreneurs, individuals interested in working in healthcare settings, corporate trainers in the healthcare industry, and academic leaders and education administrators in healthcare organisations. No advanced technical background is required.";
+
+const alSyllabus = [
+  { label: "Module 1", topic: "Introduction" },
+  { label: "Module 2", topic: "Concept Exploration" },
+  { label: "Module 3", topic: "Applied Practice" },
+];
+
+const makeAlCourse = (
+  code: string,
+  title: string,
+  headline: string,
+  longDesc: string,
+  outcomes: string[],
+): Course => ({
+  code,
+  subject: "Health",
+  title,
+  headline,
+  desc: headline,
+  type: "Professional",
+  delivery: "Online",
+  duration: "1 hr",
+  accent: accent.Health,
+  bannerImage: bannerALICP,
+  hasDetailPage: true,
+  parentCode: "ALICP-001",
+  language: "en",
+  startDate: "Enrol anytime",
+  longDesc,
+  outcomes,
+  audience: alAudience,
+  syllabus: alSyllabus,
+});
+
+const alSubCourses: Course[] = [
+  makeAlCourse(
+    "AL-C1",
+    "Introduction to Theories of Leadership",
+    "The practice of adaptive leadership: tools and tactics for changing your organisation and the world.",
+    "This course explores foundational theories of leadership, contrasting leadership as a trait with leadership as a process. Learners will examine the principles of adaptive leadership and consider how they can be applied to person-centred care for people with complex care needs in healthcare settings.",
+    [
+      "Explain the difference between adaptive leadership as a process and traditional leadership as a set of traits",
+      "Differentiate between technical problems and adaptive challenges using relevant examples",
+      "Analyse the concept of resistance to change and explain why the statement \u201Cpeople resist change\u201D may be misleading",
+      "Describe how leadership principles can be applied effectively in the role of a NICU nurse",
+    ],
+  ),
+  makeAlCourse(
+    "AL-C2",
+    "Diagnosing Your Immunity to Change",
+    "Uncover the hidden commitments and assumptions that quietly hold you back from change.",
+    "This course helps learners diagnose personal immunity to change and recognise how competing commitments and big assumptions function as forms of self-protection. Through reflective activities, learners will examine the behaviours, emotions, and worrisome outcomes that maintain the status quo and limit personal and professional growth.",
+    [
+      "Explain the importance of diagnosing personal immunity to change in the context of personal and professional growth",
+      "Describe how competing commitments function as a form of self-protection",
+      "Interpret the analogy of big assumptions acting like an immune system in your own words",
+      "Identify areas for change in the workplace that could enhance personal effectiveness and job satisfaction",
+      "Analyse how personal complaints can reveal underlying commitments",
+      "Evaluate behaviours that may be unintentionally undermining one\u2019s own commitments",
+      "Reflect on emotional responses that arise when considering actions contrary to undermining behaviours",
+      "Identify the worrisome outcomes that undermining behaviours aim to prevent and explain their role in maintaining the status quo",
+    ],
+  ),
+  makeAlCourse(
+    "AL-C3",
+    "Understanding the Roadmap for Adaptive Solutions",
+    "Step back, see the bigger picture, and lead organisations through complex adaptive change.",
+    "This course introduces the concept of \u201Cgetting on the balcony\u201D and its significance in adaptive leadership. Learners will explore how adaptive leaders diagnose challenges, balance tradition with innovation, and create safe spaces that foster diversity and overcome resistance to organisational change.",
+    [
+      "Describe the concept of \u201Cgetting on the balcony\u201D and its significance in adaptive leadership",
+      "Explain how adaptive leadership addresses challenges and drives change within organisations",
+      "Analyse the role of leaders in diagnosing the nature and scope of adaptive challenges",
+      "Evaluate how adaptive leadership promotes a balance between preserving tradition and encouraging innovation",
+      "Describe strategies leaders can use to create a safe space that fosters diversity and innovation",
+      "Identify and explain the steps involved in overcoming resistance to organisational change",
+    ],
+  ),
+  makeAlCourse(
+    "AL-C4",
+    "Interprofessional Competencies for Leadership",
+    "Lead across professions to deliver truly collaborative, person-centred healthcare.",
+    "This course examines the relationship between adaptive leadership and interprofessional healthcare collaboration. Learners will explore how collaboration itself can be viewed as an adaptive challenge and consider how leaders navigate complex situations such as integrating parental presence into the NICU.",
+    [
+      "Explain the relationship between adaptive leadership and interprofessional healthcare collaboration",
+      "Analyse how interprofessional healthcare collaboration can be viewed as an adaptive challenge",
+      "Describe how adaptive leaders can navigate the challenge of integrating parental presence into the NICU",
+    ],
+  ),
+  makeAlCourse(
+    "AL-C5",
+    "The Science of Decision-Making",
+    "Recognise bias, sharpen judgement, and make better decisions in interprofessional teams.",
+    "This course explores the cognitive and unconscious biases that shape decision-making in healthcare. Learners will evaluate strategies for reducing bias and reflect on how bias influences leadership and collaboration within interprofessional teams.",
+    [
+      "Identify and explain key cognitive and unconscious biases that affect decision-making",
+      "Evaluate strategies for reducing bias in decision-making",
+      "Reflect on how bias impacts leadership in interprofessional teams",
+    ],
+  ),
+  makeAlCourse(
+    "AL-C6",
+    "Difficult Conversations",
+    "Lead emotionally charged, high-stakes conversations with empathy and confidence.",
+    "This course introduces frameworks for managing difficult conversations through a leadership lens. Learners will apply interprofessional competencies to navigate emotionally charged dialogue, examine how adaptive leadership supports high-stakes communication, and explore the role of empathy and situational awareness in person-centred care.",
+    [
+      "Compare key frameworks for managing difficult conversations through a leadership lens",
+      "Apply interprofessional competencies to navigate emotionally charged conversations in person-centred care",
+      "Analyse how adaptive leadership addresses difficult, ambiguous, or high-stakes dialogue in clinical settings",
+      "Recognise and mitigate personal and organisational barriers to effective communication",
+      "Examine how empathy, communication strategies, and situational awareness support adaptive leadership in health care",
+    ],
+  ),
+];
+
 const makePmeCourse = (
   code: string,
   title: string,
@@ -624,24 +740,28 @@ export const sampleCourses: Course[] = [
       "You will learn through self-paced online modules, guided activities, worked examples, knowledge checks, and reflection tasks. Each of the 10 courses is fully online and can be completed flexibly at your own pace.",
   },
   ...pmeSubCourses,
-  // Featured 4: Adaptive Leadership and Interprofessional Collaborative Practice
+  // Featured 4: Adaptive Leadership — Micro-credential parent
   {
     code: "ALICP-001",
     subject: "Health",
-    title: "Adaptive Leadership and Interprofessional Collaborative Practice",
-    desc: "Build leadership skills for interprofessional healthcare teams and support person-centred care in complex clinical settings.",
-    type: "Professional",
+    title: "Adaptive Leadership",
+    headline: "Learn the art of adaptive leadership for clinical practice within interprofessional teams to enhance person-centred health care.",
+    desc: "Build adaptive leadership skills to mobilise, motivate, and lead interprofessional healthcare teams through complex change.",
+    type: "Micro-credential",
     delivery: "Online",
     duration: "5 hrs",
     accent: accent.Health,
     bannerImage: bannerALICP,
     hasDetailPage: true,
-    price: 950,
+    isMicroCredential: true,
+    subCourseCodes: [
+      "AL-C1", "AL-C2", "AL-C3", "AL-C4", "AL-C5", "AL-C6",
+    ],
     currency: "QAR",
     language: "en",
     startDate: "Enrol anytime",
     longDesc:
-      "This course aims to assist learners to learn the art of adaptive leadership for clinical leadership and practice within interprofessional teams to enhance person-centred health care.\n\nThere is a focus on interprofessional competencies and the principles, tools, and techniques of adaptive leadership to mobilise, motivate, organise, and focus interprofessional healthcare teams to navigate the complexities of change for effective health care.\n\nOffered through eUDST, the University of Doha for Science & Technology's online learning platform, this course supports professionals who want to strengthen their leadership capability and contribute more effectively within collaborative healthcare environments.",
+      "This Micro-credential is designed for today\u2019s dynamic and complex healthcare environment, where professionals, staff, and nurses are called to lead with confidence, collaborate effectively, and respond adaptively to ever-changing circumstances.\n\nAdaptive Leadership and Interprofessional Practice helps learners mobilise, motivate, organise, and focus interprofessional healthcare teams to navigate the complexities of change and deliver effective, person-centred health care.\n\nLearners who successfully complete all six Micro-credential courses and required assessments will receive an Adaptive Leadership Micro-credential certificate recognising their completion of the programme.",
     outcomes: [
       "Compare theories of leadership",
       "Apply interprofessional competencies to support person-centred care in clinical practice",
@@ -649,21 +769,13 @@ export const sampleCourses: Course[] = [
       "Analyse personal and organisational barriers to change",
       "Examine adaptive leadership and its relevance to person-centred health care",
     ],
-    audience:
-      "This course is designed for healthcare professionals and practitioners who want to strengthen their leadership skills and work more effectively within interprofessional teams.",
+    audience: alAudience,
     structure:
-      "This fully online course is organised into a series of interactive units that guide learners through the principles and practice of adaptive leadership in interprofessional healthcare settings.\n\nEach unit includes short modules, practical examples, and applied learning activities that connect leadership theory to real clinical practice. The course is designed for flexible, self-paced study, allowing learners to progress through the content in a clear and structured way while building knowledge step by step.",
+      "Adaptive Leadership is a 6-course Micro-credential delivered in a self-paced online learning environment, designed to provide healthcare professionals with practical leadership skills for interprofessional collaborative practice.\n\nEach course can be enrolled in individually, or completed as a full pathway.",
     howYouLearn:
-      "You will learn through interactive online modules, real-world healthcare scenarios, reflective activities, and practical examples. The course encourages active engagement with leadership concepts and helps you apply them to collaborative healthcare practice and person-centred care.",
-    syllabus: [
-      { label: "Module 1 · 1 hr", topic: "Foundational theories of leadership in healthcare" },
-      { label: "Module 2 · 1 hr", topic: "Interprofessional competencies and person-centred care" },
-      { label: "Module 3 · 1 hr", topic: "Technical and adaptive challenges in clinical settings" },
-      { label: "Module 4 · 1 hr", topic: "Personal and organisational barriers to change" },
-      { label: "Module 5 · 1 hr", topic: "Adaptive leadership in interprofessional practice" },
-    ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/187827/lessons/3747206",
+      "You will learn through self-paced online modules, real-world healthcare scenarios, guided activities, knowledge checks, and reflection tasks. Each of the six courses is fully online and can be completed flexibly at your own pace.",
   },
+  ...alSubCourses,
   // ───────────────────────────────────────────────
   // Upcoming courses (coming soon)
   // ───────────────────────────────────────────────
