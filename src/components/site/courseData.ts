@@ -105,6 +105,7 @@ const alSubCourses: Course[] = [
       "Analyse the concept of resistance to change and explain why the statement \u201Cpeople resist change\u201D may be misleading",
       "Describe how leadership principles can be applied effectively in the role of a NICU nurse",
     ],
+    bannerAL_C1,
   ),
   makeAlCourse(
     "AL-C2",
@@ -121,6 +122,7 @@ const alSubCourses: Course[] = [
       "Reflect on emotional responses that arise when considering actions contrary to undermining behaviours",
       "Identify the worrisome outcomes that undermining behaviours aim to prevent and explain their role in maintaining the status quo",
     ],
+    bannerAL_C2,
   ),
   makeAlCourse(
     "AL-C3",
@@ -135,6 +137,7 @@ const alSubCourses: Course[] = [
       "Describe strategies leaders can use to create a safe space that fosters diversity and innovation",
       "Identify and explain the steps involved in overcoming resistance to organisational change",
     ],
+    bannerAL_C3,
   ),
   makeAlCourse(
     "AL-C4",
@@ -146,6 +149,7 @@ const alSubCourses: Course[] = [
       "Analyse how interprofessional healthcare collaboration can be viewed as an adaptive challenge",
       "Describe how adaptive leaders can navigate the challenge of integrating parental presence into the NICU",
     ],
+    bannerAL_C4,
   ),
   makeAlCourse(
     "AL-C5",
@@ -157,6 +161,7 @@ const alSubCourses: Course[] = [
       "Evaluate strategies for reducing bias in decision-making",
       "Reflect on how bias impacts leadership in interprofessional teams",
     ],
+    bannerAL_C5,
   ),
   makeAlCourse(
     "AL-C6",
@@ -170,6 +175,7 @@ const alSubCourses: Course[] = [
       "Recognise and mitigate personal and organisational barriers to effective communication",
       "Examine how empathy, communication strategies, and situational awareness support adaptive leadership in health care",
     ],
+    bannerAL_C6,
   ),
 ];
 
