@@ -76,6 +76,8 @@ const makeAlCourse = (
   bannerImage: bannerALICP,
   hasDetailPage: true,
   parentCode: "ALICP-001",
+  price: 100,
+  currency: "QAR",
   language: "en",
   startDate: "Enrol anytime",
   longDesc,
