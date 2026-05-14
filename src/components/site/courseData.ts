@@ -85,6 +85,7 @@ const pmeSubCourses: Course[] = [
       "Describe the role of a project manager",
       "Recognise the major process groups in project management",
     ],
+    bannerPME_C1,
   ),
   makePmeCourse(
     "PME-C2",
@@ -97,6 +98,7 @@ const pmeSubCourses: Course[] = [
       "Describe key activities within each phase",
       "Explain how project phases support project success",
     ],
+    bannerPME_C2,
   ),
   makePmeCourse(
     "PME-C3",
@@ -109,6 +111,7 @@ const pmeSubCourses: Course[] = [
       "Explain the purpose of Work Breakdown Structure (WBS)",
       "Apply scope management concepts to simple project scenarios",
     ],
+    bannerPME_C3,
   ),
   makePmeCourse(
     "PME-C4",
@@ -121,6 +124,7 @@ const pmeSubCourses: Course[] = [
       "Explain the concept of the critical path",
       "Analyse scheduling challenges and project delays",
     ],
+    bannerPME_C4,
   ),
   makePmeCourse(
     "PME-C5",
@@ -133,6 +137,7 @@ const pmeSubCourses: Course[] = [
       "Explain the purpose of contingency planning",
       "Apply budgeting concepts to simple project scenarios",
     ],
+    bannerPME_C5,
   ),
   makePmeCourse(
     "PME-C6",
