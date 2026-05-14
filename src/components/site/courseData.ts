@@ -49,6 +49,7 @@ const makePmeCourse = (
   headline: string,
   longDesc: string,
   outcomes: string[],
+  bannerImage: string = bannerPM,
 ): Course => ({
   code,
   subject: "Professional Skills",
@@ -59,7 +60,7 @@ const makePmeCourse = (
   delivery: "Online",
   duration: "1 hr",
   accent: accent.Business,
-  bannerImage: bannerPM,
+  bannerImage,
   hasDetailPage: true,
   parentCode: "PME-GE-001",
   price: 100,
