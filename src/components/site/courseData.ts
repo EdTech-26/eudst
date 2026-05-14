@@ -740,24 +740,28 @@ export const sampleCourses: Course[] = [
       "You will learn through self-paced online modules, guided activities, worked examples, knowledge checks, and reflection tasks. Each of the 10 courses is fully online and can be completed flexibly at your own pace.",
   },
   ...pmeSubCourses,
-  // Featured 4: Adaptive Leadership and Interprofessional Collaborative Practice
+  // Featured 4: Adaptive Leadership — Micro-credential parent
   {
     code: "ALICP-001",
     subject: "Health",
-    title: "Adaptive Leadership and Interprofessional Collaborative Practice",
-    desc: "Build leadership skills for interprofessional healthcare teams and support person-centred care in complex clinical settings.",
-    type: "Professional",
+    title: "Adaptive Leadership",
+    headline: "Learn the art of adaptive leadership for clinical practice within interprofessional teams to enhance person-centred health care.",
+    desc: "Build adaptive leadership skills to mobilise, motivate, and lead interprofessional healthcare teams through complex change.",
+    type: "Micro-credential",
     delivery: "Online",
     duration: "5 hrs",
     accent: accent.Health,
     bannerImage: bannerALICP,
     hasDetailPage: true,
-    price: 950,
+    isMicroCredential: true,
+    subCourseCodes: [
+      "AL-C1", "AL-C2", "AL-C3", "AL-C4", "AL-C5", "AL-C6",
+    ],
     currency: "QAR",
     language: "en",
     startDate: "Enrol anytime",
     longDesc:
-      "This course aims to assist learners to learn the art of adaptive leadership for clinical leadership and practice within interprofessional teams to enhance person-centred health care.\n\nThere is a focus on interprofessional competencies and the principles, tools, and techniques of adaptive leadership to mobilise, motivate, organise, and focus interprofessional healthcare teams to navigate the complexities of change for effective health care.\n\nOffered through eUDST, the University of Doha for Science & Technology's online learning platform, this course supports professionals who want to strengthen their leadership capability and contribute more effectively within collaborative healthcare environments.",
+      "This Micro-credential is designed for today\u2019s dynamic and complex healthcare environment, where professionals, staff, and nurses are called to lead with confidence, collaborate effectively, and respond adaptively to ever-changing circumstances.\n\nAdaptive Leadership and Interprofessional Practice helps learners mobilise, motivate, organise, and focus interprofessional healthcare teams to navigate the complexities of change and deliver effective, person-centred health care.\n\nLearners who successfully complete all six Micro-credential courses and required assessments will receive an Adaptive Leadership Micro-credential certificate recognising their completion of the programme.",
     outcomes: [
       "Compare theories of leadership",
       "Apply interprofessional competencies to support person-centred care in clinical practice",
@@ -765,21 +769,13 @@ export const sampleCourses: Course[] = [
       "Analyse personal and organisational barriers to change",
       "Examine adaptive leadership and its relevance to person-centred health care",
     ],
-    audience:
-      "This course is designed for healthcare professionals and practitioners who want to strengthen their leadership skills and work more effectively within interprofessional teams.",
+    audience: alAudience,
     structure:
-      "This fully online course is organised into a series of interactive units that guide learners through the principles and practice of adaptive leadership in interprofessional healthcare settings.\n\nEach unit includes short modules, practical examples, and applied learning activities that connect leadership theory to real clinical practice. The course is designed for flexible, self-paced study, allowing learners to progress through the content in a clear and structured way while building knowledge step by step.",
+      "Adaptive Leadership is a 6-course Micro-credential delivered in a self-paced online learning environment, designed to provide healthcare professionals with practical leadership skills for interprofessional collaborative practice.\n\nEach course can be enrolled in individually, or completed as a full pathway.",
     howYouLearn:
-      "You will learn through interactive online modules, real-world healthcare scenarios, reflective activities, and practical examples. The course encourages active engagement with leadership concepts and helps you apply them to collaborative healthcare practice and person-centred care.",
-    syllabus: [
-      { label: "Module 1 · 1 hr", topic: "Foundational theories of leadership in healthcare" },
-      { label: "Module 2 · 1 hr", topic: "Interprofessional competencies and person-centred care" },
-      { label: "Module 3 · 1 hr", topic: "Technical and adaptive challenges in clinical settings" },
-      { label: "Module 4 · 1 hr", topic: "Personal and organisational barriers to change" },
-      { label: "Module 5 · 1 hr", topic: "Adaptive leadership in interprofessional practice" },
-    ],
-    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/187827/lessons/3747206",
+      "You will learn through self-paced online modules, real-world healthcare scenarios, guided activities, knowledge checks, and reflection tasks. Each of the six courses is fully online and can be completed flexibly at your own pace.",
   },
+  ...alSubCourses,
   // ───────────────────────────────────────────────
   // Upcoming courses (coming soon)
   // ───────────────────────────────────────────────
