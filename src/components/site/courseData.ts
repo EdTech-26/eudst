@@ -12,6 +12,11 @@ import bannerHIG_C3 from "@/assets/hig-c3-banner.png";
 import bannerHIG_C4 from "@/assets/hig-c4-banner.png";
 import bannerALICP from "@/assets/course-alicp.png";
 import bannerPM from "@/assets/pme-banner.png";
+import bannerPME_C1 from "@/assets/pme-c1-banner.png";
+import bannerPME_C2 from "@/assets/pme-c2-banner.png";
+import bannerPME_C3 from "@/assets/pme-c3-banner.png";
+import bannerPME_C4 from "@/assets/pme-c4-banner.png";
+import bannerPME_C5 from "@/assets/pme-c5-banner.png";
 import bannerDSC from "@/assets/course-dsc.jpg";
 import bannerELE from "@/assets/course-ele.jpg";
 import bannerPGD from "@/assets/course-pgd.jpg";
@@ -44,6 +49,7 @@ const makePmeCourse = (
   headline: string,
   longDesc: string,
   outcomes: string[],
+  bannerImage: string = bannerPM,
 ): Course => ({
   code,
   subject: "Professional Skills",
@@ -54,7 +60,7 @@ const makePmeCourse = (
   delivery: "Online",
   duration: "1 hr",
   accent: accent.Business,
-  bannerImage: bannerPM,
+  bannerImage,
   hasDetailPage: true,
   parentCode: "PME-GE-001",
   price: 100,
@@ -79,6 +85,7 @@ const pmeSubCourses: Course[] = [
       "Describe the role of a project manager",
       "Recognise the major process groups in project management",
     ],
+    bannerPME_C1,
   ),
   makePmeCourse(
     "PME-C2",
@@ -91,6 +98,7 @@ const pmeSubCourses: Course[] = [
       "Describe key activities within each phase",
       "Explain how project phases support project success",
     ],
+    bannerPME_C2,
   ),
   makePmeCourse(
     "PME-C3",
@@ -103,6 +111,7 @@ const pmeSubCourses: Course[] = [
       "Explain the purpose of Work Breakdown Structure (WBS)",
       "Apply scope management concepts to simple project scenarios",
     ],
+    bannerPME_C3,
   ),
   makePmeCourse(
     "PME-C4",
@@ -115,6 +124,7 @@ const pmeSubCourses: Course[] = [
       "Explain the concept of the critical path",
       "Analyse scheduling challenges and project delays",
     ],
+    bannerPME_C4,
   ),
   makePmeCourse(
     "PME-C5",
@@ -127,6 +137,7 @@ const pmeSubCourses: Course[] = [
       "Explain the purpose of contingency planning",
       "Apply budgeting concepts to simple project scenarios",
     ],
+    bannerPME_C5,
   ),
   makePmeCourse(
     "PME-C6",
