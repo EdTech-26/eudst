@@ -158,7 +158,7 @@ const CourseDetail = () => {
                 width={1600}
                 height={640}
                 loading="lazy"
-                className="h-56 w-full object-cover object-[50%_30%] md:h-80 lg:h-96"
+                className="h-56 w-full object-cover object-[50%_45%] md:h-80 lg:h-96"
               />
             </motion.div>
           </section>
