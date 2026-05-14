@@ -475,7 +475,7 @@ export const sampleCourses: Course[] = [
     delivery: "Online",
     duration: "1 hr",
     accent: accent.Health,
-    bannerImage: bannerHDPSG,
+    bannerImage: bannerHIG_C2,
     hasDetailPage: true,
     parentCode: "HDPSG-001",
     price: 100,
