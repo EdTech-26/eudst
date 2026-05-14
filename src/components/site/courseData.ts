@@ -7,6 +7,7 @@ import bannerTL21C_C4 from "@/assets/tl21c-c4-banner.png";
 import bannerTL21C_C5 from "@/assets/tl21c-c5-banner.png";
 import bannerHDPSG from "@/assets/course-hdpsg.png";
 import bannerHIG_C1 from "@/assets/hig-c1-banner.png";
+import bannerHIG_C2 from "@/assets/hig-c2-banner.png";
 import bannerALICP from "@/assets/course-alicp.png";
 import bannerPM from "@/assets/pme-banner.png";
 import bannerDSC from "@/assets/course-dsc.jpg";
