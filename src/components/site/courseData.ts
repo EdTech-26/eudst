@@ -17,6 +17,11 @@ import bannerPME_C2 from "@/assets/pme-c2-banner.png";
 import bannerPME_C3 from "@/assets/pme-c3-banner.png";
 import bannerPME_C4 from "@/assets/pme-c4-banner.png";
 import bannerPME_C5 from "@/assets/pme-c5-banner.png";
+import bannerPME_C6 from "@/assets/pme-c6-banner.png";
+import bannerPME_C7 from "@/assets/pme-c7-banner.png";
+import bannerPME_C8 from "@/assets/pme-c8-banner.png";
+import bannerPME_C9 from "@/assets/pme-c9-banner.png";
+import bannerPME_C10 from "@/assets/pme-c10-banner.png";
 import bannerDSC from "@/assets/course-dsc.jpg";
 import bannerELE from "@/assets/course-ele.jpg";
 import bannerPGD from "@/assets/course-pgd.jpg";
@@ -150,6 +155,7 @@ const pmeSubCourses: Course[] = [
       "Differentiate between likelihood and impact",
       "Select appropriate risk response strategies",
     ],
+    bannerPME_C6,
   ),
   makePmeCourse(
     "PME-C7",
@@ -162,6 +168,7 @@ const pmeSubCourses: Course[] = [
       "Apply communication planning concepts",
       "Recognise basic conflict resolution strategies",
     ],
+    bannerPME_C7,
   ),
   makePmeCourse(
     "PME-C8",
@@ -174,6 +181,7 @@ const pmeSubCourses: Course[] = [
       "Explain the purpose of project monitoring and change control",
       "Identify corrective actions for common project issues",
     ],
+    bannerPME_C8,
   ),
   makePmeCourse(
     "PME-C9",
@@ -186,6 +194,7 @@ const pmeSubCourses: Course[] = [
       "Describe the purpose of lessons learned documentation",
       "Evaluate project closure scenarios and identify improvements",
     ],
+    bannerPME_C9,
   ),
   makePmeCourse(
     "PME-C10",
@@ -197,6 +206,7 @@ const pmeSubCourses: Course[] = [
       "Apply project management concepts to simple scenarios",
       "Evaluate project situations and identify improvements",
     ],
+    bannerPME_C10,
   ),
 ];
 
