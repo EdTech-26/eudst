@@ -69,6 +69,7 @@ const makeAlCourse = (
   headline: string,
   longDesc: string,
   outcomes: string[],
+  bannerImage: string = bannerALICP,
 ): Course => ({
   code,
   subject: "Health",
@@ -79,7 +80,7 @@ const makeAlCourse = (
   delivery: "Online",
   duration: "1 hr",
   accent: accent.Health,
-  bannerImage: bannerALICP,
+  bannerImage,
   hasDetailPage: true,
   parentCode: "ALICP-001",
   price: 100,
