@@ -249,6 +249,7 @@ const pmeSubCourses: Course[] = [
       "Recognise the major process groups in project management",
     ],
     bannerPME_C1,
+    "https://d2l.udst.edu.qa/d2l/le/sequenceLauncher/193561/View",
   ),
   makePmeCourse(
     "PME-C2",
