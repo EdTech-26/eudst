@@ -263,6 +263,7 @@ const pmeSubCourses: Course[] = [
       "Explain how project phases support project success",
     ],
     bannerPME_C2,
+    "https://d2l.udst.edu.qa/d2l/le/sequenceLauncher/193562/View",
   ),
   makePmeCourse(
     "PME-C3",
