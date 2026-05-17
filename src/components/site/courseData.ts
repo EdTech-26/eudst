@@ -211,6 +211,7 @@ const makePmeCourse = (
   longDesc: string,
   outcomes: string[],
   bannerImage: string = bannerPM,
+  launchUrl?: string,
 ): Course => ({
   code,
   subject: "Professional Skills",
@@ -232,6 +233,7 @@ const makePmeCourse = (
   outcomes,
   audience: pmeAudience,
   syllabus: pmeSyllabus,
+  ...(launchUrl ? { launchUrl } : {}),
 });
 
 const pmeSubCourses: Course[] = [
@@ -247,6 +249,7 @@ const pmeSubCourses: Course[] = [
       "Recognise the major process groups in project management",
     ],
     bannerPME_C1,
+    "https://d2l.udst.edu.qa/d2l/le/sequenceLauncher/193561/View",
   ),
   makePmeCourse(
     "PME-C2",
@@ -260,6 +263,7 @@ const pmeSubCourses: Course[] = [
       "Explain how project phases support project success",
     ],
     bannerPME_C2,
+    "https://d2l.udst.edu.qa/d2l/le/sequenceLauncher/193562/View",
   ),
   makePmeCourse(
     "PME-C3",
@@ -419,6 +423,7 @@ export const sampleCourses: Course[] = [
     currency: "QAR",
     language: "en",
     startDate: "Enrol anytime",
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/sequenceLauncher/187819/View",
     longDesc:
       "This course invites educators to examine the growing influence of AI on teaching and learning, and to develop the awareness, knowledge, and practical strategies needed to respond thoughtfully and effectively.\n\nYou will explore how AI is transforming not only the tools we use, but also the skills students need, the role of the instructor, and the very purpose of education itself, with the goal of creating learning experiences that remain meaningful, ethical, and future-ready.",
     outcomes: [
