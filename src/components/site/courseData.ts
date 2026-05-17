@@ -57,18 +57,13 @@ const pmeSyllabus = [
 const alAudience =
   "This Micro-credential is designed for healthcare professionals, graduate students interested in healthcare settings, university and college faculty in health, healthcare startup founders and entrepreneurs, individuals interested in working in healthcare settings, corporate trainers in the healthcare industry, and academic leaders and education administrators in healthcare organisations. No advanced technical background is required.";
 
-const alSyllabus = [
-  { label: "Module 1", topic: "Introduction" },
-  { label: "Module 2", topic: "Concept Exploration" },
-  { label: "Module 3", topic: "Applied Practice" },
-];
-
 const makeAlCourse = (
   code: string,
   title: string,
   headline: string,
   longDesc: string,
   outcomes: string[],
+  modules: string[],
   bannerImage: string = bannerALICP,
 ): Course => ({
   code,
@@ -90,7 +85,7 @@ const makeAlCourse = (
   longDesc,
   outcomes,
   audience: alAudience,
-  syllabus: alSyllabus,
+  syllabus: modules.map((topic, i) => ({ label: `Module ${i + 1}`, topic })),
 });
 
 const alSubCourses: Course[] = [
