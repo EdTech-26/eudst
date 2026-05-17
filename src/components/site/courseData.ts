@@ -131,6 +131,7 @@ const alSubCourses: Course[] = [
       "Competing Commitments",
     ],
     bannerAL_C2,
+    "https://d2l.udst.edu.qa/d2l/le/lessons/187827/units/3747205",
   ),
   makeAlCourse(
     "AL-C3",
