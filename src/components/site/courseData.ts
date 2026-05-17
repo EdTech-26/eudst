@@ -65,6 +65,7 @@ const makeAlCourse = (
   outcomes: string[],
   modules: string[],
   bannerImage: string = bannerALICP,
+  launchUrl?: string,
 ): Course => ({
   code,
   subject: "Health",
@@ -86,6 +87,7 @@ const makeAlCourse = (
   outcomes,
   audience: alAudience,
   syllabus: modules.map((topic, i) => ({ label: `Module ${i + 1}`, topic })),
+  ...(launchUrl ? { launchUrl } : {}),
 });
 
 const alSubCourses: Course[] = [
