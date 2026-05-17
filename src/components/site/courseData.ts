@@ -784,7 +784,7 @@ export const sampleCourses: Course[] = [
   {
     code: "ALICP-001",
     subject: "Health",
-    title: "Adaptive Leadership and Interprofessional Collaborative Practice",
+    title: "Adaptive Leadership",
     desc: "Build adaptive leadership skills to mobilise, motivate, and lead interprofessional healthcare teams through complex change.",
     type: "Micro-credential",
     delivery: "Online",
