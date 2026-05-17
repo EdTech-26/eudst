@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
@@ -20,6 +20,21 @@ const Enroll = () => {
 
   const [paying, setPaying] = useState(false);
 
+  const isMC = !!(course?.isMicroCredential && course.subCourseCodes?.length);
+  const subCourses = useMemo(
+    () =>
+      isMC && course?.subCourseCodes
+        ? course.subCourseCodes
+            .map((sc) => sampleCourses.find((c) => c.code === sc))
+            .filter((c): c is NonNullable<typeof c> => Boolean(c))
+        : [],
+    [isMC, course],
+  );
+  const totalPrice = isMC
+    ? subCourses.reduce((sum, sc) => sum + (sc.price ?? 0), 0)
+    : course?.price ?? 0;
+  const codesToEnroll = isMC ? subCourses.map((sc) => sc.code) : course ? [course.code] : [];
+
   useEffect(() => {
     document.title = course ? `Enrol · ${course.title}` : "Enrol · eUDST";
   }, [course]);
@@ -31,10 +46,11 @@ const Enroll = () => {
   }, [authLoading, user, code, navigate]);
 
   useEffect(() => {
-    if (course && !enrollLoading && isEnrolled(course.code)) {
-      navigate("/my-learning", { replace: true });
-    }
-  }, [course, enrollLoading, isEnrolled, navigate]);
+    if (!course || enrollLoading) return;
+    const allDone =
+      codesToEnroll.length > 0 && codesToEnroll.every((c) => isEnrolled(c));
+    if (allDone) navigate("/my-learning", { replace: true });
+  }, [course, enrollLoading, isEnrolled, navigate, codesToEnroll]);
 
   if (!course) {
     return (
@@ -57,13 +73,20 @@ const Enroll = () => {
     e.preventDefault();
     setPaying(true);
     setTimeout(async () => {
-      const result = await enroll(course.code);
-      setPaying(false);
-      if ("error" in result && result.error) {
-        toast.error(result.error.message);
-        return;
+      for (const c of codesToEnroll) {
+        const result = await enroll(c);
+        if ("error" in result && result.error) {
+          setPaying(false);
+          toast.error(result.error.message);
+          return;
+        }
       }
-      toast.success(`You're enrolled in ${course.title}`);
+      setPaying(false);
+      toast.success(
+        isMC
+          ? `You're enrolled in all ${codesToEnroll.length} courses of ${course.title}`
+          : `You're enrolled in ${course.title}`,
+      );
       navigate("/my-learning");
     }, 1100);
   };
@@ -127,7 +150,7 @@ const Enroll = () => {
                 <Button type="submit" variant="hero" className="w-full" disabled={paying}>
                   {paying
                     ? "Processing…"
-                    : `Pay ${course.price?.toLocaleString()} ${course.currency} & enrol`}
+                    : `Pay ${totalPrice.toLocaleString()} ${course.currency} & enrol`}
                 </Button>
               </form>
             </div>
@@ -140,17 +163,31 @@ const Enroll = () => {
                 <div>
                   <p className="font-semibold text-ink">{course.title}</p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    {course.subject} · {course.type}
+                    {course.subject} · {isMC ? `${subCourses.length}-course Micro-credential` : course.type}
                   </p>
                 </div>
                 <span className="font-display text-lg font-semibold text-ink">
-                  {course.price?.toLocaleString()}
+                  {totalPrice.toLocaleString()}
                 </span>
               </div>
+
+              {isMC && (
+                <ul className="mt-4 space-y-2 border-t border-border pt-4 text-xs">
+                  {subCourses.map((sc) => (
+                    <li key={sc.code} className="flex justify-between gap-3">
+                      <span className="text-muted-foreground">{sc.title}</span>
+                      <span className="font-medium text-ink">
+                        {(sc.price ?? 0).toLocaleString()}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               <div className="mt-6 space-y-2 border-t border-border pt-4 text-sm">
                 <div className="flex justify-between text-muted-foreground">
                   <span>Subtotal</span>
-                  <span>{course.price?.toLocaleString()} {course.currency}</span>
+                  <span>{totalPrice.toLocaleString()} {course.currency}</span>
                 </div>
                 <div className="flex justify-between text-muted-foreground">
                   <span>VAT</span>
@@ -158,7 +195,7 @@ const Enroll = () => {
                 </div>
                 <div className="flex justify-between border-t border-border pt-3 font-semibold text-ink">
                   <span>Total</span>
-                  <span>{course.price?.toLocaleString()} {course.currency}</span>
+                  <span>{totalPrice.toLocaleString()} {course.currency}</span>
                 </div>
               </div>
             </aside>
