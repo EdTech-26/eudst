@@ -427,7 +427,7 @@ export const sampleCourses: Course[] = [
     currency: "QAR",
     language: "en",
     startDate: "Enrol anytime",
-    launchUrl: "https://d2l.udst.edu.qa/d2l/le/sequenceLauncher/187819/View",
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/lessons/187819/units/3746776",
     longDesc:
       "This course invites educators to examine the growing influence of AI on teaching and learning, and to develop the awareness, knowledge, and practical strategies needed to respond thoughtfully and effectively.\n\nYou will explore how AI is transforming not only the tools we use, but also the skills students need, the role of the instructor, and the very purpose of education itself, with the goal of creating learning experiences that remain meaningful, ethical, and future-ready.",
     outcomes: [
