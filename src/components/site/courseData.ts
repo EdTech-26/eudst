@@ -211,6 +211,7 @@ const makePmeCourse = (
   longDesc: string,
   outcomes: string[],
   bannerImage: string = bannerPM,
+  launchUrl?: string,
 ): Course => ({
   code,
   subject: "Professional Skills",
@@ -232,6 +233,7 @@ const makePmeCourse = (
   outcomes,
   audience: pmeAudience,
   syllabus: pmeSyllabus,
+  ...(launchUrl ? { launchUrl } : {}),
 });
 
 const pmeSubCourses: Course[] = [
