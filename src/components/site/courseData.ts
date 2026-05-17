@@ -633,6 +633,7 @@ export const sampleCourses: Course[] = [
     currency: "QAR",
     language: "en",
     startDate: "Enrol anytime",
+    launchUrl: "https://d2l.udst.edu.qa/d2l/le/sequenceLauncher/187826/View",
     longDesc:
       "Learners will explore the ethical and legal foundations of health data privacy. The course covers the critical differences between privacy and security, global legislative standards, and strategies for safeguarding data against breaches.",
     outcomes: [
