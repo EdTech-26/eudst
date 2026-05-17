@@ -65,6 +65,7 @@ const makeAlCourse = (
   outcomes: string[],
   modules: string[],
   bannerImage: string = bannerALICP,
+  launchUrl?: string,
 ): Course => ({
   code,
   subject: "Health",
@@ -86,6 +87,7 @@ const makeAlCourse = (
   outcomes,
   audience: alAudience,
   syllabus: modules.map((topic, i) => ({ label: `Module ${i + 1}`, topic })),
+  ...(launchUrl ? { launchUrl } : {}),
 });
 
 const alSubCourses: Course[] = [
@@ -106,6 +108,7 @@ const alSubCourses: Course[] = [
       "Adaptive Leadership in Organisational Settings",
     ],
     bannerAL_C1,
+    "https://d2l.udst.edu.qa/d2l/le/enhancedSequenceViewer/187827?url=https%3A%2F%2F349e08f8-7f0e-4a9b-852a-394ff83bce15.sequences.api.brightspace.com%2F187827%2Factivity%2F3744412%3FfilterOnDatesAndDepth%3D1",
   ),
   makeAlCourse(
     "AL-C2",
@@ -128,6 +131,7 @@ const alSubCourses: Course[] = [
       "Competing Commitments",
     ],
     bannerAL_C2,
+    "https://d2l.udst.edu.qa/d2l/le/lessons/187827/units/3747205",
   ),
   makeAlCourse(
     "AL-C3",
