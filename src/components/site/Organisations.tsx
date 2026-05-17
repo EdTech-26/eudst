@@ -1,8 +1,53 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Building2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
 
 export const Organisations = () => {
+  const [open, setOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState({
+    organisation: "",
+    fullName: "",
+    email: "",
+    phone: "",
+    details: "",
+  });
+
+  const update = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.organisation.trim() || !form.fullName.trim() || !form.email.trim() || !form.details.trim()) {
+      toast({ title: "Please complete all required fields.", variant: "destructive" });
+      return;
+    }
+    setSubmitting(true);
+    const subject = encodeURIComponent(`Custom Course Request — ${form.organisation}`);
+    const body = encodeURIComponent(
+      `Organisation: ${form.organisation}\nFull Name: ${form.fullName}\nContact Email: ${form.email}\nContact Number: ${form.phone}\n\nCourse request details:\n${form.details}`,
+    );
+    window.location.href = `mailto:elearning@udst.edu.qa?subject=${subject}&body=${body}`;
+    setTimeout(() => {
+      setSubmitting(false);
+      setOpen(false);
+      toast({ title: "Request ready to send", description: "Your email client has opened with the details." });
+    }, 400);
+  };
+
   return (
     <section className="container py-20 md:py-28">
       <motion.div
@@ -40,15 +85,64 @@ export const Organisations = () => {
             <Button
               size="xl"
               className="bg-background text-primary hover:bg-background/90"
-              asChild
+              onClick={() => setOpen(true)}
             >
-              <a href="mailto:elearning@udst.edu.qa?subject=Custom%20Course%20Request">
-                Request a custom course <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
+              Request a custom course <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
           </div>
         </div>
       </motion.div>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Request a custom course</DialogTitle>
+            <DialogDescription>
+              Share a few details and our team will be in touch to scope a tailored programme for your organisation.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="org">Organisation *</Label>
+              <Input id="org" maxLength={150} value={form.organisation} onChange={update("organisation")} required />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="name">Full Name *</Label>
+              <Input id="name" maxLength={100} value={form.fullName} onChange={update("fullName")} required />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="email">Contact Email *</Label>
+                <Input id="email" type="email" maxLength={255} value={form.email} onChange={update("email")} required />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone">Contact Number</Label>
+                <Input id="phone" type="tel" maxLength={30} value={form.phone} onChange={update("phone")} />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="details">Course request details *</Label>
+              <Textarea
+                id="details"
+                rows={5}
+                maxLength={2000}
+                value={form.details}
+                onChange={update("details")}
+                placeholder="Tell us about your team, learning goals, preferred topics, and timing."
+                required
+              />
+            </div>
+            <DialogFooter>
+              <Button type="button" variant="ghost" onClick={() => setOpen(false)}>
+                Cancel
+              </Button>
+              <Button type="submit" variant="hero" disabled={submitting}>
+                {submitting ? "Sending…" : "Send request"}
+              </Button>
+            </DialogFooter>
+          </form>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
