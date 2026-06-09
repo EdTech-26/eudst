@@ -18,8 +18,9 @@ import {
 const subjects = ["All", "Health", "Education", "Computing", "Business", "Engineering", "Communication"];
 const typeKeys: { value: string; key: string }[] = [
   { value: "All", key: "catalogue.all" },
-  { value: "Course", key: "catalogue.types.academic" },
   { value: "Micro-credential", key: "catalogue.types.micro-credential" },
+  { value: "Course", key: "catalogue.types.course" },
+  { value: "Academic", key: "catalogue.types.academic" },
 ];
 
 const Catalogue = () => {
@@ -42,7 +43,6 @@ const Catalogue = () => {
   const filtered = useMemo(
     () =>
       sampleCourses
-        .filter((c) => !c.parentCode)
         .filter(
           (c) =>
             (subject === "All" || c.subject === subject) &&

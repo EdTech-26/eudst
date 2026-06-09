@@ -249,9 +249,10 @@
     "deliveryLabel": "Delivery",
     "all": "All",
     "types": {
-      "academic": "Course",
+      "course": "Courses",
+      "academic": "Academic",
       "professional": "Professional",
-      "micro-credential": "Micro-credential"
+      "micro-credential": "Micro-credentials"
     },
     "delivery": {
       "online": "Online",
