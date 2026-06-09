@@ -420,11 +420,6 @@ const CourseDetail = () => {
                       </div>
                     </dl>
                   </div>
-                  <Button variant="hero" className="mt-4 w-full" asChild>
-                    <a href="mailto:eudst@udst.edu.qa?subject=Academic course registration">
-                      Email to register
-                    </a>
-                  </Button>
                   <p className="mt-3 text-center text-[11px] text-muted-foreground">
                     Open to UDST academic staff and students only
                   </p>
