@@ -74,7 +74,7 @@ const Catalogue = () => {
       <Navbar />
       <main>
         {/* Header */}
-        <section className="bg-gradient-to-b from-secondary/60 to-background py-20 md:py-28">
+        <section className="bg-gradient-to-b from-secondary/60 to-background pt-20 pb-10 md:pt-28 md:pb-14">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ const Catalogue = () => {
         </section>
 
         {/* Filter bar */}
-        <section className="sticky top-[72px] z-30 border-y border-border bg-background/85 py-3 backdrop-blur">
+        <section className="sticky top-[72px] z-30 border-y border-border bg-background/85 py-4 backdrop-blur">
           <div className="container flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:flex md:items-center">
               <Select value={subject} onValueChange={setSubject}>
@@ -145,7 +145,7 @@ const Catalogue = () => {
         </section>
 
         {/* Grid */}
-        <section className="container py-16 md:py-20">
+        <section className="container py-10 md:py-14">
           {filtered.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-border p-16 text-center">
               <p className="font-display text-xl font-semibold text-ink">
