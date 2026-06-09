@@ -249,7 +249,7 @@
     "deliveryLabel": "Delivery",
     "all": "All",
     "types": {
-      "academic": "Academic",
+      "academic": "Course",
       "professional": "Professional",
       "micro-credential": "Micro-credential"
     },

@@ -18,7 +18,7 @@ import {
 const subjects = ["All", "Health", "Education", "Computing", "Business", "Engineering", "Communication"];
 const typeKeys: { value: string; key: string }[] = [
   { value: "All", key: "catalogue.all" },
-  { value: "Academic", key: "catalogue.types.academic" },
+  { value: "Course", key: "catalogue.types.academic" },
   { value: "Micro-credential", key: "catalogue.types.micro-credential" },
 ];
 
