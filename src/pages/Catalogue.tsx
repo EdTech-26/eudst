@@ -50,7 +50,8 @@ const Catalogue = () => {
         )
         .slice()
         .sort((a, b) => {
-          const rank = (c: typeof a) => (c.academicOnly ? 2 : c.isPlaceholder ? 1 : 0);
+          const rank = (c: typeof a) =>
+            c.type === "Micro-credential" ? 0 : c.academicOnly ? 3 : c.isPlaceholder ? 2 : 1;
           return rank(a) - rank(b);
         }),
     [subject, type]
